@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBridges Hackathon Hub</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="logo.jpg.jpeg" alt="no logo">
+          BrainBridges</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="profile.html">My Profile</a>
+            <a href="messages.html">Messages</a>
+            <a href="#">Requests</a>
+            <a href="#">Info</a>
+            <a href="about.html">About Us</a>
+            <a href="partnership.html">Settings</a>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <img src="banner.jpg.jpeg" alt="Hackathon Banner">
+        </div>
+        <section class="intro">
+            <p>Introducing brain bridges, the ultimate destination for hackathon enthusiasts. Tired of scouring the internet for hackathon details? With BrainBridges, all the information you need is just a click away.</p>
+            <p>Our platform provides comprehensive details on upcoming hackathons, including time, location, and requirements, all in one convenient location. But we don’t stop there. Hackathon Hub also offers features for networking, team formation, and project showcasing, making it easier than ever for students to connect, collaborate, and compete.</p>
+            <p>Join the community today and take your hackathon experience to the next level.</p>
+        </section>
+        <section class="features">
+            <div class="feature-box">
+                <h2>Find Team Members</h2>
+                <p>Connect with potential team members for your projects.</p>
+                <button>Find now</button>
+            </div>
+            <div class="feature-box">
+                <h2>Create Portfolio</h2>
+                <p>Create a stunning portfolio to showcase your skills and projects.</p>
+                <button>Form now</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
