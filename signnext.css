@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(formteams.jpg);
+}
+
+header {
+    background-color: #fff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border-color: #252E5D;
+    background-image: url(formteams.jpg);
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border: 1px solid #252E5D;
+    position: relative;
+background-color: #02061c;
+    background-size: cover;
+    background-position: center;
+}
+
+label, input, textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    color: #000;
+}
+
+input, textarea {
+    background-color: #ebe7e7;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ebe7e7;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+button:active {
+    background-color: #fff;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+input:hover,
+textarea:hover {
+    color: #000;
+    font-weight: bolder;
+}
+
+input:hover {
+    background-color: #fff;
+    color: #000;
+}

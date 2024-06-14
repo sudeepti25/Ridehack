@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hackathon Page</title>
+<link rel="stylesheet" href="formteams.css">
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const portfolioItems = document.querySelectorAll(".portfolio-item");
+        portfolioItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add("show");
+            }, 100 * index);
+        });
+    });
+
+    function portfolioClicked(button) {
+        button.classList.add("clicked");
+        setTimeout(() => {
+            button.classList.remove("clicked");
+        }, 200);
+    }
+</script>
+</head>
+<body>
+<header>
+    <h1>Form your own team !</h1>
+</header>
+<div class="portfolio-item">
+    <h2>Portfolio 1</h2>
+    <p>Description of Portfolio 1</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<!-- Repeat the structure for additional portfolio items -->
+<div class="portfolio-item">
+    <h2>Portfolio 2</h2>
+    <p>Description of Portfolio 2</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<div class="portfolio-item">
+    <h2>Portfolio 3</h2>
+    <p>Description of Portfolio 3</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<div class="portfolio-item">
+    <h2>Portfolio 4</h2>
+    <p>Description of Portfolio 3</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<div class="portfolio-item">
+    <h2>Portfolio 5</h2>
+    <p>Description of Portfolio 3</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<div class="portfolio-item">
+    <h2>Portfolio 6</h2>
+    <p>Description of Portfolio 3</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<div class="portfolio-item">
+    <h2>Portfolio 7</h2>
+    <p>Description of Portfolio 3</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<div class="portfolio-item">
+    <h2>Portfolio 8</h2>
+    <p>Description of Portfolio 3</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<div class="portfolio-item">
+    <h2>Portfolio 9</h2>
+    <p>Description of Portfolio 3</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<div class="portfolio-item">
+    <h2>Portfolio 10</h2>
+    <p>Description of Portfolio 3</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<div class="portfolio-item">
+    <h2>Portfolio 11</h2>
+    <p>Description of Portfolio 3</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+<div class="portfolio-item">
+    <h2>Portfolio 12</h2>
+    <p>Description of Portfolio 3</p>
+    <button onclick="portfolioClicked(this)">View Portfolio</button>
+</div>
+
+
+<!-- Add more portfolio items here -->
+</body>
+</html>
