@@ -88,9 +88,9 @@ input[type="submit"]:hover {
 }
 
 /* Add hover effect for all elements with color #00ff00 */
-body,
+/* body,
 h1,
-label,
+label, */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -101,9 +101,9 @@ input[type="submit"] {
 }
 
 /* Apply hover effect */
-body:hover,
+/* body:hover,
 h1:hover,
-label:hover,
+label:hover, */
 input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="password"]:hover,
