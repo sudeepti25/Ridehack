@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <link rel="stylesheet" href="organizehackathon.css">
+</head>
+<body>
+    <h1>Event Registration Form</h1>
+    <div class="form-container">
+        <form id="eventForm" onsubmit="return validateForm()">
+            <h2>Event Organizer Details</h2>
+            <div class="form-group">
+                <label for="organizerName">Organizer Name:</label>
+                <input type="text" id="organizerName" name="organizerName" required>
+            </div>
+            <div class="form-group">
+                <label for="organizationName">Name of Organization:</label>
+                <input type="text" id="organizationName" name="organizationName" required>
+            </div>
+            <div class="form-group">
+                <label for="organizerMail">Organizer Email:</label>
+                <input type="email" id="organizerMail" name="organizerMail" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+
+            <h2>Event Details</h2>
+            <div class="form-group">
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" name="eventName" required>
+            </div>
+            <div class="form-group">
+                <label for="eventType">Event Type:</label>
+                <input type="text" id="eventType" name="eventType" required>
+            </div>
+            <div class="form-group">
+                <label for="eventCategory">Event Category:</label>
+                <input type="text" id="eventCategory" name="eventCategory" required>
+            </div>
+            <div class="form-group">
+                <label for="eventTopic">Event Topic:</label>
+                <input type="text" id="eventTopic" name="eventTopic" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="organizingSociety">Organizing Society:</label>
+                <input type="text" id="organizingSociety" name="organizingSociety" required>
+            </div>
+            <div class="form-group">
+                <label for="contactPerson">Contact Person for the Event:</label>
+                <input type="text" id="contactPerson" name="contactPerson" required>
+            </div>
+            <div class="form-group">
+                <label for="eventEnquiriesEmail">Event Enquiries Email:</label>
+                <input type="email" id="eventEnquiriesEmail" name="eventEnquiriesEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="websiteAddress">Website Address:</label>
+                <input type="text" id="websiteAddress" name="websiteAddress">
+            </div>
+            <div class="form-group">
+                <label for="eventStartDate">Event Start Date:</label>
+                <input type="date" id="eventStartDate" name="eventStartDate" required>
+            </div>
+            <div class="form-group">
+                <label for="eventEndDate">Last Date of Event:</label>
+                <input type="date" id="eventEndDate" name="eventEndDate" required>
+            </div>
+            <div class="form-group">
+                <label for="eventTheme">Theme of the Event:</label>
+                <input type="text" id="eventTheme" name="eventTheme" required>
+            </div>
+           
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
