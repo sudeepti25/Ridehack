@@ -67,6 +67,8 @@ nav button:hover {
   padding: 20px;
   background-color: #f9f9f9;
   justify-content: center;
+  text-align: center;
+  
 }
 
 .intro p {
@@ -120,7 +122,17 @@ nav button:hover {
   justify-self: center;
   width: 130px;
 }
+.feature-box:hover{
+  color: #fff;
+}
+.feature-box p:hover{
+  color: #fff;
+}
 
+.feature-box:hover{
+background-image: linear-gradient(100deg,rgb(13, 253, 209),rgb(43, 190, 243), rgb(0, 119, 255) );
+
+}
 .feature-box button:hover {
   background-color: #1faac3;
 }

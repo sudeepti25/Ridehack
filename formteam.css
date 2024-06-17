@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #000;
+    /* background-color: #000; */
     margin: 0;
     padding: 0;
     display: flex;
@@ -8,6 +8,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
+    background-image: url(formteams.jpg);
 }
 
 h2 {
@@ -26,7 +27,7 @@ h2 {
 .option-box {
     width: 200px;
     height: 100px;
-    background-color: #222;
+    /* background-color: #222; */
     color: #fff;
     text-align: center;
     line-height: 100px;
