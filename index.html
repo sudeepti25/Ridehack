@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainBridges Hackathon Hub</title>
     <link rel="stylesheet" href="landingpage.css">
+    <style>
+        /* Add this CSS to make the header fixed */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white; /* Ensure the header has a background color */
+            z-index: 1000; /* Ensure the header is on top */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: add a shadow for better visibility */
+        }
+        /* Add top padding to the main content to avoid overlapping */
+        main {
+            padding-top: 80px; /* Adjust this value according to the header height */
+        }
+        #typed {
+            font-size: 1em; /* Keeping the original font size */
+        }
+        .intro {
+            margin-top: 20px; /* Add top margin to the intro section */
+        }
+        .footer-boxes p, .third-footer-boxes {
+            margin-top: 10px; /* Add margin to top and bottom of each item */
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -78,16 +104,17 @@
         <footer>
             <div class="footer-container">
                 <div class="footer-boxes">
-                    <h3>Categories</h3>
-                    <p>Caretaker</p>
-                    <p>Electrician</p>
-                    <p>Housekeeping</p>
-                    <p>Security</p>
+                    <h3>Features</h3>
+                    <p>Hackathon Calender</p>
+                    <p>Accessiblity</p>
+                    <p>Blog</p>
+                    <p>Team Formation</p>
                 </div>
                 <div class="footer-boxes">
                     <h3>Quick Links</h3>
                     <p>About us</p>
-                    <p>Contact us</p>
+                    <p>Help Centre</p>
+                    <p>Blog</p>
                     <p>FAQ</p>
                     <p></p>
                 </div>
@@ -95,7 +122,7 @@
                     <h3>Contact Us</h3>
                     <div class="third-footer-boxes">
                         <img class="image-third-footer-boxes" src="building-regular.svg" alt="">
-                        <p>Noida, Uttar Pradesh</p>
+                        <p>Email - support@brainbridges.com</p>
                     </div>
                     <div class="third-footer-boxes">
                         <img class="image-third-footer-boxes" src="headphones-solid.svg" alt="">
@@ -119,7 +146,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var options = {
-                strings: ["The ultimate destination for hackathon enthusiasts. ! Ready to innovate? Sign up and start collaborating today."],
+                strings: [
+                    "The ultimate destination for hackathon enthusiasts!",
+                    "Ready to innovate?",
+                    "Sign up and start collaborating today!"
+                ],
                 typeSpeed: 50,
                 backSpeed: 25,
                 loop: true
