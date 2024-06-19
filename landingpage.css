@@ -86,11 +86,12 @@ margin-top: 20px;
 .intro {
   
   text-align: center;
-  
+  font-size: larger;
 }
 
 .intro p {
   margin-bottom: 20px;
+  font-size: larger;
 }
 .feature-container{
   padding-top: 2rem;
@@ -108,7 +109,9 @@ margin-top: 20px;
     outline-color: #252E5D;
     border-radius: 2rem; 
     background-color: white;
-    border: 1px solid #252E5D; }
+    border: 1px solid #252E5D;
+  font-size: 20PX; }
+    
     .feature-box button {
       background-color: #00bcd4;
       color: white;
