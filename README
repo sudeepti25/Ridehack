@@ -1,9 +1,10 @@
-
- #website link -->  https://sudeepti25.github.io/Ridehack/
 # Brain Bridges
 
+[Brain Bridges Website](https://sudeepti25.github.io/Ridehack/)
+
 ## Overview
-Brain Bridges is an innovative platform designed to streamline the process of conducting and participating in hackathons. Developed by a talented team of developers, this website offers a range of features to enhance the hackathon experience.
+Brain Bridges is an innovative platform designed to streamline the process of conducting and participating in hackathons. 
+Developed by a talented team of developers, this website offers a range of features to enhance the hackathon experience.
 
 ## Features
 - **Hackathon Management:** Organize and manage hackathons effortlessly.
@@ -12,19 +13,9 @@ Brain Bridges is an innovative platform designed to streamline the process of co
 - **Resource Allocation:** Efficient distribution of resources to participants.
 - **Real-time Updates:** Stay informed with live updates and notifications.
 
-## Team Contributions
-- **Swastik:** Lead developer and backend integration, ensuring smooth data management and server-side functionality.
-- **Yash:** Frontend design and user interface development, creating an intuitive and visually appealing experience.
-- **Sudeepti:** Event scheduling and management features, allowing efficient planning and execution of hackathon events.
-- **Shubhi:** Participant registration system, ensuring a seamless and user-friendly sign-up process.
-- **Niharika:** Real-time updates and notification system, keeping users informed with live information.
-
-## Contributing
-We welcome contributions from the community. Please read our [contributing guidelines](CONTRIBUTING.md) for more details.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize this template according to your specific needs.
+## Team Members
+- **Swastik**
+- **Yash**
+- **Sudeepti**
+- **Shubhi**
+- **Niharika**
