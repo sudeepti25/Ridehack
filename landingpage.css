@@ -296,11 +296,16 @@ font-size: large;
 }
 
 footer {
-  border-top: #666666 solid px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color:white;
+  height: 300px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+   margin: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+ 
 }
 
 .footer-container {
