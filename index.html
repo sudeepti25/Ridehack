@@ -6,8 +6,8 @@
     <title>BrainBridges Hackathon Hub</title>
     <link rel="stylesheet" href="landingpage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <style>
         /* Add this CSS to make the header fixed */
         header {
@@ -24,14 +24,75 @@
             padding-top: 80px; /* Adjust this value according to the header height */
         }
         #typed {
-            font-size: 1em; /* Keeping the original font size */
+            font-size: 1.2em; /* Increased font size */
         }
         .intro {
             margin-top: 20px; /* Add top margin to the intro section */
+            font-size: 1.2em; /* Increased font size */
+        }
+        .aboutus {
+            font-size: 1.2em; /* Increased font size */
         }
         .footer-boxes p, .third-footer-boxes {
             margin-top: 10px; /* Add margin to top and bottom of each item */
             margin-bottom: 10px;
+            font-size: 1.2em; /* Increased font size */
+        }
+        /* Updated CSS for feature boxes */
+        .feature-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%; /* Adjust the width as needed */
+            margin: 20px 0; /* Add some margin for spacing */
+        }
+        .feature-box {
+            width: 40%;
+            margin-bottom: 20px; /* Add some margin for spacing */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .feature-description {
+            width: 50%;
+            margin-left: 20px;
+            font-size: 1em; /* Increase font size */
+        }
+        .heading {
+            color: purple;
+            font-weight: bold;
+            font-size: 1.2em; /* Increase font size */
+            margin-bottom: 10px; /* Add margin below heading */
+        }
+        .sub-heading {
+            color: blue;
+            font-weight: bold;
+            font-size: 1em; /* Increase font size */
+            margin-bottom: 5px; /* Add margin below sub-heading */
+        }
+        .feature-description p {
+            margin-bottom: 10px; /* Add margin below paragraphs */
+            font-size: 1.2em; /* Increase font size */
+        }
+
+        /* Alternate positioning of feature boxes */
+        .feature-container > div:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Keyframes for pop-up animation */
+        @keyframes popUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -56,9 +117,6 @@
         </div>
     </header>
 
-    <!-- <div class="hero">
-        <img src="banner.jpg.jpeg" alt="Hackathon Banner">
-    </div> -->
     <main>
         <div class="hieght"></div>
         <div class="sliderframe">
@@ -81,7 +139,6 @@
             <h1>Start Exploring!</h1>
         </div>
 
-
         <div class="aboutus">
             <h4>Why BrainBridges ?</h4>
             <br>
@@ -89,43 +146,66 @@
                 <img src="logo.jpg.jpeg" alt="" height="300px">
                 <br>
                 "Unleash Innovation, Code the Future"
-
             </div>
-            
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur,
-             dolores cumque veniam dignissimos magnam perspiciatis eligendi vitae s
-             aepe tenetur omnis ut expedita officiis? Totam non enim aperiam amet 
-             aut tempora harum ex deserunt atque ratione quidem veritatis delectus
-              minima sequi impedit aliquam aspernatur
-             voluptatibus veniam, eum necessitatibus cum, commodi tempore id.
-              Ad tempore adipisci tenetur rerum tempora aut quisquam sint.
-        
-        </p>
-            </div>
-        
+            <p>At BrainBridges, we ignite innovation by turning your ideas into reality through our dynamic hackathons.
+                Collaborate with like-minded individuals and industry experts, pushing your boundaries with real-world challenges that test your skills and inspire creativity.
+                Our events cater to both beginners and seasoned coders, offering mentorship, workshops, and hands-on experience to enhance your skillset.
+                 Stand out by showcasing your talent to potential employers and investors, while enjoying fun activities, social events, and the chance to win amazing prizes that celebrate your hard work and innovation.
+            </p>
+        </div>
 
         <div class="feature-container">
-            <div class="feature-box">
-                <h3>Form Professional Teams</h3>
-                <p>Form professional teams with experts in various fields for your projects or business ventures.</p>
-                <a href="formteam.html"><button>Form Now</button></a>
+            <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                <div class="feature-box">
+                    <h3>Form Professional Teams</h3>
+                    <p>Form professional teams with experts in various fields for your projects or business ventures.</p>
+                    <a href="formteam.html"><button>Form Now</button></a>
+                </div>
+                <div class="feature-description">
+                    <h3 class="heading">Form Professional Teams</h3>
+                    <p style="font-size: 1.2em;">Connect with experts in various fields to collaborate on projects or business ventures. Whether you're looking to develop a new tech startup or innovate within an existing project, Brain Bridges provides a platform to assemble skilled teams tailored to your need.</p>
+                </div>
             </div>
-            <div class="feature-box">
-                <h3>Find Hackathons</h3>
-                <p>Explore and participate in upcoming hackathons to showcase your skills and innovate.</p>
-                <a href="findhackathon.html"><button>Find Now</button></a>
+
+            <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                <div class="feature-description">
+                    <h3 class="heading">Explore Hackathons</h3>
+                    <p style="font-size: 1.2em;"><span class="sub-heading">1. Upcoming Events:</span> Discover a comprehensive calendar of upcoming hackathons worldwide, categorized by date and location. Stay updated on registration deadlines and event details to plan your participation effectively.</p>
+                    <p style="font-size: 1.2em;"><span class="sub-heading">2. Skill Showcase:</span> Explore diverse hackathon themes ranging from AI and cybersecurity to sustainability and fintech. Each event offers a unique opportunity to showcase your skills, network with industry leaders, and gain hands-on experience in cutting-edge technologies.</p>
+                    <p style="font-size: 1.2em;"><span class="sub-heading">3. Participant Resources:</span> Access resources such as past hackathon projects, mentorship opportunities, and participant testimonials to prepare effectively and maximize your hackathon experience.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Find Hackathons</h3>
+                    <p>Explore and participate in upcoming hackathons to showcase your skills and innovate.</p>
+                    <a href="findhackathon.html"><button>Find Now</button></a>
+                </div>
             </div>
-            <div class="feature-box">
-                <h3>Organize a Hackathon</h3>
-                <p>Organize a hackathon giving people a platform to showcase their talent.</p>
-                <a href="organizehackathon.html"><button>Organize Now</button></a>
+
+            <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                <div class="feature-box">
+                    <h3>Organize a Hackathon</h3>
+                    <p>Organize a hackathon event through Brain Bridges and bring together creative minds.</p>
+                    <button>Organize Now</button>
+                </div>
+                <div class="feature-description">
+                    <h3 class="heading">Organize a Hackathon</h3>
+                    <p style="font-size: 1.2em;">Host your own hackathon on Brain Bridges to foster innovation and creativity within the community. Provide a platform for participants to collaborate, compete, and showcase their talent. Customize event details, manage registrations, and engage with sponsors to ensure a successful and impactful hackathon experience.</p>
+                </div>
             </div>
-            <div class="feature-box">
-                <h3>Saved Hackathons Options</h3>
-                <p>View and manage your saved hackathons options.</p>
-                <button>Manage Now</button>
+
+            <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                <div class="feature-description">
+                    <h3 class="heading">Saved Hackathon Options</h3>
+                    <p style="font-size: 1.2em;">Manage your saved hackathons efficiently with Brain Bridges. View and organize your selected events, edit preferences, and stay updated on upcoming deadlines. Easily access detailed information about each saved hackathon to streamline your participation planning process.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Saved Hackathons Options</h3>
+                    <p>View and manage your saved hackathons options.</p>
+                    <button>Manage Now</button>
+                </div>
             </div>
         </div>
+
         <div class="upperfooter"></div>
         <footer>
             <div class="footer-container">
@@ -142,7 +222,6 @@
                     <p>Help Centre</p>
                     <p>Blog</p>
                     <p>FAQ</p>
-                    <p></p>
                 </div>
                 <div class="footer-boxes">
                     <h3>Contact Us</h3>
@@ -183,6 +262,25 @@
             };
             var typed = new Typed("#typed", options);
         });
+
+        // Scroll event listener for feature box animations
+        document.addEventListener('scroll', function() {
+            var featureBoxes = document.querySelectorAll('.feature-box');
+            var triggerHeight = window.innerHeight / 1.1;
+
+            featureBoxes.forEach((box, index) => {
+                var boxTop = box.getBoundingClientRect().top;
+                if (boxTop < triggerHeight) {
+                    setTimeout(() => {
+                        box.style.opacity = 1;
+                        box.style.transform = 'translateY(0)';
+                        box.style.animation = 'popUp 0.5s ease-out';
+                    }, index * 300); // Delay based on the index
+                }
+            });
+        });
     </script>
 </body>
 </html>
+
+
