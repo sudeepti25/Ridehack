@@ -8,11 +8,11 @@ body {
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
-    background-image: url(formteams.jpg);
+    background-color: #EBF4F6;
 }
 
 h2 {
-    color: #fff;
+    color: #242424;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 20px;
@@ -27,7 +27,7 @@ h2 {
 .option-box {
     width: 200px;
     height: 100px;
-    /* background-color: #222; */
+ background-color: #071952;
     color: #fff;
     text-align: center;
     line-height: 100px;
@@ -37,27 +37,6 @@ h2 {
     overflow: hidden;
     box-shadow: 0 0 10px  #252E5D; /* Neon glow effect */
 }
-
-.option-box:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: linear-gradient(45deg, rgba(0,255,0,0) 0%, #00bcd4 50%, rgba(0,255,0,0) 100%);
-    border-radius: 50%;
-    transition: all 0.5s;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-}
-
-.option-box:hover:before {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.2);
-}
-
-.option-box:hover {
-    background-color: #111;
+.option-box:hover{
+           transform: scale(1.03);
 }
