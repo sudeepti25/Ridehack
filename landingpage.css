@@ -170,7 +170,7 @@ nav a:hover {
   
   width: 80%;
   /* height:300px; */
-  font-size: 20px;;
+  font-size: 22px;;
   text-align: left;
   margin-top: 150px;
   margin-bottom: 150px;
@@ -187,7 +187,7 @@ nav a:hover {
 }
  .img{
   font-family: "Quicksand", sans-serif;
-font-size: large;
+font-size: larger;
   float: right;
   justify-self: center;
   margin-left: 300px;
@@ -223,6 +223,33 @@ font-size: large;
   border: 1px solid #252E5D;
   font-size: 20PX;
 }
+.feature-box {
+  width: 50%; /* Increased width for better spacing */
+  margin-left: auto; /* Push feature boxes slightly to the right */
+  margin-right: auto; /* Center align the boxes */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.feature-description {
+  width: 45%; /* Adjusted width for better alignment */
+  margin-left: 5%; /* Add some margin on the left */
+}
+
+.heading {
+  font-size: 1.2em; /* Increased font size for headings */
+  color: rgb(9, 9, 9);
+  font-weight: bold;
+}
+
+.sub-heading {
+  font-size: 1em; /* Increased font size for sub-headings */
+  color: rgb(1, 1, 56);
+  font-weight: bold;
+}
+
 
 .feature-box button {
   
@@ -231,7 +258,7 @@ font-size: large;
   border: none;
   padding: 10px 20px;
   font-size: 1em;
-  border-radius: 4px;
+  border-radius: 3rem;
   cursor: pointer;
 
   text-align: center;
@@ -261,7 +288,7 @@ font-size: large;
 }
 
 .feature-box button:hover {
-  background-color: #efeeee;
+  background-color:#fff;
   color:#000
 }
 
@@ -338,29 +365,3 @@ footer {
 }
 /* Adjusted styles for your requirements */
 
-.feature-box {
-  width: 50%; /* Increased width for better spacing */
-  margin-left: auto; /* Push feature boxes slightly to the right */
-  margin-right: auto; /* Center align the boxes */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.feature-description {
-  width: 45%; /* Adjusted width for better alignment */
-  margin-left: 5%; /* Add some margin on the left */
-}
-
-.heading {
-  font-size: 1.2em; /* Increased font size for headings */
-  color: purple;
-  font-weight: bold;
-}
-
-.sub-heading {
-  font-size: 1em; /* Increased font size for sub-headings */
-  color: blue;
-  font-weight: bold;
-}

@@ -1,37 +1,65 @@
-*{margin: 0;
-    padding: 0;
-    box-sizing: border-box;}
-    .heading{margin-bottom: 4rem;}
-    body h1,h3{text-align: center;
-              }
-    .container{display: grid;
-               margin: auto;
-               width: 70%;
-               grid-template-columns: 1fr 1fr 1fr 1fr;
-               row-gap: 3rem;
-               grid-template-rows: 1fr 1fr;    }
-    .box{max-width: 12.5rem;
-         border: 1px solid rgb(238, 238, 238);
-         background-color: white;
-         box-shadow: 13px 6px 25px -15px rgba(0,0,0,0.1);
-         padding: 1rem;
-         border-radius: 1rem;
-         align-items: center;
-         display: flex;
-         flex-direction: column;
-         row-gap: 1rem;
-         text-align: center;
-         height: 15.7rem; }
-    .box:hover{transform: scale(1.04);}     
-    .box img{width: 4rem;}
-    .box h2{font-family: 'Times New Roman', Times, serif;
-                }
-     .box p{color: rgb(160, 160, 160);}  
-     .box button{background-color: #071952;
-                  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                  border-radius: 0.9rem;
-                  font-size: 1rem;
-                  border: none;
-                  padding: 0.7rem;
-                  box-shadow:  black;
-                  color: white;}   
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+.heading {
+     margin-bottom: 4rem;
+}
+
+body h1,
+h3 {
+     text-align: center;
+}
+
+.container {
+     display: grid;
+     margin: auto;
+     width: 70%;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     row-gap: 3rem;
+     grid-template-rows: 1fr 1fr;
+}
+
+.box {
+     max-width: 12.5rem;
+     border: 1px solid rgb(238, 238, 238);
+     background-color: #EBF4F6;
+     box-shadow: 13px 6px 25px -15px rgba(0, 0, 0, 0.1);
+     padding: 1rem;
+     border-radius: 1rem;
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+     row-gap: 1rem;
+     text-align: center;
+     height: 15.7rem;
+}
+
+.box:hover {
+     transform: scale(1.04);
+}
+
+.box img {
+     width: 4rem;
+}
+
+.box h2 {
+     font-family: 'Times New Roman', Times, serif;
+}
+
+.box p {
+     color: rgb(160, 160, 160);
+}
+
+.box button {
+     background-color: #071952;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     border-radius: 0.9rem;
+     font-size: 1rem;
+     border: none;
+     padding: 0.7rem;
+     box-shadow: black;
+     color: white;
+}

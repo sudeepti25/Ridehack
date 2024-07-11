@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url(formteams.jpg);
+    background-color: #EBF4F6;
     margin: 0;
     padding: 20px;
-    color: #00bcd4;
+    color: #4c4c4c;
 }
 
 h1 {
@@ -17,7 +17,9 @@ h1 {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #00bcd4;
+    color: #3b3a3a;
+          background-color: #cde6eb;
+    ;
 }
 
 .form-group {
