@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
-<link rel="stylesheet" href="signnext.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="signnext.css">
 </head>
 <body>
-<header>
-    <h1>My Portfolio</h1>
-</header>
-<div class="container">
-    <form action="portfolio.php" method="post">
-        <h2>Add Your Details</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="bio">Bio:</label>
-        <textarea id="bio" name="bio" rows="5" required></textarea>
-
-        <label for="skills">Skills:</label>
-        <input type="text" id="skills" name="skills" required>
-
-        <label for="experience">Experience:</label>
-        <textarea id="experience" name="experience" rows="5" required></textarea>
-
-        <button type="submit">Save</button>
-    </form>
-</div>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+    <div class="container">
+        <form action="portfolio.php" method="post">
+            <h2 style="color: black;">Add Your Details</h2>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="college">College Name:</label>
+                <input type="text" id="college" name="college" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" name="skills" required>
+            </div>
+            <div class="form-group">
+                <label for="experience">Experience:</label>
+                <textarea id="experience" name="experience" rows="5" required></textarea>
+            </div>
+            <input type="submit" value="Save">
+        </form>
+    </div>
 </body>
 </html>
