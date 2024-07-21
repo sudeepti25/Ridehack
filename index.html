@@ -8,93 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <style>
-        /* Add this CSS to make the header fixed */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: white; /* Ensure the header has a background color */
-            z-index: 1000; /* Ensure the header is on top */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: add a shadow for better visibility */
-        }
-        /* Add top padding to the main content to avoid overlapping */
-        main {
-            padding-top: 80px; /* Adjust this value according to the header height */
-        }
-        #typed {
-            font-size: 1.2em; /* Increased font size */
-        }
-        .intro {
-            margin-top: 20px; /* Add top margin to the intro section */
-            font-size: 1.2em; /* Increased font size */
-        }
-        .aboutus {
-            font-size: 1.2em; /* Increased font size */
-        }
-        .footer-boxes p, .third-footer-boxes {
-            margin-top: 10px; /* Add margin to top and bottom of each item */
-            margin-bottom: 10px;
-            font-size: 1.2em; /* Increased font size */
-        }
-        /* Updated CSS for feature boxes */
-        .feature-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 100%; /* Adjust the width as needed */
-            margin: 20px 0; /* Add some margin for spacing */
-        }
-        .feature-box {
-            width: 40%;
-            margin-bottom: 20px; /* Add some margin for spacing */
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        .feature-description {
-            width: 50%;
-            margin-left: 20px;
-            font-size: 1em; /* Increase font size */
-        }
-        .heading {
-            color: purple;
-            font-weight: bold;
-            font-size: 1.2em; /* Increase font size */
-            margin-bottom: 10px; /* Add margin below heading */
-        }
-        .sub-heading {
-            color: blue;
-            font-weight: bold;
-            font-size: 1em; /* Increase font size */
-            margin-bottom: 5px; /* Add margin below sub-heading */
-        }
-        .feature-description p {
-            margin-bottom: 10px; /* Add margin below paragraphs */
-            font-size: 1.2em; /* Increase font size */
-        }
-
-        /* Alternate positioning of feature boxes */
-        .feature-container > div:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        /* Keyframes for pop-up animation */
-        @keyframes popUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
@@ -205,8 +119,48 @@
                 </div>
             </div>
         </div>
+         <!-- faq       -->
+          <div class="title-faq"><h1>Faq About Us</h1>
+</div>
+<div class="faq-container">
+    <div class="faq-boxes">
+        <div class="faq-question-box">
+            <p>What are We?</p>
+            <img class="faq-toggle" src="chevron-down-solid.svg" alt="">
+        </div>
+        <div class="faq-answer-box">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium deserunt, dolor modi ratione, obcaecati nulla eveniet blanditiis aperiam ut dolores numquam esse quibusdam voluptates eligendi necessitatibus est vero asperiores ducimus.</p>
+        </div>
+    </div>
+    <div class="faq-boxes">
+        <div class="faq-question-box">
+            <p>What are We?</p>
+            <img class="faq-toggle" src="chevron-down-solid.svg" alt="">
+        </div>
+        <div class="faq-answer-box">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium deserunt, dolor modi ratione, obcaecati nulla eveniet blanditiis aperiam ut dolores numquam esse quibusdam voluptates eligendi necessitatibus est vero asperiores ducimus.</p>
+        </div>
+    </div>
+    <div class="faq-boxes">
+        <div class="faq-question-box">
+            <p>What are We?</p>
+            <img class="faq-toggle" src="chevron-down-solid.svg" alt="">
+        </div>
+        <div class="faq-answer-box">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium deserunt, dolor modi ratione, obcaecati nulla eveniet blanditiis aperiam ut dolores numquam esse quibusdam voluptates eligendi necessitatibus est vero asperiores ducimus.</p>
+        </div>
+    </div>
+    <div class="faq-boxes">
+        <div class="faq-question-box">
+            <p>What are We?</p>
+            <img class="faq-toggle" src="chevron-down-solid.svg" alt="">
+        </div>
+        <div class="faq-answer-box">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium deserunt, dolor modi ratione, obcaecati nulla eveniet blanditiis aperiam ut dolores numquam esse quibusdam voluptates eligendi necessitatibus est vero asperiores ducimus.</p>
+        </div>
+    </div>
+</div>
 
-        <div class="upperfooter"></div>
         <footer>
             <div class="footer-container">
                 <div class="footer-boxes">
@@ -244,41 +198,13 @@
             </div>
         </footer>
     </main>
-
+      <script src="index.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <!-- Include Typed.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
     <!-- Initialize Typed.js -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var options = {
-                strings: [
-                    "The ultimate destination for hackathon enthusiasts!",
-                    "Ready to innovate?",
-                    "Sign up and start collaborating today!"
-                ],
-                typeSpeed: 50,
-                backSpeed: 25,
-                loop: true
-            };
-            var typed = new Typed("#typed", options);
-        });
-
-        // Scroll event listener for feature box animations
-        document.addEventListener('scroll', function() {
-            var featureBoxes = document.querySelectorAll('.feature-box');
-            var triggerHeight = window.innerHeight / 1.1;
-
-            featureBoxes.forEach((box, index) => {
-                var boxTop = box.getBoundingClientRect().top;
-                if (boxTop < triggerHeight) {
-                    setTimeout(() => {
-                        box.style.opacity = 1;
-                        box.style.transform = 'translateY(0)';
-                        box.style.animation = 'popUp 0.5s ease-out';
-                    }, index * 300); // Delay based on the index
-                }
-            });
-        });
+       
     </script>
 </body>
 </html>

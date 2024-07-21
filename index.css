@@ -1,0 +1,129 @@
+  /* Add this CSS to make the header fixed */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* Ensure the header has a background color */
+    z-index: 1000; /* Ensure the header is on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: add a shadow for better visibility */
+}
+/* Add top padding to the main content to avoid overlapping */
+main {
+    padding-top: 80px; /* Adjust this value according to the header height */
+}
+#typed {
+    font-size: 1.2em; /* Increased font size */
+}
+.intro {
+    margin-top: 20px; /* Add top margin to the intro section */
+    font-size: 1.2em; /* Increased font size */
+}
+.aboutus {
+    font-size: 1.2em; /* Increased font size */
+}
+.footer-boxes p, .third-footer-boxes {
+    margin-top: 10px; /* Add margin to top and bottom of each item */
+    margin-bottom: 10px;
+    font-size: 1.2em; /* Increased font size */
+}
+/* Updated CSS for feature boxes */
+.feature-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Adjust the width as needed */
+    margin: 20px 0; /* Add some margin for spacing */
+}
+.feature-box {
+    width: 40%;
+    margin-bottom: 20px; /* Add some margin for spacing */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.feature-description {
+    width: 50%;
+    margin-left: 20px;
+    font-size: 1em; /* Increase font size */
+}
+.heading {
+    color: purple;
+    font-weight: bold;
+    font-size: 1.2em; /* Increase font size */
+    margin-bottom: 10px; /* Add margin below heading */
+}
+.sub-heading {
+    color: blue;
+    font-weight: bold;
+    font-size: 1em; /* Increase font size */
+    margin-bottom: 5px; /* Add margin below sub-heading */
+}
+.feature-description p {
+    margin-bottom: 10px; /* Add margin below paragraphs */
+    font-size: 1.2em; /* Increase font size */
+}
+
+/* Alternate positioning of feature boxes */
+.feature-container > div:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Keyframes for pop-up animation */
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* adding faq section */
+.faq-container{ display: grid; 
+                width: 50%;
+                row-gap: 1rem;
+                column-gap: 1rem;
+                margin: auto; 
+                margin-bottom: 1rem;
+                grid-template-rows: repeat(1,1fr); }
+ .faq-container h1{ text-align: center;
+                     padding: 1rem;}
+  .title-faq h1{   text-align: center;
+                    text-decoration: underline;
+                   padding: 1rem;}                                 
+.faq-boxes{    width: 90%;
+               margin: 0.3rem;
+              border-radius: 1rem;
+             background-color: rgb(28, 28, 255);
+              
+             padding: 1.4rem;}
+.faq-boxes img{width: 2rem;}
+.faq-question-box{  display: flex;
+                    justify-content: space-between;
+                    }
+ .faq-question-box p{font-size: 1.4rem;}                   
+
+.faq-answer-box {
+    display: none;
+}
+
+.faq-answer-box-show {
+    display: block;
+}
+
+.faq-toggle {
+    overflow: hidden;
+    scrollbar-width: 0px;
+    transition: transform 0.3s;
+}
+
+.faq-toggle-rotate {
+    overflow: hidden;
+    transform: rotate(180deg);
+}
+
