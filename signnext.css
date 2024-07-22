@@ -7,12 +7,13 @@ body {
 }
 
 header {
-    background-color: #fff;
-    color: #fff;
+
+    color: #464545;
     padding: 10px 20px;
     text-align: center;
     border-color: #252E5D;
-    background-image: url(formteams.jpg);
+    /* background-image: url(formteams.jpg); */
+    
 }
 
 h1 {
@@ -38,7 +39,7 @@ label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: black;
+    color: rgb(60, 60, 60);
 }
 
 input[type="text"],
@@ -52,7 +53,7 @@ textarea {
     border-radius: 4px;
     box-sizing: border-box;
     color: #000;
-    background-color: #ebe7e7;
+    background-color: #f9f6f6;
 }
 
 input[type="text"]:hover,
@@ -63,6 +64,8 @@ textarea:hover {
     color: #000;
     font-weight: bolder;
     background-color: #fff;
+    
+
 }
 
 input[type="submit"] {
