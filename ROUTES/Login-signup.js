@@ -1,12 +1,12 @@
-// Filename: Login-signup.js
+// Filename:Login-signup.js
 
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const router = express.Router();
-const db = require('../CONNECTIONS/Connect'); // Importing the connection pool
+const db = require('../CONNECTIONS/Connect'); //Importing the connection pool
 
 
-
+//LANDING PAGE ROUTE
 routes.get('/landing_page',(req, res) => {
 
 
@@ -30,12 +30,12 @@ router.post('/signup', (req, res) => {
 
 
     res.redirect('/landing_page');
-
+    
     
 });
 
 // Handle Login
-router.post('/login', (req, res) => {
+router.post('/login', (req,res) => {
     const { email, password } = req.body;
 
     const sql = 'SELECT * FROM users WHERE email = ?';
@@ -72,7 +72,7 @@ router.get('/signup', (req, res) => {
     res.render('signpage'); // Render signpage.ejs
 });
 // Test route to check database connection
-router.get('/test-db', (req, res) => {
+router.get('/test-db', (req,res) => {
     db.query('SELECT 1 + 1 AS solution', (error, results) => {
         if (error) {
             console.error('Database query error:', error);
