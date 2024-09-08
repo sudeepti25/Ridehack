@@ -3,35 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="/sign.css"> <!-- Update the path if needed -->
+    <title>Login 3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<<<<<<< HEAD
+    <link rel="stylesheet" href="./sign.css">
+=======
+    <link rel="stylesheet" href="sign.css">
+>>>>>>> 287e6fb78fd5e44e0add1a302f0266ead321a934
 </head>
 <body>
-    <div class="container">
-        <div class="login-box">
-            <h1>Sign Up</h1>
-            <form action="/signup" method="POST"> <!-- Update form action to point to your signup route -->
-                <div class="input-box">
-                    <input type="text" required name="name"> <!-- Added name field -->
-                    <label for="name">Name</label>
-                </div>
-                <div class="input-box">
-                    <input type="email" required name="email">
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-box">
-                    <input type="password" required name="password">
-                    <label for="password">Password</label>
-                </div>
-                <button type="submit" class="btn">Sign Up</button>
-                <p class="link-text">
-                    Already have an account?
-                    <a href="/login">Click Here</a> <!-- Update link to point to login route -->
-                </p>
-            </form>
+    <div class="biggie-shadow">
+        <div class="container">
+            <div class="login-box">
+                <h1>Sign In</h1>
+                <form action="/signup" method="POST"> 
+                    <div class="input-box">
+                        <input type="text" required name="name">
+                        <label for="name">Username</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" required name="email">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" required maxlength="8" minlength="4" name="password">    
+                        <label for="password">Password</label>
+                    </div>
+                    <p class="link-text">
+                        Forget password ?
+                        <a href="#">Click Here</a>
+                    </p>
+                    
+                    <button type="submit" class="btn">Sign Up</button>
+                    
+                    <p class="link-text">
+                        Already have an account?
+                        <a href="/login">Click Here</a>
+                    </p>
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
+                    <div class="google">
+                        <i class="fa-brands fa-google fa-lg" style="color: #000000;"></i>
+                        <p>Sign in with Google</p>
+                    </div>
+                    
+                </form> 
+            </div>
         </div>
-        <!-- You can keep the span elements if they are part of your design -->
-        <!-- <span style="--i:0;"></span> ... (other spans) ... -->
+        <div class="bg-img">
+            <img src="ride3.png" height="100%" width="90%" >
+        </div>
     </div>
+    
 </body>
 </html>

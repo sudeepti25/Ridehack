@@ -1,21 +1,44 @@
-// Filename: Login-signup.js
+// Filename:Login-signup.js
 
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const router = express.Router();
-const db = require('../CONNECTIONS/Connect'); // Importing the connection pool
+const db = require('../CONNECTIONS/Connect'); //Importing the connection pool
 
 
-
-routes.get('/landing_page',(req, res) => {
+//LANDING PAGE ROUTE
+router.get('/landing_page',(req, res) => {
 
 
     res.render('landing_page'); 
 })
 
 // Handle Signup
+// router.post('/signup', (req, res) => {
+//     const { name, email, password } = req.body;
+
+//     const hashedPassword = bcrypt.hashSync(password, 8);
+
+//     const sql = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
+//     db.query(sql, [name, email, hashedPassword], (err, result) => {
+//         if (err) {
+//             console.error(err);
+//             return res.status(500).send('Error during signup!');
+//         }
+//         res.send('Signup successful! You can now login.');
+//     });
+
+
+    
+    
+    
+// });
 router.post('/signup', (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password } = req.body; // Extracts form data
+
+    if (!name || !email || !password) {
+        return res.status(400).send('All fields are required!');
+    }
 
     const hashedPassword = bcrypt.hashSync(password, 8);
 
@@ -27,15 +50,10 @@ router.post('/signup', (req, res) => {
         }
         res.send('Signup successful! You can now login.');
     });
-
-
-    res.redirect('/landing_page');
-
-    
 });
 
 // Handle Login
-router.post('/login', (req, res) => {
+router.post('/login', (req,res) => {
     const { email, password } = req.body;
 
     const sql = 'SELECT * FROM users WHERE email = ?';
@@ -59,8 +77,10 @@ router.post('/login', (req, res) => {
         // Example: Store user data in session or another mechanism for subsequent requests
         req.session.user = user; // Assuming you have session middleware set up
 
-        res.send('Login successful!');
+        res.redirect('/landing_page');
     });
+
+    
 });
 router.get('/login', (req, res) => {
     res.render('login'); // Render login.ejs
@@ -72,7 +92,7 @@ router.get('/signup', (req, res) => {
     res.render('signpage'); // Render signpage.ejs
 });
 // Test route to check database connection
-router.get('/test-db', (req, res) => {
+router.get('/test-db', (req,res) => {
     db.query('SELECT 1 + 1 AS solution', (error, results) => {
         if (error) {
             console.error('Database query error:', error);
