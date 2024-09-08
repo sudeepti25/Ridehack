@@ -3,16 +3,16 @@
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
-const db = require('./CONNECTIONS/Connect'); // Database connection
-const loginSignupRoutes = require('./MAIN/Login-signup'); // Routes for login/signup
+const db = require('../CONNECTIONS/Connect'); // Database connection
+const loginSignupRoutes = require('../ROUTES/Login-signup'); // Routes for login/signup
 
 const app = express();
 const PORT = 5000;
 
 // Set EJS as the template engine
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
+app.set('views', path.join(__dirname, './VIEWS/views'));
+app.use(express.static(path.join(__dirname, './VIEWS/views')));
 // Session setup
 app.use(session({
     secret: 'your-secret-key',
