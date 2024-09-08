@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/login.css"> <!-- Update the path if needed -->
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>Login</h1>
+            <form action="/login" method="POST"> <!-- Update form action to point to your login route -->
+                <div class="input-box">
+                    <input type="email" required name="email"> <!-- Added name attribute for server-side processing -->
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" required name="password"> <!-- Added name attribute for server-side processing -->
+                    <label for="password">Password</label>
+                </div>
+                <p class="link-text">
+                    Forget password?
+                    <a href="#">Click Here</a>
+                </p>
+                <button type="submit" class="btn">Login</button>
+                <p class="link-text">
+                    Create an Account
+                    <a href="/signup">Click Here</a> <!-- Update link to point to signup route -->
+                </p>
+            </form>
+        </div>
+        <!-- You can keep the span elements if they are part of your design -->
+        <!-- <span style="--i:0;"></span> ... (other spans) ... -->
+    </div>
+</body>
+</html>
