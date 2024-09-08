@@ -5,6 +5,14 @@ const bcrypt = require('bcryptjs');
 const router = express.Router();
 const db = require('../CONNECTIONS/Connect'); // Importing the connection pool
 
+
+
+routes.get('/landing_page',(req, res) => {
+
+
+    res.render('landing_page'); 
+})
+
 // Handle Signup
 router.post('/signup', (req, res) => {
     const { name, email, password } = req.body;
@@ -19,6 +27,11 @@ router.post('/signup', (req, res) => {
         }
         res.send('Signup successful! You can now login.');
     });
+
+
+    res.redirect('/landing_page');
+
+    
 });
 
 // Handle Login
