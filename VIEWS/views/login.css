@@ -1,3 +1,4 @@
+
 *{
   padding: 0;
   margin: 0;
@@ -84,9 +85,10 @@ body{
     padding: 0 50px;
   }
   h1 {
-    font-size: 2em;
-    color: #00a0ff;
+    font-size: 2.3em;
+    color: #263238;
     text-align: center;
+    padding:4px 7px 4px 7px;
   }
   .input-box {
     position: relative;
@@ -107,8 +109,9 @@ body{
   .input-box input:focus,
   .input-box input:focus {
     border: 3px solid #00a0ff;
-    box-shadow: 0 0 3px #00a0ff, 0 0 3px #00a0ff, 0 0 3px #00a0ff, 0 0 3px #00a0ff;
+    /* box-shadow: 0 0 3px #00a0ff, 0 0 3px #00a0ff, 0 0 3px #00a0ff, 0 0 3px #00a0ff; */
     /* border: 3px solid #2c4766; */
+    background-color:rgba(6, 167, 247, 0.1);
   }
   .input-box label {
     position: absolute;
@@ -126,7 +129,8 @@ body{
   .input-box input:valid ~ label {
     top: 1px;
     font-size: 0.8em;
-    background: #1f293d;
+    background: #fff;
+    border:0.6px solid #00a0ff;
     border-radius: 5px;
     padding: 0 6px;
     color: #00a0ff;
