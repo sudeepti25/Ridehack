@@ -39,7 +39,7 @@ app.get('/test-db', (req, res) => {
     });
 });
 
-// Start the server
+// Start the server 
 app.listen(PORT, () => {
     console.log("Server is listening on port", PORT);
 });
