@@ -7,10 +7,10 @@ const db = require('../CONNECTIONS/Connect'); //Importing the connection pool
 
 
 //LANDING PAGE ROUTE
-router.get('/landing_page',(req, res) => {
+router.get('/landing',(req, res) => {
 
 
-    res.render('landing_page'); 
+    res.render('landing'); 
 })
 
 // Handle Signup
@@ -27,7 +27,8 @@ router.post('/signup', (req, res) => {
         }
         res.send('Signup successful! You can now login.');
     });
-
+ 
+    res.redirect('/login'); 
 
     
     
@@ -56,13 +57,15 @@ router.post('/login', (req,res) => {
             return res.status(401).send('Incorrect password!');
         }
 
+        
+
         // Example: Store user data in session or another mechanism for subsequent requests
         req.session.user = user; // Assuming you have session middleware set up
-
+        res.redirect('/landing');
     
     });
 
-    res.redirect('/landing_page');
+  
 });
 router.get('/login', (req, res) => {
     res.render('login'); // Render login.ejs
