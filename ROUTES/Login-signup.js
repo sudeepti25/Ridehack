@@ -61,11 +61,19 @@ router.post('/login', (req,res) => {
 
         // Example: Store user data in session or another mechanism for subsequent requests
         req.session.user = user; // Assuming you have session middleware set up
+<<<<<<< HEAD
         res.redirect('/landing');
     
     });
 
   
+=======
+
+        res.redirect('/landing_page');
+    });
+
+    
+>>>>>>> 287e6fb78fd5e44e0add1a302f0266ead321a934
 });
 router.get('/login', (req, res) => {
     res.render('login'); // Render login.ejs
