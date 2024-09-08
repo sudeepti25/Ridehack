@@ -7,15 +7,38 @@ const db = require('../CONNECTIONS/Connect'); //Importing the connection pool
 
 
 //LANDING PAGE ROUTE
-router.get('/landing',(req, res) => {
+router.get('/landing_page',(req, res) => {
 
 
-    res.render('landing'); 
+    res.render('landing_page'); 
 })
 
 // Handle Signup
+// router.post('/signup', (req, res) => {
+//     const { name, email, password } = req.body;
+
+//     const hashedPassword = bcrypt.hashSync(password, 8);
+
+//     const sql = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
+//     db.query(sql, [name, email, hashedPassword], (err, result) => {
+//         if (err) {
+//             console.error(err);
+//             return res.status(500).send('Error during signup!');
+//         }
+//         res.send('Signup successful! You can now login.');
+//     });
+
+
+    
+    
+    
+// });
 router.post('/signup', (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password } = req.body; // Extracts form data
+
+    if (!name || !email || !password) {
+        return res.status(400).send('All fields are required!');
+    }
 
     const hashedPassword = bcrypt.hashSync(password, 8);
 
@@ -27,12 +50,6 @@ router.post('/signup', (req, res) => {
         }
         res.send('Signup successful! You can now login.');
     });
- 
-    res.redirect('/login'); 
-
-    
-    
-    
 });
 
 // Handle Login
@@ -57,23 +74,13 @@ router.post('/login', (req,res) => {
             return res.status(401).send('Incorrect password!');
         }
 
-        
-
         // Example: Store user data in session or another mechanism for subsequent requests
         req.session.user = user; // Assuming you have session middleware set up
-<<<<<<< HEAD
-        res.redirect('/landing');
-    
-    });
-
-  
-=======
 
         res.redirect('/landing_page');
     });
 
     
->>>>>>> 287e6fb78fd5e44e0add1a302f0266ead321a934
 });
 router.get('/login', (req, res) => {
     res.render('login'); // Render login.ejs

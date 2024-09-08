@@ -5,7 +5,7 @@ const path = require('path');
 const session = require('express-session');
 const db = require('./CONNECTIONS/Connect'); // Database connection
 const loginSignupRoutes = require('./ROUTES/Login-signup'); // Routes for login/signup
-
+const signnextRoutes = require('./ROUTES/signnext'); // Updated route import
 const app = express();
 const PORT = 5000;
 
@@ -26,6 +26,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Use the login/signup routes
 app.use('/', loginSignupRoutes);
+
+// Use the signnext routes
+app.use('/', signnextRoutes);
 
 // Test database connection route
 app.get('/test-db', (req, res) => {

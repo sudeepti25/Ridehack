@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header>
+        <h1>User Profile</h1>
+    </header>
+    <div class="container">
+        <h2>Personal Information</h2>
+        <p><strong>Name:</strong> <%= profile.name %></p>
+        <p><strong>Email:</strong> <%= profile.email %></p>
+
+        <h2>Portfolio Details</h2>
+        <p><strong>College:</strong> <%= profile.college %></p>
+        <p><strong>Projects:</strong> <%= profile.projects %></p>
+        <p><strong>Bio:</strong> <%= profile.bio %></p>
+        <p><strong>Skills:</strong> <%= profile.skills %></p>
+        <p><strong>Experience:</strong> <%= profile.experience %></p>
+    </div>
+</body>
+</html>
