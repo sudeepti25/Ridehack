@@ -84,7 +84,8 @@ input[type="submit"]:hover {
     input[type="password"],
     select,
     input[type="date"],
-    input[type="submit"] {
+    input[type="submit"],
+    textarea {
         width: 100%;
     }
 }

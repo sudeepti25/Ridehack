@@ -30,7 +30,7 @@ router.get('/teams',(req,res)=>{
         }
 
 
-        res.render('showteams',{people:result});
+        res.render('formteams1',{people:result});
 
 })
 
