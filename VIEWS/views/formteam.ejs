@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Formation Options</title>
+    <link rel="stylesheet" href="formteam.css">
+</head>
+<body>
+    <h2>Choose Your Domain</h2>
+
+    <div class="container">
+        <div class="option-box" onclick="handle_click('App')">App Development</div>
+        <div class="option-box" onclick="handle_click('Website')">Website Development</div>
+        <div class="option-box" onclick="handle_click('Hackathons')">Hackathons</div>
+        <div class="option-box" onclick="handle_click('AI')">AI & ML</div>
+        <div class="option-box" onclick="handle_click('Other')">Other</div>
+    </div>
+
+    <script>
+        function handle_click(event)
+        {
+            window.location.href=`/teams ? value=${event}`;
+        }
+    </script>
+</body>
+</html>
