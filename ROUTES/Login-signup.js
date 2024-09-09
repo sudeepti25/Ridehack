@@ -41,8 +41,7 @@ router.post('/signup', (req, res) => {
             const user = result[0];
             req.session.user = user;
 
-            // Redirect to signnext page after signup
-            res.redirect('/signnext');
+           res.redirect('/login');
         });
     });
 });
@@ -77,8 +76,8 @@ router.post('/login', (req, res) => {
         // Store user data in session
         req.session.user = user;
 
-        // Redirect to landing page
-        res.redirect('/landing_page');
+        
+        res.redirect('/signnext');
     });
 });
 
