@@ -41,7 +41,7 @@ router.post('/signup', (req, res) => {
             const user = result[0];
             req.session.user = user;
 
-           res.redirect('/login');
+           res.render('redirection');
         });
     });
 });
@@ -77,7 +77,7 @@ router.post('/login', (req, res) => {
         req.session.user = user;
 
         
-        res.redirect('/signnext');
+        res.redirect('/landing_page');
     });
 });
 
