@@ -16,7 +16,7 @@ router.get('/teams',(req,res)=>{
 
     const sql = `SELECT name,skills FROM portfolio WHERE skills=?`;
 
-    db.query(sql,[value],(err,result)=>{
+    db.query(sql,[],(err,result)=>{
 
         if(err)
         {
@@ -39,3 +39,4 @@ router.get('/teams',(req,res)=>{
 
 
 })
+module.exports=router;
