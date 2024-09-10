@@ -6,6 +6,9 @@ const session = require('express-session');
 const db = require('./CONNECTIONS/Connect'); // Database connection
 const loginSignupRoutes = require('./ROUTES/Login-signup'); // Routes for login/signup
 const signnextRoutes = require('./ROUTES/signnext'); // Updated route import
+const organizeHackathonRoutes = require('./ROUTES/organizehackathon'); // Import the organizehackathon routes
+
+
 const app = express();
 const PORT = 5000;
 
@@ -29,6 +32,9 @@ app.use('/', loginSignupRoutes);
 
 // Use the signnext routes
 app.use('/', signnextRoutes);
+
+// Use the organizehackathon routes
+app.use('/', organizeHackathonRoutes);
 
 // Test database connection route
 app.get('/test-db', (req, res) => {

@@ -28,7 +28,7 @@ router.post('/signnext', (req, res) => {
             console.error(err);
             return res.status(500).send('Error saving portfolio data!');
         }
-        res.send('Portfolio data saved successfully!');
+        
 
         res.redirect('/landing_page');
     });
