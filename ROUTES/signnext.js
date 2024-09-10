@@ -13,7 +13,7 @@ router.get('/signnext', (req, res) => {
 
 // Handle Portfolio Form Submission
 router.post('/signnext', (req, res) => {
-    const { name, email, college, projects, bio, skills, experience } = req.body;
+    const { name, domain, college, projects, bio, skills, experience } = req.body;
 
     // Assuming the user ID is stored in the session
     const userId = req.session.user ? req.session.user.id : null;
@@ -22,8 +22,8 @@ router.post('/signnext', (req, res) => {
         return res.status(403).send('User not logged in');
     }
 
-    const sql = 'INSERT INTO portfolio (user_id, name, email, college, projects, bio, skills, experience) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
-    db.query(sql, [userId, name, email, college, projects, bio, skills, experience], (err, result) => {
+    const sql = 'INSERT INTO portfolio (user_id, name, domain, college, projects, bio, skills, experience) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+    db.query(sql, [userId, name, domain, college, projects, bio, skills, experience], (err, result) => {
         if (err) {
             console.error(err);
             return res.status(500).send('Error saving portfolio data!');
@@ -43,7 +43,7 @@ router.get('/profile', (req, res) => {
         return res.status(403).send('User not logged in');
     }
 
-    const sql = `SELECT u.email, u.name, p.college, p.projects, p.bio, p.skills, p.experience
+    const sql = `SELECT u.domain, u.name, p.college, p.projects, p.bio, p.skills, p.experience
                  FROM users u
                  LEFT JOIN portfolio p ON u.id = p.user_id
                  WHERE u.id = ?`;
