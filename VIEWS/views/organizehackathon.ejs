@@ -9,34 +9,20 @@
 <body>
     <h1>Organize your own hackathon !</h1>
     <div class="form-container">
-        <form id="eventForm" onsubmit="return validateForm()">
-            <h2>Event Organizer Details</h2>
-            <div class="form-group">
-                <label for="organizerName">Organizer Name:</label>
-                <input type="text" id="organizerName" name="organizerName" required>
-            </div>
-            <div class="form-group">
-                <label for="organizationName">Name of Organization:</label>
-                <input type="text" id="organizationName" name="organizationName" required>
-            </div>
-            <div class="form-group">
-                <label for="organizerMail">Organizer Email:</label>
-                <input type="email" id="organizerMail" name="organizerMail" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
-            </div>
+        <form id="eventForm" onsubmit="return validateForm()" method="POST">
 
+            
+            
             <h2>Event Details</h2>
             <div class="form-group">
                 <label for="eventName">Event Name:</label>
                 <input type="text" id="eventName" name="eventName" required>
             </div>
+            <div class="form-group">
+                <label for="organizationName">Name of Organization:</label>
+                <input type="text" id="organizationName" name="organizationName" required>
+            </div>
+            
             <div class="form-group">
                 <label for="eventType">Event Type:</label>
                 <input type="text" id="eventType" name="eventType" required>
@@ -49,22 +35,14 @@
                 <label for="eventTopic">Event Topic:</label>
                 <input type="text" id="eventTopic" name="eventTopic" required>
             </div>
+    
+            
             <div class="form-group">
-                <label for="country">Country:</label>
-                <input type="text" id="country" name="country" required>
+                <label for="eventaddress">Event Address:</label>
+                <textarea id="eventaddress" name="eventaddress" rows="5" required style="height: 70px; width: 580px;"></textarea>
+                
             </div>
-            <div class="form-group">
-                <label for="state">State:</label>
-                <input type="text" id="state" name="state" required>
-            </div>
-            <div class="form-group">
-                <label for="city">City:</label>
-                <input type="text" id="city" name="city" required>
-            </div>
-            <div class="form-group">
-                <label for="organizingSociety">Organizing Society:</label>
-                <input type="text" id="organizingSociety" name="organizingSociety" required>
-            </div>
+            
             <div class="form-group">
                 <label for="contactPerson">Contact Person for the Event:</label>
                 <input type="text" id="contactPerson" name="contactPerson" required>
