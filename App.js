@@ -36,6 +36,12 @@ app.use('/', signnextRoutes);
 // Use the organizehackathon routes
 app.use('/', organizeHackathonRoutes);
 
+
+// LANDING PAGE ROUTE
+app.get('/findhackathon', (req, res) => {
+    res.render('findhackathon');
+});
+
 // Test database connection route
 app.get('/test-db', (req, res) => {
     db.query('SELECT 1 + 1 AS solution', (error, results) => {
