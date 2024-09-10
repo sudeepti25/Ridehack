@@ -12,6 +12,11 @@
             <h1>HACKATHONS-DIRECTORIES</h1>
             <p>UPCOMING HACKATHONS</p>
         </div>
+        <!-- Search Bar Section -->
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search hackathons...">
+            <button id="search-button">Search</button>
+        </div>
         <div class="mainbox">
             <div class="beforeboxes">
                 <div class="boxes">
@@ -180,5 +185,24 @@
             </div>
         </div>
     </div>
+    <script>
+        function searchFunction() {
+            var input, filter, container, boxes, h2, i, txtValue;
+            input = document.getElementById('searchBar');
+            filter = input.value.toUpperCase();
+            container = document.getElementById("teamContainer");
+            boxes = container.getElementsByClassName('box');
+
+            for (i = 0; i < boxes.length; i++) {
+                h2 = boxes[i].getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    boxes[i].style.display = "";
+                } else {
+                    boxes[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>

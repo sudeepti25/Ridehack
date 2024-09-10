@@ -2,27 +2,58 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
-}
-
-.heading {
-     margin-bottom: 4rem;
-}
-
-body h1,
-h3 {
+ }
+ 
+ /* Added top margin to prevent congestion */
+ .heading {
+     margin-bottom: 2rem;
+     margin-top: 2rem;  /* Adjusted top margin */
+ }
+ 
+ body h1, h3 {
      text-align: center;
-}
-
-.container {
+ }
+ 
+ /* Search bar styling with 3D effect, border, and lighter hover effect */
+ .search-container {
+     display: flex;
+     justify-content: center;
+     margin: 1rem 0 2rem 0;  /* Added more margin to the bottom */
+ }
+ 
+ .search-container input {
+     padding: 0.7rem;
+     font-size: 1rem;
+     width: 30%;
+     border-radius: 0.5rem;
+     border: 2px solid #071952;  /* Dark blue border */
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* 3D shadow effect */
+     transition: all 0.3s ease;
+ }
+ 
+ .search-container input:hover {
+     background-color: #f0f0f0;  /* Light greyish color on hover */
+     color: #071952;  /* Keep the text dark blue */
+     border: 2px solid #87CEEB;  /* Light blue border on hover */
+     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);  /* Lighter shadow on hover */
+ }
+ 
+ .search-container input:focus {
+     outline: none;
+     border: 2px solid #071952;  /* Dark blue border on focus */
+ }
+ 
+ .container {
      display: grid;
      margin: auto;
      width: 70%;
      grid-template-columns: 1fr 1fr 1fr 1fr;
      row-gap: 3rem;
      grid-template-rows: 1fr 1fr;
-}
-
-.box {
+     margin-top: 2rem;  /* Added margin from the bottom of the search box */
+ }
+ 
+ .box {
      max-width: 12.5rem;
      border: 1px solid rgb(238, 238, 238);
      background-color: #EBF4F6;
@@ -35,25 +66,25 @@ h3 {
      row-gap: 1rem;
      text-align: center;
      height: 15.7rem;
-}
-
-.box:hover {
+ }
+ 
+ .box:hover {
      transform: scale(1.04);
-}
-
-.box img {
+ }
+ 
+ .box img {
      width: 4rem;
-}
-
-.box h2 {
+ }
+ 
+ .box h2 {
      font-family: 'Times New Roman', Times, serif;
-}
-
-.box p {
+ }
+ 
+ .box p {
      color: rgb(160, 160, 160);
-}
-
-.box button {
+ }
+ 
+ .box button {
      background-color: #071952;
      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
      border-radius: 0.9rem;
@@ -62,4 +93,6 @@ h3 {
      padding: 0.7rem;
      box-shadow: black;
      color: white;
-}
+ }
+ 
+ 

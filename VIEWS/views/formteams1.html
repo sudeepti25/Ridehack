@@ -13,6 +13,10 @@
     <h1>Form Your Own Team</h1>
            <h3>Powered By BrainBridges</h3>
 </div>
+<!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search for names..">
+</div>
     <div class="container">
         <div class="box">
             <img src="man.png" alt="" srcset="">
@@ -63,6 +67,24 @@
             <button type="button">View More</button>
         </div>
     </div>
-    
+    <script>
+        function searchFunction() {
+            var input, filter, container, boxes, h2, i, txtValue;
+            input = document.getElementById('searchBar');
+            filter = input.value.toUpperCase();
+            container = document.getElementById("teamContainer");
+            boxes = container.getElementsByClassName('box');
+
+            for (i = 0; i < boxes.length; i++) {
+                h2 = boxes[i].getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    boxes[i].style.display = "";
+                } else {
+                    boxes[i].style.display = "none";
+                }
+            }
+        }
+    </script>  
 </body>
 </html>
