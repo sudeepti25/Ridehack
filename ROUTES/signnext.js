@@ -62,4 +62,34 @@ router.get('/profile', (req, res) => {
     });
 });
 
+
+// Route to display the user's portfolio (dynamic route)
+router.get('/portfolio/:name', (req, res) => {
+    const name = req.params.name;
+    
+    // Fetch the user details from the database
+    const sql = "SELECT * FROM portfolio WHERE name = ?";
+    db.query(sql, [name], (err, result) => {
+        if (err) {
+            console.error("Error fetching user details: ", err);
+            res.status(500).send('Server error');
+            return;
+        }
+
+        if (result.length === 0) {
+            console.error("No user found with that name");
+            res.status(404).send('User not found');
+            return;
+        }
+
+        // Log the result to ensure we got data
+        console.log("Fetched user data: ", result[0]);
+
+        // Pass the user data to the EJS template
+        res.render('portfolio', { user: result[0] });
+    });
+});
+
+
+
 module.exports = router;
