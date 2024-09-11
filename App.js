@@ -3,6 +3,8 @@
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
+const cors = require('cors');
+const bodyparser = require('body-parser');
 const db = require('./CONNECTIONS/Connect'); // Database connection
 const loginSignupRoutes = require('./ROUTES/Login-signup'); // Routes for login/signup
 const signnextRoutes = require('./ROUTES/signnext'); // Updated route import
@@ -12,7 +14,8 @@ const formteamsroutes = require('./ROUTES/Formteam'); // Import the organizehack
 
 const app = express();
 const PORT = 5000;
-
+app.use(cors());
+app.use(express.json());
 // Set EJS as the template engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './VIEWS/views'));
@@ -26,10 +29,10 @@ app.use(session({
 }));
 
 // Middleware to parse form data
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyparser.urlencoded({ extended: true }));
 
 // Use the login/signup routes
-app.use('/', loginSignupRoutes);
+// app.use('/', loginSignupRoutes);
 
 // Use the signnext routes
 app.use('/', signnextRoutes);
@@ -55,6 +58,12 @@ app.get('/test-db', (req, res) => {
     });
 });
 
+
+
+
+app.get('/landing_page', (req,res)=>{
+    res.render('landing_page'); 
+})
 // Start the server 
 app.listen(PORT, () => {
     console.log("Server is listening on port", PORT);
