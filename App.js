@@ -67,17 +67,53 @@ app.get('/landing_page', (req,res)=>{
 
 app.get('/portfolio', (req,res)=>{
 
-    const user = {
-        name: 'Vidit Tamrakar',
-        domain: 'full stack development',
-        college: 'JUET GUNA',
-        projects: 'scriptbox.cloud',
-        bio: "I'm a full stack web developer.",
-        skills: 'React.js , Node.js , Next.js, Docker , kubernetes , Distributed System, AWS.',
-        experience: '2'
-      }
-    res.render('portfolio', {user}); 
-})
+    // const user = {
+    //     name: 'Vidit Tamrakar',
+    //     domain: 'full stack development',
+    //     college: 'JUET GUNA',
+    //     projects: 'scriptbox.cloud',
+    //     bio: "I'm a full stack web developer.",
+    //     skills: 'React.js , Node.js , Next.js, Docker , kubernetes , Distributed System, AWS.',
+    //     experience: '2'
+    //   }
+    // res.render('portfolio', {user}); 
+    const username = req.query.username; // Get username from the query parameters (e.g., /portfolio?username=vidit)
+
+    if (!username) {
+        return res.status(400).send('No username provided');
+    }
+
+    // Query the database to get the user's portfolio data by username
+    const sql = 'SELECT name, domain, college, projects, bio, skills, experience FROM portfolio WHERE name = ?';
+    // const sql = `
+    // SELECT 
+    //     portfolio.name, portfolio.domain, portfolio.college, portfolio.projects, 
+    //     portfolio.bio, portfolio.skills, portfolio.experience, users.email 
+    // FROM 
+    //     portfolio 
+    // JOIN 
+    //     users 
+    // ON 
+    //     portfolio.name = users.name 
+    // WHERE 
+    //     portfolio.name = ?`;
+    db.query(sql, [username], (err, result) => {
+        if (err) {
+            console.error('Error fetching user data:', err);
+            return res.status(500).send('Error fetching portfolio data');
+        }
+
+        if (result.length === 0) {
+            return res.status(404).send('Portfolio not found for this user');
+        }
+
+        // Extract the user's data
+        const user = result[0];
+
+        // Render the portfolio.ejs page with the user data
+        res.render('portfolio', { user });
+    });
+});
 
 
 // Start the server 
