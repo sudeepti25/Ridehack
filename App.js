@@ -64,6 +64,22 @@ app.get('/test-db', (req, res) => {
 app.get('/landing_page', (req,res)=>{
     res.render('landing_page'); 
 })
+
+app.get('/portfolio', (req,res)=>{
+
+    const user = {
+        name: 'Vidit Tamrakar',
+        domain: 'full stack development',
+        college: 'JUET GUNA',
+        projects: 'scriptbox.cloud',
+        bio: "I'm a full stack web developer.",
+        skills: 'React.js , Node.js , Next.js, Docker , kubernetes , Distributed System, AWS.',
+        experience: '2'
+      }
+    res.render('portfolio', {user}); 
+})
+
+
 // Start the server 
 app.listen(PORT, () => {
     console.log("Server is listening on port", PORT);
