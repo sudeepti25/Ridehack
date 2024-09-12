@@ -64,11 +64,11 @@ border-radius: 5px;
 border: 1px solid #ccc;
 }
 
-.search-container button {
+.search-container #search-button {
 padding: 5px 10px;
 border: none;
 border-radius: 5px;
-background-color:whitesmoke;
+background-color:rgb(74, 67, 67);
 color: #000;
 font-weight: bold;
 cursor: pointer;

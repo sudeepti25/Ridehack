@@ -3,7 +3,10 @@
      padding: 0;
      box-sizing: border-box;
  }
- 
+ body {
+    background-image: linear-gradient(to right, #7d706d, #72b0ee);
+  }
+
  /* Added top margin to prevent congestion */
  .heading {
      margin-bottom: 2rem;
@@ -29,15 +32,31 @@
      border: 2px solid #071952;  /* Dark blue border */
      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* 3D shadow effect */
      transition: all 0.3s ease;
+     background-color: #b5b8ba;
  }
  
  .search-container input:hover {
-     background-color: #f0f0f0;  /* Light greyish color on hover */
+     background-color: #b4a7a7;  /* Light greyish color on hover */
      color: #071952;  /* Keep the text dark blue */
-     border: 2px solid #87CEEB;  /* Light blue border on hover */
+     border: 2px solid #000000;  /* black border on hover */
      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);  /* Lighter shadow on hover */
  }
  
+ .search-container #search-button{
+     background-color: rgb(48, 48, 103);
+     color:rgb(255, 254, 254);
+     border-radius: 10px;
+     padding :8px;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+ }
+
+ .search-container #search-button:hover{
+    background-color: rgb(44, 48, 120);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+ }
+
  .search-container input:focus {
      outline: none;
      border: 2px solid #071952;  /* Dark blue border on focus */
@@ -55,8 +74,8 @@
  
  .box {
      max-width: 12.5rem;
-     border: 1px solid rgb(238, 238, 238);
-     background-color: #EBF4F6;
+     border: 1px solid rgb(0, 0, 0);
+     background-color: #a0bce4;
      box-shadow: 13px 6px 25px -15px rgba(0, 0, 0, 0.1);
      padding: 1rem;
      border-radius: 1rem;
@@ -81,7 +100,7 @@
  }
  
  .box p {
-     color: rgb(160, 160, 160);
+     color: rgb(39, 38, 38);
  }
  
  .box button {
@@ -93,6 +112,83 @@
      padding: 0.7rem;
      box-shadow: black;
      color: white;
+     cursor: pointer;
  }
  
- 
+ /* sidebar */
+ /* Styling the hamburger icon */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+
+/* Hide the navigation menu by default */
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar ul li {
+    padding: 10px 20px;
+}
+
+#sidebar ul li a {
+    font-family:sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#sidebar ul li a:hover {
+    color: #bcb8b8;
+    text-decoration: underline;
+}
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    width: 250px;
+    height: 100%;
+    background-color: #333131;
+    padding-top: 60px;
+    transform: translateX(-100%); /* Hidden initially using transform */
+    transition: transform 0.4s ease-in-out; /* Smooth transition */
+    z-index: 999;
+}
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Active sidebar state */
+#sidebar.active {
+    transform: translateX(0); /* Bring sidebar into view */
+}
+
+/* When the sidebar is active, show the close button */
+#sidebar.active .close-btn {
+    display: block;
+}
