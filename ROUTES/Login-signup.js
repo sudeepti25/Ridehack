@@ -15,7 +15,7 @@ router.get('/signup', (req, res) => {
 
 // Handle Signup
 router.post('/signup', (req, res) => {
-    const { name, email, password } = req.body; // Extracts form data
+    const { name, email, password,id } = req.body; // Extracts form data
 
     if (!name || !email || !password) {
         return res.status(400).send('All fields are required!');

@@ -4,29 +4,36 @@ const db = require('../CONNECTIONS/Connect');
 
 
 
+router.get("/teampage",(req, res) => {
+
+    res.render('formteam');
+ });
+
 router.get('/teams',(req,res)=>{
 
-    const userid= req.session.user.id;
+    
+    if (!req.session || !req.session.user || !req.session.user.id) {
+        return res.status(404).send("USER NOT LOGGED IN");
+    }
+
+   
+
     const value =req.query.value;
 
-    if(!userid)
-    {
-        res.status(404).send("USER NOT LOGGED IN");
-    }
 
     const sql = `SELECT name,skills FROM portfolio WHERE skills=?`;
 
-    db.query(sql,[],(err,result)=>{
+    db.query(sql,[value],(err,result)=>{
 
         if(err)
         {
-            res.status(500).send("ERROR FECTHING");
+            return res.status(500).send("ERROR FECTHING");
 
         }
 
-        if(result.length===0)
+        if(!result)
         {
-            res.status(404).send("PEOPLE NOT FOUND");
+            return res.status(404).send("PEOPLE NOT FOUND");
         }
 
 

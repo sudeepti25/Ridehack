@@ -32,7 +32,7 @@ app.use(session({
 app.use(bodyparser.urlencoded({ extended: true }));
 
 // Use the login/signup routes
-// app.use('/', loginSignupRoutes);
+ app.use('/', loginSignupRoutes);
 
 // Use the signnext routes
 app.use('/', signnextRoutes);
@@ -40,6 +40,7 @@ app.use('/', signnextRoutes);
 // Use the organizehackathon routes
 app.use('/', organizeHackathonRoutes);
 app.use('/', formteamsroutes);
+
 
 // LANDING PAGE ROUTE
 app.get('/findhackathon', (req, res) => {
