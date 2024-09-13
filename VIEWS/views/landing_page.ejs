@@ -26,8 +26,13 @@
             <a href="partnership.html">Settings</a>
         </nav>
         <div class="login-signup-button">
-            <a href="\login"><button class="login-button" >Login</button></a>
-            <a href="\signup"><button class="signup-button">Signup</button></a>
+            <% if (!user) { %> <!-- If no user is logged in -->
+                <a href="/login"><button class="login-button">Login</button></a>
+                <a href="/signup"><button class="signup-button">Signup</button></a>
+            <% } else { %> <!-- If user is logged in -->
+                
+                <a href="/logout"><button class="logout-button">Logout</button></a>
+            <% } %>
         </div>
     </header>
 
@@ -73,7 +78,7 @@
                 <div class="feature-box">
                     <h3>Form Professional Teams</h3>
                     <p>Form professional teams with experts in various fields for your projects or business ventures.</p>
-                    <a href="formteam.html"><button>Form Now</button></a>
+                    <a href="/teampage"><button>Form Now</button></a>
                 </div>
                 <div class="feature-description">
                     <h3 class="heading">Form Professional Teams</h3>
@@ -159,15 +164,18 @@
             </div>
         </footer>
     </main>
-      <script src="index.js"></script>
+      <script src="index.js">
+       
+      </script>
       <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <!-- Include Typed.js library -->
     
     <!-- Initialize Typed.js -->
-    <script>
-       
-    </script>
+    
+    
+    
 </body>
+
 </html>
 
 

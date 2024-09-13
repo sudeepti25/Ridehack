@@ -5,7 +5,8 @@ const db = require('../CONNECTIONS/Connect'); // Importing the connection pool
 
 // LANDING PAGE ROUTE
 router.get('/landing_page', (req, res) => {
-    res.render('landing_page');
+    const user = req.session.user;
+    res.render('landing_page', { user });
 });
 
 // Serve signup page
@@ -15,7 +16,7 @@ router.get('/signup', (req, res) => {
 
 // Handle Signup
 router.post('/signup', (req, res) => {
-    const { name, email, password } = req.body; // Extracts form data
+    const { name, email, password,id } = req.body; // Extracts form data
 
     if (!name || !email || !password) {
         return res.status(400).send('All fields are required!');
@@ -93,4 +94,12 @@ router.get('/test-db', (req, res) => {
     });
 });
 
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send('Error logging out!');
+        }
+        res.redirect('/landing_page');
+    });
+});
 module.exports = router;
