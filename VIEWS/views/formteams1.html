@@ -9,13 +9,33 @@
                    
     </style>
 </head>
-<body><div class="heading">
+<body>
+    <div class="heading">
     <h1>Form Your Own Team</h1>
            <h3>Powered By BrainBridges</h3>
 </div>
+<!-- side bar option -->
+<div class="hamburger-menu">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<nav id="sidebar">
+    <!-- Close button -->
+    <div class="close-btn">&times;</div>
+    <ul>
+        <li><a href="#">Year</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Languages</a></li>
+        <li><a href="#">College</a></li>
+    </ul>
+</nav>
+
 <!-- Search Bar -->
 <div class="search-container">
     <input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search for names..">
+    <button id="search-button">Search</button>
 </div>
     <div class="container">
         <div class="box">
@@ -85,6 +105,22 @@
                 }
             }
         }
+// side bar
+const hamburger = document.querySelector('.hamburger-menu');
+const sidebar = document.getElementById('sidebar');
+const closeBtn = document.querySelector('.close-btn');
+
+// Toggle sidebar when hamburger is clicked
+hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+});
+
+// Close sidebar when close button is clicked
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+});
+
+
     </script>  
 </body>
 </html>
