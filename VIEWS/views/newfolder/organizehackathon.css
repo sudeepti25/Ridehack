@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EBF4F6;
+    margin: 0;
+    padding: 20px;
+    color: #4c4c4c;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #3b3a3a;
+          background-color: #cde6eb;
+    ;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+input[type="date"] {
+    width: calc(100% - 18px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #000; /* Set input text color to black */
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+select:hover,
+input[type="date"]:hover {
+    color: #000; /* Ensure input text color stays black on hover */
+}
+
+input[type="submit"] {
+    background-color: white;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+input[type="submit"]:hover {
+    color: white;
+    background-color: #00bcd4;
+    font-weight: bolder;
+}
+
+.error-message {
+    color: red;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+    .form-container {
+        padding: 20px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select,
+    input[type="date"],
+    input[type="submit"],
+    textarea {
+        width: 100%;
+    }
+}
+
+/* Add hover effect for all elements with color #00ff00 */
+/* body,
+h1,
+label, */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+input[type="date"],
+input[type="submit"] {
+    transition: color 0.3s;
+}
+
+/* Apply hover effect */
+/* body:hover,
+h1:hover,
+label:hover, */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+select:hover,
+input[type="date"]:hover,
+input[type="submit"]:hover {
+    color: #000;
+}
