@@ -5,7 +5,7 @@ const router = express.Router();
 const db = require('../CONNECTIONS/Connect');
 
 // GET /organizehackathon to render the form
-router.get('/organizehackathon', (req, res) => {
+router.get('/organize', (req, res) => {
     res.render('organizehackathon');  // Render organizehackathon.ejs
 });
 router.get('/findhackathon', (req, res) => {
@@ -13,7 +13,7 @@ router.get('/findhackathon', (req, res) => {
 });
 
 // Handle Event Registration Form Submission
-router.post('/organizehackathon', (req, res) => {
+router.post('/organize', (req, res) => {
     const { eventName, organizationName, eventType, eventCategory, eventTopic, eventaddress, contactPerson, eventEnquiriesEmail, websiteAddress, eventStartDate, eventEndDate, eventTheme } = req.body;
 
     const sql = 'INSERT INTO Events (eventName, organizationName, eventType, eventCategory, eventTopic, eventAddress, contactPerson, eventEnquiriesEmail, websiteAddress, eventStartDate, eventEndDate, eventTheme) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';

@@ -8,7 +8,7 @@ const bodyparser = require('body-parser');
 const db = require('./CONNECTIONS/Connect'); // Database connection
 const loginSignupRoutes = require('./ROUTES/Login-signup'); // Routes for login/signup
 const signnextRoutes = require('./ROUTES/signnext'); // Updated route import
-const organizeHackathonRoutes = require('./ROUTES/organizehackathon'); // Import the organizehackathon routes
+const organizeHackathonRoutes = require('./ROUTES/organize'); // Import the organizehackathon routes
 const formteamsroutes = require('./ROUTES/Formteam'); // Import the organizehackathon routes
 
 

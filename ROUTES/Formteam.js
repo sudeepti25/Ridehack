@@ -36,6 +36,7 @@ router.get('/teams',(req,res)=>{
             return res.status(404).send("PEOPLE NOT FOUND");
         }
 
+       
 
         res.render('formteams1',{people:result});
 

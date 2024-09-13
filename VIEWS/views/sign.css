@@ -39,6 +39,15 @@ body{
   width: 60%;
   height: 100%;
 }
+
+.para
+{
+  margin-top: -22px;
+  font-size: smaller;
+  color: red;
+  margin-left: 12px;
+  margin-bottom: -20px;
+}
 .container {
   /* position: relative; */
   margin-top: 6.2%;

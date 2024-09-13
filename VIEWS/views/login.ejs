@@ -13,13 +13,16 @@
                 <h1>Login</h1>
                 <form action="/login" method="post"> 
                     <div class="input-box">
-                        <input type="email" required name="email">
+                        <input type="email" required name="email" id="email">
                         <label for="email">Email</label>
                     </div>
                     <div class="input-box">
                         <input type="password" required maxlength="8" minlength="4" name="password">    
                         <label for="password">Password</label>
                     </div>
+                    <% if(error) {%> 
+                        <p class="para" id="err">Invalid credentials</p>
+                    <%}%>
                     <p class="link-text">
                         Forget password ?
                         <a href="#">Click Here</a>
@@ -40,4 +43,16 @@
     </div>
     
 </body>
+<script>
+  
+    const emailInput = document.getElementById('email');
+    const errorMessage = document.getElementById('err');
+
+    
+    emailInput.addEventListener('focus', function() {
+        if (errorMessage) {
+            errorMessage.style.display = 'none'; // Hide the error message
+        }
+    });
+</script>
 </html>

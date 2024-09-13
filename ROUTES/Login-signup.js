@@ -11,14 +11,14 @@ router.get('/landing_page', (req, res) => {
 
 // Serve signup page
 router.get('/signup', (req, res) => {
-    res.render('signpage'); // Render signpage.ejs
+    res.render('signpage',{error:null}); // Render signpage.ejs
 });
 
 // Handle Signup
 router.post('/signup', (req, res) => {
     const { name, email, password,id } = req.body; // Extracts form data
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password) { 
         return res.status(400).send('All fields are required!');
     }
 
@@ -27,8 +27,9 @@ router.post('/signup', (req, res) => {
     const sql = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
     db.query(sql, [name, email, hashedPassword], (err, result) => {
         if (err) {
-            console.error(err);
-            return res.status(500).send('Error during signup!');
+
+         return res.render('signpage',{error:1}); // Render signpage.ej
+          
         }
 
         // Fetch the newly created user from the database to store in the session
@@ -49,7 +50,7 @@ router.post('/signup', (req, res) => {
 
 // Serve login page
 router.get('/login', (req, res) => {
-    res.render('login'); // Render login.ejs
+    res.render('login',{error:null}); // Render login.ejs
 });
 
 // Handle Login
@@ -63,15 +64,15 @@ router.post('/login', (req, res) => {
             return res.status(500).send('Error during login!');
         }
 
-        if (result.length === 0) {
-            return res.status(404).send('User not found!');
+        if (!result) {
+            return res.render('login',{error:1});
         }
 
         const user = result[0];
         const isPasswordValid = bcrypt.compareSync(password, user.password);
 
         if (!isPasswordValid) {
-            return res.status(401).send('Incorrect password!');
+            return res.render('login',{error:1});
         }
 
         // Store user data in session
