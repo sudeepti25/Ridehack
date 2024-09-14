@@ -49,7 +49,9 @@ router.get('/hackathon/:eventName', (req, res) => {
 
         // Pass the hackathon data to the EJS template
         res.render('hackathon', { hackathon: result[0] });
+
     });
+    
 });
 
 module.exports = router;
