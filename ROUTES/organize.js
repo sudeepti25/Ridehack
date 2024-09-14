@@ -1,21 +1,18 @@
-// Filename: organizehackathon.js
-
 const express = require('express');
 const router = express.Router();
 const db = require('../CONNECTIONS/Connect');
 
-// GET /organizehackathon to render the form
+// GET /organize to render the form
 router.get('/organize', (req, res) => {
     res.render('organizehackathon');  // Render organizehackathon.ejs
 });
+
+// GET /findhackathon to render the search page
 router.get('/findhackathon', (req, res) => {
-    res.render('findhackathon'); // Render signpage.ejs
-});
-router.get('/hackathon', (req, res) => {
-    res.render('hackathon');  // Render organizehackathon.ejs
+    res.render('findhackathon');
 });
 
-// Handle Event Registration Form Submission
+// POST /organize to handle event registration
 router.post('/organize', (req, res) => {
     const { eventName, organizationName, eventType, about, eventTopic, eventaddress, prize, eventEnquiriesEmail, websiteAddress, eventStartDate, eventEndDate, eventTheme } = req.body;
 
@@ -25,12 +22,12 @@ router.post('/organize', (req, res) => {
             console.error(err);
             return res.status(500).send('Error saving event data!');
         }
-        res.redirect('/hackathon');
+        // Redirect to the newly created hackathon's detail page
+        res.redirect(`/hackathon/${eventName}`);
     });
-    
 });
-// GET /findhackathon to fetch and display event data
-// Search hackathon by name and display its details
+
+// GET /hackathon/:eventName to fetch and display hackathon details
 router.get('/hackathon/:eventName', (req, res) => {
     const eventName = req.params.eventName;
 
@@ -47,14 +44,12 @@ router.get('/hackathon/:eventName', (req, res) => {
             return res.status(404).send('Hackathon not found');
         }
 
-        // Log the fetched hackathon data to ensure we got it
+        // Log the fetched hackathon data
         console.log("Fetched hackathon data: ", result[0]);
 
         // Pass the hackathon data to the EJS template
         res.render('hackathon', { hackathon: result[0] });
     });
-
 });
 
-module.exports = router;
 module.exports = router;

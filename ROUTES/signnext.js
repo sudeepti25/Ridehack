@@ -42,31 +42,31 @@ router.post('/signnext', (req, res) => {
 // Route to get user profile
 
 
-router.get('/profile', (req, res) => {
-    const userId = req.session.user ? req.session.user.id : null;
+// router.get('/profile', (req, res) => {
+//     const userId = req.session.user ? req.session.user.id : null;
 
-    if (!userId) {
-        return res.status(403).send('User not logged in');
-    }
+//     if (!userId) {
+//         return res.status(403).send('User not logged in');
+//     }
 
-    const sql = `SELECT u.domain, u.name, p.college, p.projects, p.bio, p.skills, p.experience
-                 FROM users u
-                 LEFT JOIN portfolio p ON u.id = p.user_id
-                 WHERE u.id = ?`;
+//     const sql = `SELECT u.domain, u.name, p.college, p.projects, p.bio, p.skills, p.experience
+//                  FROM users u
+//                  LEFT JOIN portfolio p ON u.id = p.user_id
+//                  WHERE u.id = ?`;
 
-    db.query(sql, [userId], (err, result) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).send('Error fetching profile data!');
-        }
+//     db.query(sql, [userId], (err, result) => {
+//         if (err) {
+//             console.error(err);
+//             return res.status(500).send('Error fetching profile data!');
+//         }
 
-        if (result.length === 0) {
-            return res.status(404).send('Profile not found!');
-        }
+//         if (result.length === 0) {
+//             return res.status(404).send('Profile not found!');
+//         }
 
-        res.render('profile', { profile: result[0] }); // Render profile.ejs with user profile data
-    });
-});
+//         res.render('profile', { profile: result[0] }); // Render profile.ejs with user profile data
+//     });
+// });
 
 
 // Route to display the user's portfolio (dynamic route)
