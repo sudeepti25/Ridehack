@@ -21,16 +21,96 @@
     <div class="bar"></div>
 </div>
 
+
 <nav id="sidebar">
     <!-- Close button -->
     <div class="close-btn">&times;</div>
+    <div class="dropdown">
     <ul>
-        <li><a href="#">Year</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Languages</a></li>
-        <li><a href="#">College</a></li>
+        <!-- Year Dropdown -->
+        <li>
+            <a href="#" class="dropdown-toggle">Year</a>
+            <ul class="dropdown-menu year-filters show ">
+                <li>
+                    <label><input type="checkbox" name="year" value="1st" data-filter="1st"> 1st Year</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="year" value="2nd" data-filter="2nd"> 2nd Year</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="year" value="3rd" data-filter="3rd"> 3rd Year</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="year" value="4th" data-filter="4th"> 4th Year</label>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Skills Dropdown -->
+        <li>
+            <a href="#" class="dropdown-toggle">Skills</a>
+            <ul class="dropdown-menu skills-filters show ">
+                <li>
+                    <label><input type="checkbox" name="skills" value="AI" data-filter="AI"> AI</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="skills" value="ML" data-filter="ML"> ML</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="skills" value="Web Development" data-filter="Web Development"> Web Development</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="skills" value="App Development" data-filter="App Development"> App Development</label>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Languages Dropdown -->
+        <li>
+            <a href="#" class="dropdown-toggle">Languages</a>
+            <ul class="dropdown-menu language-filters show">
+                <li>
+                    <label><input type="checkbox" name="language" value="C/C++" data-filter="C/C++"> C/C++</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="language" value="Java" data-filter="Java"> Java</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="language" value="Python" data-filter="Python"> Python</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="language" value="JavaScript" data-filter="JavaScript"> JavaScript</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="language" value="Ruby" data-filter="Ruby"> Ruby</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="language" value="PHP" data-filter="PHP"> PHP</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="language" value="Go" data-filter="Go"> Go</label>
+                </li>
+            </ul>
+        </li>
+
+        <!-- College Dropdown -->
+        <li>
+            <a href="#" class="dropdown-toggle">College</a>
+            <ul class="dropdown-menu college-filters show">
+                <li>
+                    <label><input type="checkbox" name="college" value="Global" data-filter="Global"> Global Universities</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="college" value="Own University" data-filter="Own University"> Within University</label>
+                </li>
+            </ul>
+      
+        </li>
     </ul>
+    </div>
 </nav>
+
+
 
 <!-- Search Bar -->
 <div class="search-container">
@@ -120,6 +200,94 @@ closeBtn.addEventListener('click', () => {
     sidebar.classList.remove('active');
 });
 
+//side bar options
+// Object to store selected filters
+const filters = {
+    year: [],
+    skills: [],
+    language: [],
+    college: []
+};
+
+// Handle click event for dropdown toggle
+document.querySelector('.dropdown-toggle').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    // Toggle the 'show' class to display/hide the dropdown menu
+    dropdownMenu.classList.toggle('show');
+});
+
+
+// Handle click event for dropdown toggle
+document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        const parent = this.parentElement;
+        const dropdownMenu = parent.querySelector('.dropdown-menu');
+        
+        // Toggle the 'show' class to display/hide the dropdown menu
+        dropdownMenu.classList.toggle('show');
+    });
+});
+
+ // Toggle dropdown menu visibility
+ document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+
+                // Get the dropdown menu
+                const dropdownMenu = this.nextElementSibling;
+
+                // Toggle the 'show' class to display/hide the dropdown menu
+                dropdownMenu.classList.toggle('show');
+
+                // Close other dropdowns
+                document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                    }
+                });
+            });
+        });
+
+// Close dropdown menu if clicked outside
+document.addEventListener('click', function(event) {
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        
+        if (!dropdown.contains(event.target)) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
+// Handle click event for dropdown toggle
+document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Toggle the dropdown menu visibility
+        const dropdownMenu = this.nextElementSibling; // Get the dropdown menu
+        dropdownMenu.classList.toggle('show');
+
+        // Close other dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+            if (menu !== dropdownMenu) {
+                menu.classList.remove('show');
+            }
+        });
+    });
+});
+
+// Close dropdown menu if clicked outside
+document.addEventListener('click', function(event) {
+    // If the click is outside of the dropdowns
+    if (!event.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+            menu.classList.remove('show');
+        });
+    }
+});
 
     </script>  
 </body>

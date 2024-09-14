@@ -75,7 +75,7 @@
  .box {
      max-width: 12.5rem;
      border: 1px solid rgb(0, 0, 0);
-     background-color: #a0bce4;
+     background-color:#bdc9db;
      box-shadow: 13px 6px 25px -15px rgba(0, 0, 0, 0.1);
      padding: 1rem;
      border-radius: 1rem;
@@ -114,7 +114,10 @@
      color: white;
      cursor: pointer;
  }
- 
+ .box button:hover{
+    text-decoration: underline;
+    color: #72b0ee;
+ }
  /* sidebar */
  /* Styling the hamburger icon */
 .hamburger-menu {
@@ -165,19 +168,62 @@
     left: 0;
     color: #ffffff;
     width: 250px;
-    height: 100%;
+    height: 100vh;
     background-color: #333131;
-    padding-top: 60px;
+    padding-top: 40px;
     transform: translateX(-100%); /* Hidden initially using transform */
     transition: transform 0.4s ease-in-out; /* Smooth transition */
+    overflow-y: auto;
     z-index: 999;
+}
+
+.dropdown {
+    position: relative; /* Position relative for the dropdown menu */
+    display: inline-block;
+} 
+.dropdown-menu {
+    display: none; /* Hide dropdown by default */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #444;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li label {
+    display: block;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.dropdown-menu li label:hover {
+    background-color: #555;
+}
+
+.dropdown-menu.show {
+    display: block; /* Show the dropdown menu */
+}
+
+.dropdown-toggle {
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.dropdown.open .dropdown-menu {
+    display: block; /* Show dropdown when open */
 }
 /* Close button */
 .close-btn {
     position: absolute;
     top: 15px;
     right: 15px;
-    font-size: 50px;
+    font-size: 30px;
     color: white;
     cursor: pointer;
     display: none;
@@ -191,4 +237,27 @@
 /* When the sidebar is active, show the close button */
 #sidebar.active .close-btn {
     display: block;
+}
+
+/* sidebar effect */
+/* Track */
+::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color when hovering over the scrollbar handle */
+}
+
+/* Track (progress bar) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+    border-radius: 10px; /* Rounded corners */
 }
