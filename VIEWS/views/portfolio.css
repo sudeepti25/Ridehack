@@ -190,7 +190,7 @@
   .header--scroll {
     height: var(--height-header--scroll);
     box-shadow: var(--box-shadow);
-    background-color: #9ebbe1;
+    background-color: #6e8bb1;
   }
   
   .nav {
@@ -224,13 +224,14 @@
   }
   
   .nav__link:hover {
-    color: var(--color-primary);
+    color: black;
+    text-decoration: underline;
   }
   
   .nav__toggle {
     display: none;
     font-size: var(--fs-xl);
-    color: var(--color-white);
+    color: black;
     cursor: pointer;
     transition: var(--transition);
   }
@@ -304,7 +305,13 @@
   .hero__description {
     margin-bottom: 5rem;
   }
-  
+  .side-img {
+    height: 400px;
+  border-radius: 50%;  /* Makes the container circular */
+  overflow: hidden;    /* Hides parts of the image outside the circle */
+  position: relative;
+  }
+
   .hero__info {
     border-top: 1px solid var(--color-border);
     padding-top: 2rem;
@@ -369,7 +376,7 @@
   }
   
   .skills__content {
-    background-color: var(--color-bg-secondary);
+    background-color: rgb(83, 83, 203);
     box-shadow: var(--box-shadow);
     padding: 3rem;
   }
@@ -501,6 +508,7 @@
   .project__link:hover {
     color: var(--color-primary);
     column-gap: 1rem;
+    text-decoration: underline;
   }
   
   /* Testimonials
