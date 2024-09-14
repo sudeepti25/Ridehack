@@ -1,0 +1,158 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero-image {
+    background-image: url('image.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 55vh;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+    background-color: #f7f9fb;
+}
+
+.hackathon-info {
+    max-width: 50%;
+}
+
+.hackathon-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hackathon-info p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.join-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.join-button:hover {
+    background-color: #0056b3;
+}
+
+.details-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-width: 500px;
+}
+
+.details-box h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.details-box p {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.details-box i {
+    margin-right: 15px;
+    color: #007bff;
+    font-size: 1.3em;
+}
+
+/* Header Styles */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.header .deadline {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Main Content Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.info-content {
+    flex: 2;
+    padding-right: 40px;
+    text-align: left;
+}
+
+.sidebar {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-box {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px; /* Increased margin-bottom */
+}
+
+.highlight {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Prize Section Styles */
+.prize-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.prize-item:hover {
+    transform: translateY(-5px);
+}
+.prize-item i {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/sign.css"> <!-- Update the path if needed -->
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>Sign Up</h1>
+            <form action="/signup" method="POST"> <!-- Update form action to point to your signup route -->
+                <div class="input-box">
+                    <input type="text" required name="name"> <!-- Added name field -->
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" required name="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" required name="password">
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p class="link-text">
+                    Already have an account?
+                    <a href="/login">Click Here</a> <!-- Update link to point to login route -->
+                </p>
+            </form>
+        </div>
+        <!-- You can keep the span elements if they are part of your design -->
+        <!-- <span style="--i:0;"></span> ... (other spans) ... -->
+    </div>
+</body>
+</html>

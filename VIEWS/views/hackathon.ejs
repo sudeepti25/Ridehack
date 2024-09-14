@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackAI - Dell and NVIDIA Challenge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hackathon.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-image"></div>
+    <div class="hero-content">
+        <div class="hackathon-info">
+            <h1><%=hackathon.eventName%></h1>
+            <p><%= hackathon.eventTheme %></p>
+            <p>By <%= hackathon.organizationName %>!</p>
+
+            <a href="<%= hackathon.eventAddress %>" class="join-button">Join Us</a>
+        </div>
+        <div class="details-box">
+            <h3>Event Details</h3>
+            <p><i class="fas fa-portrait"></i> Organized By: <%= hackathon.organizationName %></p>
+            <p><i class="fas fa-calendar-alt"></i> Start: <%= hackathon.eventStartDate %></p>
+            <p><i class="fas fa-hourglass-end"></i> End: <%= hackathon.eventStartDate %></p>
+            <p><i class="fas fa-trophy"></i> Prize: <%= hackathon.prize %></p>
+            <p><i class="fas fa-globe"></i> Event Type: <%= hackathon.eventType %></p>
+        </div>
+    </div>
+
+    <!-- Header (becomes sticky after scrolling) -->
+    <header class="header">
+        <h2><%= hackathon.eventName %></h2>
+        <!-- <span class="deadline">Deadline: 3 Oct 2024 @ 5:30am GMT+5:30</span> -->
+        <a href="<%= hackathon.websiteAddress %>" class="join-button">Join Us</a>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="info-section">
+            <div class="info-content">
+                <h2><%= hackathon.eventTheme %></h2>
+               <p><%= hackathon.about %></p>
+            </div>
+            <div class="sidebar">
+                <div class="info-box">
+                    <!-- <h3>Contact Organizer</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:organizer@hackai.com">organizer@hackai.com</a></p> -->
+                    <h3>Event Enquiries Email</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="<%= hackathon.eventEnquiriesEmail %>"><%= hackathon.eventEnquiriesEmail %></a></p>
+
+                </div>
+                <div class="prize-item">
+                    <i class="fas fa-trophy"></i>
+                    <h3>First Prize</h3>
+                    <p><%= hackathon.prize %></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Sticky header
+        window.onscroll = function() {stickyHeader()};
+        var header = document.querySelector('.header');
+        var sticky = header.offsetTop;
+        function stickyHeader() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+</html>
