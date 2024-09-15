@@ -70,29 +70,26 @@ router.post('/signnext', (req, res) => {
 
 
 // Route to display the user's portfolio (dynamic route)
-router.get('/portfolio/:name', (req, res) => {
-    const name = req.params.name;
+router.get('/portfolio', (req, res) => {
+   const id =req.query.id;
     
     // Fetch the user details from the database
-    const sql = "SELECT * FROM portfolio WHERE name = ?";
-    db.query(sql, [name], (err, result) => {
+    const sql = "SELECT * FROM portfolio WHERE id = ?";
+    db.query(sql, [id], (err, result) => {
         if (err) {
             console.error("Error fetching user details: ", err);
-            res.status(500).send('Server error');
-            return;
+          return  res.status(500).send('Server error');
+           
         }
 
-        if (result.length === 0) {
+        if (!result) {
             console.error("No user found with that name");
-            res.status(404).send('User not found');
-            return;
+            return res.status(404).send('User not found');
+            
         }
 
-        // Log the result to ensure we got data
-        console.log("Fetched user data: ", result[0]);
-
-        // Pass the user data to the EJS template
-        res.render('portfolio', { user: result[0] });
+        console.log(result);
+        res.render('portfolio',{ user:result[0]});
     });
 });
 
