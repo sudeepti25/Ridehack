@@ -18,12 +18,22 @@
             <div class="box">
                 <h2><%= i.name %></h2>
                 <p><%= i.skills %></p>
-                <button type="button">View More</button>
+                <button onclick="handleclick(<%i.id%>)" type="button">View More</button>
             </div>
             
        <% }); %>
        
     </div>
+
+    <script>
+
+        function handleclick(id)
+        {   
+            window.location.href=`/portfolio?id=${id}`;
+        }
+        
+    </script>
     
 </body>
+
 </html>

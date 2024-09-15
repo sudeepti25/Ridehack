@@ -21,7 +21,7 @@ router.get('/teams',(req,res)=>{
     const value =req.query.value;
 
 
-    const sql = `SELECT name,skills FROM portfolio WHERE skills=?`;
+    const sql = `SELECT name,skills,id FROM portfolio WHERE domain=?`;
 
     db.query(sql,[value],(err,result)=>{
 
@@ -35,6 +35,8 @@ router.get('/teams',(req,res)=>{
         {
             return res.status(404).send("PEOPLE NOT FOUND");
         }
+
+       
 
        
 
