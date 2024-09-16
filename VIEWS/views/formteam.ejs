@@ -5,23 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Formation Options</title>
     <link rel="stylesheet" href="formteam.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
+
+
 </head>
 <body>
-    <h2>Choose Your Domain</h2>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg.jpeg" alt="BrainBridges Logo">
+            <h3>BrainBridges</h3>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="profile.html">My Profile</a>
+            <a href="messages.html">Messages</a>
+            <a href="#">Requests</a>
+            <a href="#">Info</a>
+            <a href="about.html">About Us</a>
+            <a href="partnership.html">Settings</a>
+        </nav>
+        <div class="login-signup-button">
+            <a href="/login"><button class="login-button">Login</button></a>
+            <a href="/signup"><button class="signup-button">Signup</button></a>
+        </div>
+    </header>
 
-    <div class="container">
-        <div class="option-box" onclick="handle_click('app')">App Development</div>
-        <div class="option-box" onclick="handle_click('Web development')">Website Development</div>
-        <div class="option-box" onclick="handle_click('blockchain')">Blockchain</div>
-        <div class="option-box" onclick="handle_click('AI and ML')">AI & ML</div>
-        <div class="option-box" onclick="handle_click('Other')">Other</div>
-    </div>
+    <section class="main-section">
+        <h2>Choose Your <span class="highlighted-text">Domain</span></h2>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search Domain..." onkeyup="filterDomains()">
+            <button id="search-btn" type="submit"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="container" id="domain-container">
+            <div class="option-box" onclick="handle_click('App')">
+                <img src="Android.gif" alt="App Development" style="max-width: 100%; height: 90%; width: 100%;">
+                <p>App Development</p>
+            </div>
+            <div class="option-box" onclick="handle_click('wedev')">
+                <img src="Html 5.gif" alt="Website Development" style="max-width: 100%; height: 90%; width: 100%;">
+                <p>Web Development</p>
+            </div>
+            <!-- <div class="option-box" onclick="handle_click('Hackathons')">
+                <img src="hackathon_icon.png" alt="Hackathons">
+                <p>Hackathons</p>
+            </div> -->
+            <div class="option-box" onclick="handle_click('AI')">
+                <img src="ai (1).png" alt="AI & ML" class="ai" style="max-width: 100%; height: 90%; width: 110%;">
+                <p>AI & ML</p>
+            </div>
+            <div class="option-box" onclick="handle_click('Blockchain')">
+                <img src="Blockchain technology.gif" alt="Blockchain" style="max-width: 100%; height: 90%; width: 100%;">
+                <p>Blockchain</p>
+            </div>
+            <div class="option-box" onclick="handle_click('IoT')">
+                <img src="Mobile Browser.gif" alt="IoT" style="max-width: 100%; height: 90%; width: 100%;">
+                <p>IoT</p>
+            </div>
+            <div class="option-box" onclick="handle_click('Cybersecurity')">
+                <img src="cybersecurity.gif" alt="Cybersecurity" style="max-width: 100%; height: 90%; width: 100%;">
+                <p>Cybersecurity</p>
+            </div>
+            <div class="option-box" onclick="handle_click('Cloud')">
+                <img src="Cloud Data Analysis.gif" alt="Cloud Computing" style="max-width: 100%; height: 90%; width: 100%;">
+                <p>Cloud Computing</p>
+            </div>
+            <!-- <div class="option-box" onclick="handle_click('E-commerce')">
+                <img src="ecommerce_icon.png" alt="E-commerce">
+                <p>E-commerce</p>
+            </div> -->
+            <div class="option-box" onclick="handle_click('Data Science')">
+                <img src="Analytics.gif" alt="Data Science" style="max-width: 100%; height: 90%; width: 100%;">
+                <p>Data Science</p>
+            </div>
+            <div class="option-box" onclick="handle_click('Game Development')">
+                <img src="Game.gif" alt="Game Development" style="max-width: 100%; height: 90%; width: 100%;">
+                <p>Game Development</p>
+            </div>
+            <!-- <div class="option-box" onclick="handle_click('Education')">
+                <img src="education_icon.png" alt="Education">
+                <p>Education</p>
+            </div> -->
+            <!-- <div class="option-box" onclick="handle_click('Virtual Reality')">
+                <img src="vr_icon.png" alt="Virtual Reality">
+                <p>Virtual Reality</p>
+            </div> -->
+            <!-- <div class="option-box" onclick="handle_click('Robotics')">
+                <img src="ORANGE_ROBOT.gif" alt="Robotics" style="max-width: 100%; height: 90%; width: 100%;">
+                <p>Robotics</p>
+            </div> -->
+            <!-- <div class="option-box" onclick="handle_click('Quantum Computing')">
+                <img src="quantum_icon.png" alt="Quantum Computing">
+                <p>Quantum Computing</p>
+            </div> -->
+            <!-- <div class="option-box" onclick="handle_click('Biotechnology')">
+                <img src="biotech_icon.png" alt="Biotechnology">
+                <p>Biotechnology</p>
+            </div> -->
+
+        </div>
+    </section>
 
     <script>
-        function handle_click(event)
-        {
-            window.location.href=`/teams?value=${event}`;
+        function handle_click(event) {
+            window.location.href = `/teams?value=${event}`;
         }
+
+        function filterDomains() {
+            const input = document.getElementById('search');
+            const filter = input.value.toLowerCase();
+            const container = document.getElementById('domain-container');
+            const boxes = container.getElementsByClassName('option-box');
+
+            for (let i = 0; i < boxes.length; i++) {
+                let text = boxes[i].innerText || boxes[i].textContent;
+                if (text.toLowerCase().indexOf(filter) > -1) {
+                    boxes[i].style.display = '';
+                } else {
+                    boxes[i].style.display = 'none';
+                }
+            }
+        }
+
+        // Fade effect for the heading
+        window.onload = () => {
+            const heading = document.querySelector('h2');
+            heading.classList.add('fade-in');
+        };
     </script>
 </body>
 </html>

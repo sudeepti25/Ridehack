@@ -1,42 +1,260 @@
-body {
-    font-family: Arial, sans-serif;
-    /* background-color: #000; */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    background-color: #EBF4F6;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* height: 100vh; */
+    /* width: 100%; */
 }
 
-h2 {
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #ffffff;
     color: #242424;
+    overflow-y: auto;
+    height: 100vh;
+}
+body::-webkit-scrollbar{
+    width: 0vw;
+}
+#gif-container {
+    width: 300px; /* Set the desired width */
+    height: 300px; /* Set the desired height */
+    border: 1px solid #000; /* Optional styling */
+    text-align: center; /* Center align the GIF */
+}
+.ai:hover{
+    transform: scale(1.10);
+    transition: transform 0.1s ease-in-out;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    padding: 1rem 2rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+nav {
+    display: flex;
+    column-gap: 2rem;
+    font-family: "Quicksand", sans-serif;
+}
+
+nav a {
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #007BFF;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
+    font-size: 1.7rem;
+}
+
+.logo img {
+    width: 4rem;
+}
+
+.login-signup-button {
+    display: flex;
+    gap: 1rem;
+}
+
+.login-signup-button button {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    border: 2px solid #007BFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-signup-button button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.main-section {
+    margin-top: 8rem;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
+}
+section{
+    font-family: "Montserrat", sans-serif;
+}
+h2 {
+    font-size: 4rem;
+    /* text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); */
+    color: black;
+    margin-bottom: 2rem;
+    margin-top: 10rem; /* Added margin for space */
+    font-weight: bold;
+    opacity: 0; /* Initially hidden */
+    position: relative;
+    animation: fadeDown 1.2s ease-out forwards; /* Fade-in effect */
+}
+.highlighted-text {
+    color: #007BFF; /* Change color to blue */
+    font-size:1em;
+    /* text-shadow: 0px 0px 5px rgb(0, 123, 255,0.3); */
+    /* text-decoration: underline; */
+    /* transition: text-shadow 0.3s ease; */
+
+    /* Add a hover effect */
+    /* &:hover {
+        text-shadow: 0px 0px 5px rgb(0, 123, 255,0.4);
+    } */
+
+}
+/* Fade-in animation */
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-230px); /* Moves from the top (near navbar) */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Settles in the final position */
+    }
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 5%;
 }
 
 .option-box {
-    width: 200px;
-    height: 100px;
- background-color: #071952;
-    color: #fff;
+    
+    background-color: white;
+    color: #000;
     text-align: center;
-    line-height: 100px;
+    padding: 2rem;
     border-radius: 10px;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 10px  #252E5D; /* Neon glow effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.option-box:hover{
-           transform: scale(1.03);
+
+.option-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    color:#007BFF;
+    /* transition: color 0.8s ease; */
+}
+
+.option-box img {
+    width: 50px;
+    margin-bottom: 1rem;
+}
+
+.option-box p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+/* Styling for the search section */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem; /* Adds some spacing from the heading */
+    margin-bottom: 2rem; /* Adds spacing between search bar and options */
+    gap: 0.5rem;
+}
+
+/* Search input styling */
+#search {
+    width: 300px; /* Adjust width according to preference */
+    padding: 0.7rem 1rem;
+    border: 2px solid #007BFF;
+    border-radius: 30px; /* Rounded edges */
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* When input is focused */
+#search:focus {
+    border-color: #007BFF;
+    background-color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for the search button */
+#search-btn {
+    background-color: #007BFF;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px; /* Matches the input field */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+#search-btn:hover {
+    background-color: #0056b3; /* Darker shade of blue */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    #search {
+        width: 80%; /* Full width on smaller screens */
+    }
+
+    #search-btn {
+        padding: 0.7rem 1rem;
+    }
+}
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #search {
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
