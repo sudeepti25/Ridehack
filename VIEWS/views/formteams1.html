@@ -30,7 +30,7 @@
         <!-- Year Dropdown -->
         <li>
             <a href="#" class="dropdown-toggle">Year</a>
-            <ul class="dropdown-menu year-filters show ">
+            <ul class="dropdown-menu year-filters show">
                 <li>
                     <label><input type="checkbox" name="year" value="1st" data-filter="1st"> 1st Year</label>
                 </li>
@@ -49,7 +49,7 @@
         <!-- Skills Dropdown -->
         <li>
             <a href="#" class="dropdown-toggle">Skills</a>
-            <ul class="dropdown-menu skills-filters show ">
+            <ul class="dropdown-menu skills-filters show">
                 <li>
                     <label><input type="checkbox" name="skills" value="AI" data-filter="AI"> AI</label>
                 </li>
@@ -231,8 +231,43 @@ document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
     });
 });
 
- // Toggle dropdown menu visibility
- document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+// Close dropdown menu if clicked outside
+document.addEventListener('click', function(event) {
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        
+        if (!dropdown.contains(event.target)) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
+
+
+// Handle click event for dropdown toggle
+document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        const parent = this.parentElement;
+        const dropdownMenu = parent.querySelector('.dropdown-menu');
+        
+        // Toggle the 'show' class to display/hide the dropdown menu
+        dropdownMenu.classList.toggle('show');
+    });
+});
+
+// Close dropdown menu if clicked outside
+document.addEventListener('click', function(event) {
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        
+        if (!dropdown.contains(event.target)) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
+
+// Toggle dropdown menu visibility
+document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
             toggle.addEventListener('click', function(event) {
                 event.preventDefault(); // Prevent default link behavior
 
@@ -250,45 +285,6 @@ document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
                 });
             });
         });
-
-// Close dropdown menu if clicked outside
-document.addEventListener('click', function(event) {
-    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-        
-        if (!dropdown.contains(event.target)) {
-            dropdownMenu.classList.remove('show');
-        }
-    });
-});
-// Handle click event for dropdown toggle
-document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-
-        // Toggle the dropdown menu visibility
-        const dropdownMenu = this.nextElementSibling; // Get the dropdown menu
-        dropdownMenu.classList.toggle('show');
-
-        // Close other dropdowns
-        document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
-            if (menu !== dropdownMenu) {
-                menu.classList.remove('show');
-            }
-        });
-    });
-});
-
-// Close dropdown menu if clicked outside
-document.addEventListener('click', function(event) {
-    // If the click is outside of the dropdowns
-    if (!event.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
-            menu.classList.remove('show');
-        });
-    }
-});
-
     </script>  
 </body>
 </html>
