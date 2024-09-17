@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../CONNECTIONS/Connect');
 
 
-router.get('/findhackathon',(req,res) => {
+router.get('/findhack',(req,res) => {
 
     const sql=`SELECT *FROM events`;
 
@@ -19,19 +19,15 @@ router.get('/findhackathon',(req,res) => {
             return res.status(404).send("NO HACKATHONS FOUND");
          }
 
-         console.log(result);
-
-
-      return res.render('findhackathon',{data:result});
       
 
 
-          
-
-
-    })
+      return res.render('findhackathon',{data:result});
+ })
 
    
 
 
 })
+
+module.exports=router;

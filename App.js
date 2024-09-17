@@ -10,6 +10,7 @@ const loginSignupRoutes = require('./ROUTES/Login-signup'); // Routes for login/
 const signnextRoutes = require('./ROUTES/signnext'); // Updated route import
 const organizeHackathonRoutes = require('./ROUTES/organize'); // Import the organizehackathon routes
 const formteamsroutes = require('./ROUTES/Formteam'); // Import the organizehackathon routes
+const findteamsroutes= require('./ROUTES/findhack');
 
 
 const app = express();
@@ -37,15 +38,15 @@ app.use(bodyparser.urlencoded({ extended: true }));
 // Use the signnext routes
 app.use('/', signnextRoutes);
 
-// Use the organizehackathon routes
+
 app.use('/', organizeHackathonRoutes);
 app.use('/', formteamsroutes);
+app.use('/',findteamsroutes); 
+
 
 
 // LANDING PAGE ROUTE
-app.get('/findhackathon', (req, res) => {
-    res.render('findhackathon');
-});
+
 
 // Test database connection route
 app.get('/test-db', (req, res) => {

@@ -7,10 +7,7 @@ router.get('/organize', (req, res) => {
     res.render('organizehackathon');  // Render organizehackathon.ejs
 });
 
-// GET /findhackathon to render the search page
-router.get('/findhackathon', (req, res) => {
-    res.render('findhackathon');
-});
+
 
 // POST /organize to handle event registration
 router.post('/organize', (req, res) => {
