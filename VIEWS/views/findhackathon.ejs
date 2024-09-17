@@ -58,19 +58,24 @@
 
 
     <div class="container">
+
+      <% if(data){ %>
+        
         <div class="row">
+
+          <% data.forEach(function(i){ %>
          
           <div class="col-md-6">
            
             <div class="hackathon-box">
-                <h3 class="hackathon-name">Hackathon Name</h3>
-                <p class="location">1234 Elm Street, Apt 56, Springfield, IL 62704, USA</p>
-                <p class="prize">Prize money: 100000</p>
+                <h3 class="hackathon-name"><%=i.eventName %></h3>
+                <p class="location"><%= i.eventAddress %></p>
+                <p class="prize">Organized by <%= i.organizationName %></p>
         
                 <div class="details">
                   <div class="detail-box">Online/Offline</div>
-                  <div class="detail-box">Start Date</div>
-                  <div class="detail-box">End Date</div>
+                  <div class="detail-box"><%=i.eventStartDate %></div>
+                  <div class="detail-box"><%=i.eventTheme %></div>
                 </div>
         
                 <div class="buttons-container">
@@ -79,6 +84,8 @@
                 </div>
               </div>
             </div>
+
+          <% })} %>
           
           <div class="col-md-6">
 
