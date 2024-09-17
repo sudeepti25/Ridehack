@@ -9,31 +9,28 @@
                    
     </style>
 </head>
-<body><div class="heading">
+<body>
+    <div class="heading">
     <h1>Form Your Own Team</h1>
            <h3>Powered By BrainBridges</h3>
 </div>
-<nav id="sidebar"></nav>
+<!-- side bar option -->
+<div class="hamburger-menu">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+
+<nav id="sidebar">
     <!-- Close button -->
     <div class="close-btn">&times;</div>
     <div class="dropdown">
     <ul>
-
-    <div class="container">
-        <% people.forEach(function(i){ %>
-            <div class="box">
-                <h2><%= i.name %></h2>
-                <p><%= i.skills %></p>
-                <button onclick="handleclick('<%=i.id%>')" type="button">View More</button>
-            </div>
-            
-       <% }); %>
-       
-    </div>
-    <!-- Year Dropdown -->
+        <!-- Year Dropdown -->
         <li>
             <a href="#" class="dropdown-toggle">Year</a>
-            <ul class="dropdown-menu year-filters show ">
+            <ul class="dropdown-menu year-filters show">
                 <li>
                     <label><input type="checkbox" name="year" value="1st" data-filter="1st"> 1st Year</label>
                 </li>
@@ -52,7 +49,7 @@
         <!-- Skills Dropdown -->
         <li>
             <a href="#" class="dropdown-toggle">Skills</a>
-            <ul class="dropdown-menu skills-filters show ">
+            <ul class="dropdown-menu skills-filters show">
                 <li>
                     <label><input type="checkbox" name="skills" value="AI" data-filter="AI"> AI</label>
                 </li>
@@ -112,13 +109,62 @@
     </ul>
     </div>
 </nav>
-    <script>
 
-        function handleclick(id)
-        {   
-            window.location.href=`/portfolio?id=${id}`;
+
+
+<!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search for names..">
+    <button id="search-button">Search</button>
+</div>
+<div class="container">
+    <% people.forEach(function(i){ %>
+        <div class="box">
+            <h2><%= i.name %></h2>
+            <p><%= i.skills %></p>
+            <button onclick="handleclick('<%= i.id%>')" type="button">View More</button>
+        </div>
+        
+   <% }); %>
+   
+</div>
+
+    <script>
+        function searchFunction() {
+            var input, filter, container, boxes, h2, i, txtValue;
+            input = document.getElementById('searchBar');
+            filter = input.value.toUpperCase();
+            container = document.getElementById("teamContainer");
+            boxes = container.getElementsByClassName('box');
+
+            for (i = 0; i < boxes.length; i++) {
+                h2 = boxes[i].getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    boxes[i].style.display = "";
+                } else {
+                    boxes[i].style.display = "none";
+                }
+            }
         }
-        const filters = {
+// side bar
+const hamburger = document.querySelector('.hamburger-menu');
+const sidebar = document.getElementById('sidebar');
+const closeBtn = document.querySelector('.close-btn');
+
+// Toggle sidebar when hamburger is clicked
+hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+});
+
+// Close sidebar when close button is clicked
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+});
+
+//side bar options
+// Object to store selected filters
+const filters = {
     year: [],
     skills: [],
     language: [],
@@ -134,6 +180,7 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function(ev
     dropdownMenu.classList.toggle('show');
 });
 
+
 // Handle click event for dropdown toggle
 document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
     toggle.addEventListener('click', function(event) {
@@ -143,6 +190,41 @@ document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
         
         // Toggle the 'show' class to display/hide the dropdown menu
         dropdownMenu.classList.toggle('show');
+    });
+});
+
+// Close dropdown menu if clicked outside
+document.addEventListener('click', function(event) {
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        
+        if (!dropdown.contains(event.target)) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
+
+
+// Handle click event for dropdown toggle
+document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        const parent = this.parentElement;
+        const dropdownMenu = parent.querySelector('.dropdown-menu');
+        
+        // Toggle the 'show' class to display/hide the dropdown menu
+        dropdownMenu.classList.toggle('show');
+    });
+});
+
+// Close dropdown menu if clicked outside
+document.addEventListener('click', function(event) {
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        
+        if (!dropdown.contains(event.target)) {
+            dropdownMenu.classList.remove('show');
+        }
     });
 });
 
@@ -165,46 +247,6 @@ document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
                 });
             });
         });
-
-        // Close dropdown menu if clicked outside
-document.addEventListener('click', function(event) {
-    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-        
-        if (!dropdown.contains(event.target)) {
-            dropdownMenu.classList.remove('show');
-        }
-    });
-});
-// Handle click event for dropdown toggle
-document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-
-        // Toggle the dropdown menu visibility
-        const dropdownMenu = this.nextElementSibling; // Get the dropdown menu
-        dropdownMenu.classList.toggle('show');
-
-        // Close other dropdowns
-        document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
-            if (menu !== dropdownMenu) {
-                menu.classList.remove('show');
-            }
-        });
-    });
-});
-
-// Close dropdown menu if clicked outside
-document.addEventListener('click', function(event) {
-    // If the click is outside of the dropdowns
-    if (!event.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
-            menu.classList.remove('show');
-        });
-    }
-});
-    </script>
-    
+    </script>  
 </body>
-
 </html>
