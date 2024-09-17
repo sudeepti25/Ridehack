@@ -88,8 +88,11 @@ router.get('/portfolio', (req, res) => {
             
         }
 
+
         console.log(result);
-        res.render('portfolio',{ user:result[0]});
+
+       
+      return res.render('portfolio',{user:result[0]});
     });
 });
 
