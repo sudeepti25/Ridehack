@@ -12,7 +12,7 @@ router.get("/teampage",(req, res) => {
 router.get('/teams',(req,res)=>{
 
     
-    if (!req.session || !req.session.user || !req.session.user.id) {
+    if (!req.session || !req.session.user || !req.session.user.user_id ){
         return res.status(404).send("USER NOT LOGGED IN");
     }
 
@@ -21,7 +21,7 @@ router.get('/teams',(req,res)=>{
     const value =req.query.value;
 
 
-    const sql = `SELECT name,skills,id FROM portfolio WHERE domain=?`;
+    const sql = `SELECT skills,user_id FROM portfolio WHERE domain=?`;
 
     db.query(sql,[value],(err,result)=>{
 
@@ -55,7 +55,7 @@ router.post('/filter-users', (req, res) => {
 
     // Construct SQL query based on the selected filters
     let query = `
-        SELECT portfolio.name, portfolio.skills, portfolio.college 
+        SELECT portfolio.skills, portfolio.college 
         FROM portfolio 
         WHERE 1=1`;
 

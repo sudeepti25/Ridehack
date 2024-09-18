@@ -74,7 +74,7 @@ router.get('/portfolio', (req, res) => {
    const id =req.query.id;
     
     // Fetch the user details from the database
-    const sql = "SELECT * FROM portfolio WHERE id = ?";
+    const sql = "SELECT * FROM portfolio WHERE user_id = ?";
     db.query(sql, [id], (err, result) => {
         if (err) {
             console.error("Error fetching user details: ", err);
