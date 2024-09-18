@@ -46,7 +46,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="tel"],
-textarea {
+textarea,select {
     width: calc(100% - 18px);
     padding: 8px;
     border: 1px solid #ccc;
@@ -60,7 +60,8 @@ input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="password"]:hover,
 input[type="tel"]:hover,
-textarea:hover {
+textarea:hover,
+select:hover {
     color: #000;
     font-weight: bolder;
     background-color: #fff;
