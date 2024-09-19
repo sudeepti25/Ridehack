@@ -10,8 +10,33 @@ router.get('/signnext', (req, res) => {
 });
 
 // Handle Portfolio Form Submission
+// router.post('/signnext', (req, res) => {
+//     const {year, domain, college, projects, bio, skills, experience } = req.body;
+
+//     const userId = req.session.user ? req.session.user.user_id : null;
+
+//     if (!userId) {
+//         return res.status(403).send('User not logged in');
+//     }
+
+//     console.log({year, domain, college, projects, bio, skills, experience });
+
+//     // Fix: Correct the number of placeholders to match the fields being inserted
+//     const sql = 'INSERT INTO portfolio (user_id, domain, skills, college, projects, bio, experience,year) VALUES (?, ?, ?, ?, ?, ?, ?,?)';
+    
+//     db.query(sql, [userId,year, domain, college, projects, bio, skills, experience], (err, result) => {
+//         if (err) {
+//             console.error(err);
+//             return res.status(500).send('Error saving portfolio data!');
+//         }
+        
+//         // Redirect only after the database operation is complete
+//         res.redirect('/landing_page');
+        
+//     });
+// });
 router.post('/signnext', (req, res) => {
-    const {year, domain, college, projects, bio, skills, experience } = req.body;
+    const { year, domain, college, projects, bio, skills, experience } = req.body;
 
     const userId = req.session.user ? req.session.user.user_id : null;
 
@@ -19,20 +44,19 @@ router.post('/signnext', (req, res) => {
         return res.status(403).send('User not logged in');
     }
 
-    console.log({year, domain, college, projects, bio, skills, experience });
+    console.log({ year, domain, college, projects, bio, skills, experience });
 
-    // Fix: Correct the number of placeholders to match the fields being inserted
-    const sql = 'INSERT INTO portfolio (user_id, domain, college, projects, bio, skills, experience) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    // Correct SQL query with matching order of placeholders and values
+    const sql = 'INSERT INTO portfolio (user_id, domain, skills, college, projects, bio, experience, year) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
     
-    db.query(sql, [userId,year, domain, college, projects, bio, skills, experience], (err, result) => {
+    db.query(sql, [userId, domain, skills, college, projects, bio, experience, year], (err, result) => {
         if (err) {
             console.error(err);
             return res.status(500).send('Error saving portfolio data!');
         }
-        
+
         // Redirect only after the database operation is complete
         res.redirect('/landing_page');
-        
     });
 });
 
