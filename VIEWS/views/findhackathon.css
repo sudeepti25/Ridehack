@@ -1,5 +1,5 @@
 
-header {
+/* header {
     width: 100%;
     margin: auto;
     display: flex;
@@ -64,7 +64,72 @@ header {
   
   .login-signup-button button:hover {
     background-color: #b7b5b527;
-  }
+  } */
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    padding: 1rem 2rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+nav {
+    display: flex;
+    column-gap: 2rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+nav a {
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #007BFF;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
+    font-size: 1.7rem;
+    
+}
+
+.logo img {
+    width: 4rem;
+}
+
+.login-signup-button {
+    display: flex;
+    gap: 1rem;
+    border: none;
+}
+
+.login-signup-button button {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    nav a {
+        font-size: 1rem;
+    }
+}
+
 
 .heading
 {
@@ -193,6 +258,7 @@ header {
 {
     margin-left:850px;
     margin-top: 41px;
+    
     height: 52px;
     width:190px;
     background-color:rgb(85, 85, 240);
