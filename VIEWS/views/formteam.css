@@ -74,6 +74,7 @@ nav a:hover {
 .login-signup-button {
     display: flex;
     gap: 1rem;
+    border:none;
 }
 
 .login-signup-button button {
@@ -81,16 +82,17 @@ nav a:hover {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 0.4rem;
-    border: 2px solid #007BFF;
+     /* border-radius: 0.4rem; */
+    /* border: 2px solid #007BFF;  */
+    border:none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
+ }
 
-.login-signup-button button:hover {
-    background-color: #007BFF;
-    color: white;
-}
+/* .login-signup-button button:hover {
+    /* background-color: #007BFF; */
+    /* color: white; */
+/* }  */
 
 .main-section {
     margin-top: 8rem;

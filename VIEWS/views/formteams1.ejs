@@ -1,135 +1,128 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Your Team</title>
     <link rel="stylesheet" href="formteams1.css">
-    <style>
-                   
-    </style>
 </head>
 <body>
     <div class="heading">
-    <h1>Form Your Own Team</h1>
-           <h3>Powered By BrainBridges</h3>
-</div>
-<!-- side bar option -->
-<div class="hamburger-menu">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-</div>
-
-
-<nav id="sidebar">
-    <!-- Close button -->
-    <div class="close-btn">&times;</div>
-    <div class="dropdown">
-    <ul>
-        
-        <li>
-            <a href="#" class="dropdown-toggle">Year</a>
-            <ul class="dropdown-menu year-filters show">
-                <li>
-                    <label><input type="checkbox" name="year" value="1" data-filter="1"> 1</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="year" value="2" data-filter="2"> 2</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="year" value="3" data-filter="3"> 3</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="year" value="4" data-filter="4"> 4</label>
-                </li>
-            </ul>
-        </li>
-
-        <!-- Skills Dropdown -->
-        <li>
-            <a href="#" class="dropdown-toggle">Skills</a>
-            <ul class="dropdown-menu skills-filters show">
-                <li>
-                    <label><input type="checkbox" name="skills" value="AI" data-filter="AI"> AI</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="skills" value="ML" data-filter="ML"> ML</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="skills" value="Web Development" data-filter="Web Development"> Web Development</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="skills" value="App Development" data-filter="App Development"> App Development</label>
-                </li>
-            </ul>
-        </li>
-
-        <!-- Languages Dropdown -->
-        <li>
-            <a href="#" class="dropdown-toggle">Languages</a>
-            <ul class="dropdown-menu language-filters show">
-                <li>
-                    <label><input type="checkbox" name="language" value="C/C++" data-filter="C/C++"> C/C++</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="Java" data-filter="Java"> Java</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="Flutter" data-filter="Flutter"> Flutter</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="JavaScript" data-filter="JavaScript"> JavaScript</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="Kotlin" data-filter="Kotlin"> Kotlin</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="Swift" data-filter="Swift"> Swift</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="Go" data-filter="Go"> Go</label>
-                </li>
-            </ul>
-        </li>
-
-        <!-- College Dropdown -->
-        <li>
-            <a href="#" class="dropdown-toggle">College</a>
-            <ul class="dropdown-menu college-filters show">
-                <li>
-                    <label><input type="checkbox" name="college" value="Global" data-filter="Global"> Global Universities</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="college" value="Own University" data-filter="Own University"> Within University</label>
-                </li>
-            </ul>
-      
-        </li>
-    </ul>
+        <h1>Form Your Own Team</h1>
+        <h3>Powered By BrainBridges</h3>
     </div>
-</nav>
 
+    <!-- Side bar options -->
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
 
-
-<!-- Search Bar -->
-<div class="search-container">
-    <input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search for names..">
-    <button id="search-button">Search</button>
-</div>
-<div class="container">
-    <% people.forEach(function(i){ %>
-        <div class="box">
-            <h2><%= i.name %></h2>
-            <p><%= i.skills %></p>
-            <button onclick="handleclick('<%= i.user_id%>')" type="button">View More</button>
+    <nav id="sidebar">
+        <!-- Close button -->
+        <div class="close-btn">&times;</div>
+        <div class="dropdown">
+            <ul>
+                <!-- Filters for year, skills, languages, and college -->
+                <li>
+                    <a href="#" class="dropdown-toggle" id="yearToggle">Year</a>
+                    <ul class="dropdown-menu year-filters" id="yearDropdown">
+                        <li><label><input type="checkbox" name="year" value="1"> 1</label></li>
+                        <li><label><input type="checkbox" name="year" value="2"> 2</label></li>
+                        <li><label><input type="checkbox" name="year" value="3"> 3</label></li>
+                        <li><label><input type="checkbox" name="year" value="4"> 4</label></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" id="skillsToggle">Skills</a>
+                    <ul class="dropdown-menu skills-filters" id="skillsDropdown">
+                        <li><label><input type="checkbox" name="skills" value="AI"> AI</label></li>
+                        <li><label><input type="checkbox" name="skills" value="ML"> ML</label></li>
+                        <li><label><input type="checkbox" name="skills" value="Web Development"> Web Development</label></li>
+                        <li><label><input type="checkbox" name="skills" value="App Development"> App Development</label></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" id="languagesToggle">Languages</a>
+                    <ul class="dropdown-menu language-filters" id="languagesDropdown">
+                        <li><label><input type="checkbox" name="language" value="C/C++"> C/C++</label></li>
+                        <li><label><input type="checkbox" name="language" value="Java"> Java</label></li>
+                        <li><label><input type="checkbox" name="language" value="Flutter"> Flutter</label></li>
+                        <li><label><input type="checkbox" name="language" value="JavaScript"> JavaScript</label></li>
+                        <li><label><input type="checkbox" name="language" value="Kotlin"> Kotlin</label></li>
+                        <li><label><input type="checkbox" name="language" value="Swift"> Swift</label></li>
+                        <li><label><input type="checkbox" name="language" value="Go"> Go</label></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" id="collegeToggle">College</a>
+                    <ul class="dropdown-menu college-filters" id="collegeDropdown">
+                        <li><label><input type="checkbox" name="college" value="Global"> Global Universities</label></li>
+                        <li><label><input type="checkbox" name="college" value="Own University"> Within University</label></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        
-   <% }); %>
-   
-</div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search for names..">
+        <button id="search-button">Search</button>
+    </div>
+
+    <div class="container" id="teamContainer">
+        <% people.forEach(function(i){ %>
+            <div class="box">
+                <h2><%= i.name %></h2>
+                <p><%= i.skills %></p>
+                <button onclick="handleclick('<%= i.user_id%>')" type="button">View More</button>
+            </div>
+        <% }); %>
+    </div>
 
     <script>
+        // Sidebar Toggle Functionality
+        const hamburger = document.querySelector('.hamburger-menu');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.querySelector('.close-btn');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+        });
+
+        // Dropdown Toggle Functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function(event) {
+                event.preventDefault();
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.classList.toggle('show');
+
+                // Close other dropdowns when one is opened
+                document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                    }
+                });
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                if (!dropdown.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        });
+
+        // Search Functionality
         function searchFunction() {
             var input, filter, container, boxes, h2, i, txtValue;
             input = document.getElementById('searchBar');
@@ -147,150 +140,34 @@
                 }
             }
         }
-// side bar
-const hamburger = document.querySelector('.hamburger-menu');
-const sidebar = document.getElementById('sidebar');
-const closeBtn = document.querySelector('.close-btn');
 
-// Toggle sidebar when hamburger is clicked
-hamburger.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-});
-
-// Close sidebar when close button is clicked
-closeBtn.addEventListener('click', () => {
-    sidebar.classList.remove('active');
-});
-
-//side bar options
-// Object to store selected filters
-const filters = {
-    year: [],
-    skills: [],
-    language: [],
-    college: []
-};
-
-// Handle click event for dropdown toggle
-document.querySelector('.dropdown-toggle').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default link behavior
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    
-    // Toggle the 'show' class to display/hide the dropdown menu
-    dropdownMenu.classList.toggle('show');
-});
-
-
-// Handle click event for dropdown toggle
-document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        const parent = this.parentElement;
-        const dropdownMenu = parent.querySelector('.dropdown-menu');
-        
-        // Toggle the 'show' class to display/hide the dropdown menu
-        dropdownMenu.classList.toggle('show');
-    });
-});
-
-// Close dropdown menu if clicked outside
-document.addEventListener('click', function(event) {
-    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-        
-        if (!dropdown.contains(event.target)) {
-            dropdownMenu.classList.remove('show');
+        // Redirect function
+        function handleclick(event){
+            window.location.href=`/portfolio?id=${event}`;
         }
-    });
-});
 
+        // Filter Functionality to send data to the backend
+        document.getElementById('search-button').addEventListener('click', function() {
+            const skills = [...document.querySelectorAll('input[name="skills"]:checked')].map(cb => cb.value);
+            const languages = [...document.querySelectorAll('input[name="language"]:checked')].map(cb => cb.value);
+            const college = [...document.querySelectorAll('input[name="college"]:checked')].map(cb => cb.value);
+            const year = [...document.querySelectorAll('input[name="year"]:checked')].map(cb => cb.value);
 
-// Handle click event for dropdown toggle
-document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        const parent = this.parentElement;
-        const dropdownMenu = parent.querySelector('.dropdown-menu');
-        
-        // Toggle the 'show' class to display/hide the dropdown menu
-        dropdownMenu.classList.toggle('show');
-    });
-});
-
-// Close dropdown menu if clicked outside
-document.addEventListener('click', function(event) {
-    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-        
-        if (!dropdown.contains(event.target)) {
-            dropdownMenu.classList.remove('show');
-        }
-    });
-});
-
-// Toggle dropdown menu visibility
-document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-            toggle.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent default link behavior
-
-                // Get the dropdown menu
-                const dropdownMenu = this.nextElementSibling;
-
-                // Toggle the 'show' class to display/hide the dropdown menu
-                dropdownMenu.classList.toggle('show');
-
-                // Close other dropdowns
-                document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
-                    if (menu !== dropdownMenu) {
-                        menu.classList.remove('show');
-                    }
-                });
-            });
+            // Send POST request with the filters
+            fetch('/filter-users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ skills, languages, college, year })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update the UI with the filtered results (you can replace this with dynamic rendering)
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
         });
-
-document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-        // Collect selected filters
-        let skills = Array.from(document.querySelectorAll('input[name="skills"]:checked')).map(cb => cb.value);
-        let languages = Array.from(document.querySelectorAll('input[name="language"]:checked')).map(cb => cb.value);
-        let college = Array.from(document.querySelectorAll('input[name="college"]:checked')).map(cb => cb.value);
-        
-        // Send the selected filters to the backend
-        fetch('/filter-users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ skills, languages, college })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Update the frontend with filtered results
-            const container = document.querySelector('.container');
-            container.innerHTML = ''; // Clear the existing content
-
-            data.forEach(user => {
-                const box = document.createElement('div');
-                box.classList.add('box');
-                box.innerHTML = `
-                    <h2>${user.name}</h2>
-                    <p>${user.skills}</p>
-                    <p>${user.college}</p>
-                    <button type="button">View More</button>
-                `;
-                container.appendChild(box);
-            });
-        })
-        .catch(error => console.error('Error fetching users:', error));
-    });
-});
-
-
-function handleclick(event){
-    window.location.href=`/portfolio?id=${event}`;
-}
-
-
-    </script>  
+    </script>
 </body>
 </html>

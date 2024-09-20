@@ -5,6 +5,70 @@ body, html {
     font-family: 'Open Sans', Arial, sans-serif;
     scroll-behavior: smooth;
 }
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    padding: 1rem 2rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+nav {
+    display: flex;
+    column-gap: 2rem;
+    font-family: "Quicksand", sans-serif;
+}
+
+nav a {
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #007BFF;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
+    font-size: 1.7rem;
+}
+
+.logo img {
+    width: 4rem;
+}
+
+.login-signup-button {
+    display: flex;
+    gap: 1rem;
+    border:none;
+}
+
+.login-signup-button button {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+     /* border-radius: 0.4rem; */
+    /* border: 2px solid #007BFF;  */
+    border:none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+ }
+
+/* .login-signup-button button:hover {
+    /* background-color: #007BFF; */
+    /* color: white; */
+/* }  */
 
 /* Hero Section */
 .hero-image {

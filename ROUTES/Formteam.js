@@ -2,88 +2,88 @@ const express = require('express');
 const router = express.Router();
 const db = require('../CONNECTIONS/Connect');
 
-
-
-router.get("/teampage",(req, res) => {
-
+// Route to render team page
+router.get("/teampage", (req, res) => {
     res.render('formteam');
- });
+});
 
-router.get('/teams',(req,res)=>{
+// Route to fetch teams based on domain
+router.get('/teams', (req, res) => {
 
-    
-    if (!req.session || !req.session.user || !req.session.user.user_id ){
+    if (!req.session || !req.session.user || !req.session.user.user_id) {
         return res.status(404).send("USER NOT LOGGED IN");
     }
 
-   
+    const value = req.query.value;
 
-    const value =req.query.value;
+    // SQL query to join users table and fetch name, skills, and user_id
+    const sql = `
+        SELECT u.name, p.skills, p.user_id 
+        FROM portfolio p 
+        JOIN users u ON p.user_id = u.user_id 
+        WHERE p.domain = ?`;
 
-
-    const sql = `SELECT skills,user_id FROM portfolio WHERE domain=?`;
-
-    db.query(sql,[value],(err,result)=>{
-
-        if(err)
-        {
-            return res.status(500).send("ERROR FECTHING");
-
+    db.query(sql, [value], (err, result) => {
+        if (err) {
+            return res.status(500).send("ERROR FETCHING");
         }
 
-        if(!result)
-        {
+        if (!result || result.length === 0) {
             return res.status(404).send("PEOPLE NOT FOUND");
         }
 
-       
+        res.render('formteams1', { people: result });
+    });
 
-       
+});
 
-        res.render('formteams1',{people:result});
-
-})
-
-    
-
-
-
-})
-
+// Route to filter users based on skills, languages, and college
+// Route to filter users based on skills, languages, year, and college
 router.post('/filter-users', (req, res) => {
-    const { skills, languages, college } = req.body;
+    const { skills, languages, college, year } = req.body;
 
-    // Construct SQL query based on the selected filters
+    // Construct SQL query with dynamic filters
     let query = `
-        SELECT portfolio.skills, portfolio.college 
-        FROM portfolio 
+        SELECT u.name, p.skills, p.college, p.year 
+        FROM portfolio p 
+        JOIN users u ON p.user_id = u.user_id 
         WHERE 1=1`;
 
     let queryParams = [];
 
-    // Add filters dynamically to the query
-    if (skills.length > 0) {
-        query += " AND portfolio.skills IN (?)";
-        queryParams.push(skills);
+    // Filter by skills (using FIND_IN_SET for comma-separated values)
+    if (skills && skills.length > 0) {
+        query += " AND FIND_IN_SET(?, p.skills)";
+        queryParams.push(skills); // Match specific skill in comma-separated skills
     }
-    if (languages.length > 0) {
-        query += " AND portfolio.skills LIKE ?";
-        queryParams.push(`%${languages}%`);  // Assuming languages are stored within skills as a string
+
+    // Filter by languages (assuming languages are stored as part of skills or separately)
+    if (languages && languages.length > 0) {
+        query += " AND FIND_IN_SET(?, p.skills)"; // Adjust if languages are stored separately
+        queryParams.push(languages);  // Match specific language
     }
-    if (college.length > 0) {
-        query += " AND portfolio.college IN (?)";
-        queryParams.push(college);
+
+    // Filter by year
+    if (year && year.length > 0) {
+        query += " AND p.year = ?";
+        queryParams.push(year);
+    }
+
+    // Filter by college
+    if (college && college.length > 0) {
+        query += " AND p.college = ?";
+        queryParams.push(college);  // Exact match for college
     }
 
     // Execute the query
     db.query(query, queryParams, (err, results) => {
         if (err) {
             console.error(err);
-            res.status(500).send('Error fetching users');
-        } else {
-            res.json(results); // Send the filtered users back to the frontend
+            return res.status(500).send('Error fetching users');
         }
+
+        res.json(results); // Send the filtered users back to the frontend
     });
 });
 
-module.exports=router;
+module.exports = router;
