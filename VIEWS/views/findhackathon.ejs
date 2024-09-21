@@ -33,19 +33,23 @@
         </nav>
         <div class="login-signup-button">
             <button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="40" fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
               </svg>
             </button>
         </div>
     </header>
+    <br>
+    <br>
+    <br>
+    <br>
     
     <div class="heading">Hackathons <span style="color:rgb(76, 76, 247)">awaits</span>
     </div>
 
     <div class="nav-search">
-        <input type="text" placeholder=" Search Hackathons..." class="search-input">
+        <input type="text"  placeholder=" Search Hackathons..." class="search-input">
         <div class="search-icon">
             <button><i class="fa-solid fa-magnifying-glass"></i></button>      
         </div>
@@ -80,7 +84,7 @@
                 <div class="buttons-container">
                     <button class="apply-btn" onclick="handleclick('<%= i.eventName %>')" type="button">View More</button>
 
-                    <button class="save-btn">Save</button>
+                    <a href="/saved"><button class="save-btn">Save</button></a>
                 </div>
               </div>
             </div>
