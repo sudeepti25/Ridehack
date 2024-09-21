@@ -5,66 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Your Team</title>
     <link rel="stylesheet" href="formteams1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+
+    
 </head>
 <body>
-    <div class="heading">
-        <h1>Form Your Own Team</h1>
-        <h3>Powered By BrainBridges</h3>
-    </div>
 
-    <!-- Side bar options -->
-    <div class="hamburger-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+<header>
+    <div class="logo">
+        <img src="logo.jpg.jpeg" alt="no logo">
+        <h3>BrainBridges</h3>
     </div>
-
-    <nav id="sidebar">
-        <!-- Close button -->
-        <div class="close-btn">&times;</div>
-        <div class="dropdown">
-            <ul>
-                <!-- Filters for year, skills, languages, and college -->
-                <li>
-                    <a href="#" class="dropdown-toggle" id="yearToggle">Year</a>
-                    <ul class="dropdown-menu year-filters" id="yearDropdown">
-                        <li><label><input type="checkbox" name="year" value="1"> 1</label></li>
-                        <li><label><input type="checkbox" name="year" value="2"> 2</label></li>
-                        <li><label><input type="checkbox" name="year" value="3"> 3</label></li>
-                        <li><label><input type="checkbox" name="year" value="4"> 4</label></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="dropdown-toggle" id="skillsToggle">Skills</a>
-                    <ul class="dropdown-menu skills-filters" id="skillsDropdown">
-                        <li><label><input type="checkbox" name="skills" value="AI"> AI</label></li>
-                        <li><label><input type="checkbox" name="skills" value="ML"> ML</label></li>
-                        <li><label><input type="checkbox" name="skills" value="Web Development"> Web Development</label></li>
-                        <li><label><input type="checkbox" name="skills" value="App Development"> App Development</label></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="dropdown-toggle" id="languagesToggle">Languages</a>
-                    <ul class="dropdown-menu language-filters" id="languagesDropdown">
-                        <li><label><input type="checkbox" name="language" value="C/C++"> C/C++</label></li>
-                        <li><label><input type="checkbox" name="language" value="Java"> Java</label></li>
-                        <li><label><input type="checkbox" name="language" value="Flutter"> Flutter</label></li>
-                        <li><label><input type="checkbox" name="language" value="JavaScript"> JavaScript</label></li>
-                        <li><label><input type="checkbox" name="language" value="Kotlin"> Kotlin</label></li>
-                        <li><label><input type="checkbox" name="language" value="Swift"> Swift</label></li>
-                        <li><label><input type="checkbox" name="language" value="Go"> Go</label></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="dropdown-toggle" id="collegeToggle">College</a>
-                    <ul class="dropdown-menu college-filters" id="collegeDropdown">
-                        <li><label><input type="checkbox" name="college" value="Global"> Global Universities</label></li>
-                        <li><label><input type="checkbox" name="college" value="Own University"> Within University</label></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="profile.html">My Profile</a>
+        <a href="messages.html">Messages</a>
+        <a href="#">Requests</a>
+        <a href="#">Info</a>
+        <a href="about.html">About Us</a>
+        
     </nav>
+    <div class="login-signup-button">
+
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" style="background-color: white; color: black; border:none; ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-filter" viewBox="0 0 16 16">
+                <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+              </svg>
+           
+           
+        </button>
+        
+    </div>
+
+</header>
+<div class="heading">
+    <h1>Form Your Own Team</h1>
+           <h3>Powered By BrainBridges</h3>
+</div>
+<!-- side bar option -->
+
+
+ 
+  
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Filters</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        
+      </div>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width:250px;">
+         Years
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width:250px;">
+            College
+           </button>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Action</a></li>
+             <li><a class="dropdown-item" href="#">Another action</a></li>
+             <li><a class="dropdown-item" href="#">Something else here</a></li>
+           </ul>
+
+           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width:250px;">
+            College
+           </button>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Action</a></li>
+             <li><a class="dropdown-item" href="#">Another action</a></li>
+             <li><a class="dropdown-item" href="#">Something else here</a></li>
+           </ul>
+      </div>
+    </div>
+  </div>
+
+
+
 
     <!-- Search Bar -->
     <div class="search-container">
@@ -84,10 +108,7 @@
 
     <script>
         // Sidebar Toggle Functionality
-        const hamburger = document.querySelector('.hamburger-menu');
-        const sidebar = document.getElementById('sidebar');
-        const closeBtn = document.querySelector('.close-btn');
-
+       
         hamburger.addEventListener('click', () => {
             sidebar.classList.toggle('active');
         });
@@ -140,34 +161,151 @@
                 }
             }
         }
+// side bar
+const hamburger = document.querySelector('.hamburger-menu');
+const sidebar = document.getElementById('sidebar');
+const closeBtn = document.querySelector('.close-btn');
 
-        // Redirect function
-        function handleclick(event){
-            window.location.href=`/portfolio?id=${event}`;
+// Toggle sidebar when hamburger is clicked
+hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+});
+
+// Close sidebar when close button is clicked
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+});
+
+//side bar options
+// Object to store selected filters
+const filters = {
+    year: [],
+    skills: [],
+    language: [],
+    college: []
+};
+
+// Handle click event for dropdown toggle
+document.querySelector('.dropdown-toggle').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    // Toggle the 'show' class to display/hide the dropdown menu
+    dropdownMenu.classList.toggle('show');
+});
+
+
+// Handle click event for dropdown toggle
+document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        const parent = this.parentElement;
+        const dropdownMenu = parent.querySelector('.dropdown-menu');
+        
+        // Toggle the 'show' class to display/hide the dropdown menu
+        dropdownMenu.classList.toggle('show');
+    });
+});
+
+// Close dropdown menu if clicked outside
+document.addEventListener('click', function(event) {
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        
+        if (!dropdown.contains(event.target)) {
+            dropdownMenu.classList.remove('show');
         }
+    });
+});
 
-        // Filter Functionality to send data to the backend
-        document.getElementById('search-button').addEventListener('click', function() {
-            const skills = [...document.querySelectorAll('input[name="skills"]:checked')].map(cb => cb.value);
-            const languages = [...document.querySelectorAll('input[name="language"]:checked')].map(cb => cb.value);
-            const college = [...document.querySelectorAll('input[name="college"]:checked')].map(cb => cb.value);
-            const year = [...document.querySelectorAll('input[name="year"]:checked')].map(cb => cb.value);
 
-            // Send POST request with the filters
-            fetch('/filter-users', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ skills, languages, college, year })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Update the UI with the filtered results (you can replace this with dynamic rendering)
-                console.log(data);
-            })
-            .catch(error => console.error('Error:', error));
+// Handle click event for dropdown toggle
+document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        const parent = this.parentElement;
+        const dropdownMenu = parent.querySelector('.dropdown-menu');
+        
+        // Toggle the 'show' class to display/hide the dropdown menu
+        dropdownMenu.classList.toggle('show');
+    });
+});
+
+// Close dropdown menu if clicked outside
+document.addEventListener('click', function(event) {
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        
+        if (!dropdown.contains(event.target)) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
+
+// Toggle dropdown menu visibility
+document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+
+                // Get the dropdown menu
+                const dropdownMenu = this.nextElementSibling;
+
+                // Toggle the 'show' class to display/hide the dropdown menu
+                dropdownMenu.classList.toggle('show');
+
+                // Close other dropdowns
+                document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                    }
+                });
+            });
         });
-    </script>
+
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        // Collect selected filters
+        let skills = Array.from(document.querySelectorAll('input[name="skills"]:checked')).map(cb => cb.value);
+        let languages = Array.from(document.querySelectorAll('input[name="language"]:checked')).map(cb => cb.value);
+        let college = Array.from(document.querySelectorAll('input[name="college"]:checked')).map(cb => cb.value);
+        
+        // Send the selected filters to the backend
+        fetch('/filter-users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ skills, languages, college })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Update the frontend with filtered results
+            const container = document.querySelector('.container');
+            container.innerHTML = ''; // Clear the existing content
+
+            data.forEach(user => {
+                const box = document.createElement('div');
+                box.classList.add('box');
+                box.innerHTML = `
+                    <h2>${user.name}</h2>
+                    <p>${user.skills}</p>
+                    <p>${user.college}</p>
+                    <button type="button">View More</button>
+                `;
+                container.appendChild(box);
+            });
+        })
+        .catch(error => console.error('Error fetching users:', error));
+    });
+});
+
+
+function handleclick(event){
+    window.location.href=`/portfolio?id=${event}`;
+}
+
+
+    </script>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
