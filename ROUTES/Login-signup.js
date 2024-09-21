@@ -3,6 +3,9 @@ const bcrypt = require('bcryptjs');
 const router = express.Router();
 const db = require('../CONNECTIONS/Connect'); // Importing the connection pool
 
+
+
+
 // LANDING PAGE ROUTE
 router.get('/landing_page', (req, res) => {
     const user = req.session.user;
@@ -77,6 +80,13 @@ router.post('/login', (req, res) => {
 
         // Store user data in session
         req.session.user = user;
+
+
+        
+           
+        
+
+
 
         
         res.redirect('/landing_page');

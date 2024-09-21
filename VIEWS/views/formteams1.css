@@ -3,8 +3,87 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-   background-image: linear-gradient(to right, #cad6d4, #28527b);
+
+
+ header {
+   width: 100%;
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+   font-family: "Quicksand", sans-serif;
+ 
+ }
+
+ .btn
+ {
+   background-color:none;
+ }
+
+
+
+
+
+ #offcanvasExample
+ {
+   width: 300px;
+ }
+
+
+ 
+ nav {
+   display: flex;
+   column-gap: 2rem;
+   font-family: "Quicksand", sans-serif;
+ 
+ }
+ 
+ nav a {
+   color: black;
+   font-size: 1.3rem;
+   font-weight: bolder;
+   text-decoration: none;
+ }
+ 
+ nav a:hover {
+   color: #00bcd4;
+ }
+ 
+ 
+ 
+ .logo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   column-gap: 0.3rem;
+   text-align: center;
+   font-size: 1.7rem;
+ }
+ 
+ .logo img {
+   width: 4rem;
+ }
+ 
+ .login-signup-button button {
+   background-color: white;
+   text-decoration: none;
+   padding: 0.5rem;
+   font-size: 1rem;
+   font-weight: 600;
+   border-radius: 0.4rem;
+ }
+ 
+ .login-signup-button {
+   padding: 2rem;
+ }
+ 
+ .login-button {
+   padding-right: 3rem;
+ }
+ 
+ .login-signup-button button:hover {
+   background-color: #b7b5b527;
  }
 
 /* Added top margin to prevent congestion */
