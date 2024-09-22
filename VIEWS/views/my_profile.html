@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #b5d5ed;
+        color: #000000;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #7fb9f4;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      nav ul li a {
+        color: #272525;
+        text-decoration: none;
+      }
+
+      .edit-profile {
+        display: inline-block;
+        padding: 10px 10px; /* Adjust padding for size */
+        background-color: #378cee; /* Button background color */
+        color: #fff; /* Text color */
+        text-align: center; /* Center text inside the button */
+        text-decoration: none; /* Remove underline if using an anchor tag */
+        border-radius: 10px; /* Slightly rounded corners */
+        border: none; /* Remove default border */
+        cursor: pointer; /* Show pointer cursor on hover */
+        font-size: 16px; /* Adjust font size */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        transition: background-color 0.3s ease; /* Smooth background color change */
+      }
+      .edit-profile:hover {
+        background-color: #005cbf; /* Change color on hover */
+      }
+
+      .container {
+        width: 60%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgb(219, 232, 232);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(38, 0, 255, 0.5);
+      }
+
+      .profile-header {
+        display: flex;
+        align-items: center;
+      }
+
+      .profile-header img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-right: 20px;
+        border: 5px solid #88aaff;
+      }
+
+      .bio {
+        margin-top: 20px;
+      }
+
+      h1 {
+        color: #0b72e8;
+      }
+
+      h2 {
+        color: #0b72e8;
+      }
+
+      p {
+        margin: 10px 0;
+      }
+
+      /* Updated style for repositories */
+      .skills-item {
+        background-color: #c0d4ea;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .skills-item h3 {
+        margin: 0;
+      }
+
+      .skills-description {
+        display: none;
+      }
+
+      .skills-item.active .skills-description {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1 style="color: #09035f; padding-left: 80px; font-size: 25px;">My Profile</h1>
+      </nav>
+      <div class="edit-profile">✏️ Edit Profile</div>
+    </header>
+
+    <div class="container">
+      <section id="user-info">
+        <div class="profile-header">
+          <img src="woman.png" alt=" " />
+          <div class="profile-details" >
+            <h1>ABC DEFG</h1>
+            <p class="email">Email: abcde@gmail.com</p>
+            <p class="domain">Domain: Web Development</p>
+            <p class="College">College: JUET Guna</p>
+          </div>
+        </div>
+        <div class="bio">
+          <h2>Bio</h2>
+          <div class="skills-item">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi
+            tenetur aperiam veritatis nostrum vitae numquam odit a, ad sapiente
+            iusto enim earum. Eum, optio! Numquam facere deleniti fuga quaerat!
+          </p>
+        </div>
+        </div>
+      </section>
+
+      <section id="Skills">
+        <h2>Skills</h2>
+        <div id="repos-list">
+          <div class="skills-item">
+              Empower your time management with our Clock App. Seamlessly track
+              time, set alarms, and customize your schedule with precision. Stay
+              organized, efficient, and on top of your day with this intuitive
+              application.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="Experience">
+        <h2>Experience</h2>
+        <div class="skills-item">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          dolorum odit quod, nihil consectetur, doloremque, modi alias pariatur
+          veritatis facilis iure fuga quis iusto ullam impedit accusamus commodi
+          dolorem amet!
+        </p>
+       </div>
+      </section>
+
+      <section id="project">
+        <h2>Project</h2>
+        <div class="skills-item">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          dolorum odit quod, nihil consectetur, doloremque, modi alias pariatur
+          veritatis facilis iure fuga quis iusto ullam impedit accusamus commodi
+          dolorem amet!
+        </p>
+       </div>
+      </section>
+    </div>
+  </body>
+</html>
