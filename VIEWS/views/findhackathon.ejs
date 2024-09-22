@@ -78,7 +78,7 @@
                 <div class="details">
                   <div class="detail-box">Online/Offline</div>
                   <div class="detail-box"><%=i.eventStartDate %></div>
-                  <div class="detail-box"><%=i.eventTheme %></div>
+                  <div class="detail-box" id="event"><%=i.eventTheme %></div>
                 </div>
         
                 <div class="buttons-container">
@@ -104,5 +104,47 @@
     function handleclick(eventId) {
         window.location.href = `/hackathon/${eventId}`;
     }
+    function adjustFontSize() {
+        const detailBoxes = document.querySelectorAll('.detail-box');
+        
+        detailBoxes.forEach(box => {
+            let fontSize = parseFloat(window.getComputedStyle(box).fontSize); // Get the initial font size
+            let maxFontSize = fontSize + 10; // Allow the font to grow a little
+            let minFontSize = fontSize - 3; // Allow it to shrink slightly
+            const text = box.innerText;
+            
+            const fitText = () => {
+                // Create a span to measure text width
+                const span = document.createElement('span');
+                span.style.position = 'absolute';
+                span.style.visibility = 'hidden';
+                span.style.whiteSpace = 'nowrap';
+                span.style.fontSize = `${fontSize}px`;
+                span.innerText = text;
+                document.body.appendChild(span);
+                
+                const spanWidth = span.offsetWidth;
+                const boxWidth = box.offsetWidth;
+                
+                if (spanWidth > boxWidth && fontSize > minFontSize) {
+                    // Text is too wide, decrease font size
+                    fontSize -= 0.5;
+                    span.style.fontSize = `${fontSize}px`;
+                } else if (spanWidth < boxWidth && fontSize < maxFontSize) {
+                    // Text fits, but there's room to grow
+                    fontSize += 0.5;
+                    span.style.fontSize = `${fontSize}px`;
+                }
+                
+                box.style.fontSize = `${fontSize}px`; // Set the final font size
+                document.body.removeChild(span); // Remove the span element
+            };
+            
+            fitText(); // Run the function
+        });
+    }
+
+    window.addEventListener('load', adjustFontSize); // Adjust on page load
+    window.addEventListener('resize', adjustFontSize); // Adjust on window resize
 </script>
 </html>
