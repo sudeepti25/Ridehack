@@ -11,6 +11,7 @@ const signnextRoutes = require('./ROUTES/signnext'); // Updated route import
 const organizeHackathonRoutes = require('./ROUTES/organize'); // Import the organizehackathon routes
 const formteamsroutes = require('./ROUTES/Formteam'); // Import the organizehackathon routes
 const findteamsroutes= require('./ROUTES/findhack');
+const sendrequestroutes = require('./ROUTES/Requests');
 
 
 const app = express();
@@ -34,6 +35,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 // Use the login/signup routes
  app.use('/', loginSignupRoutes);
+ app.use('/',sendrequestroutes);
 
 // Use the signnext routes
 app.use('/', signnextRoutes);
