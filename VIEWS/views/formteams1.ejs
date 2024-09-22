@@ -102,6 +102,7 @@
                 <h2><%= i.name %></h2>
                 <p><%= i.skills %></p>
                 <button onclick="handleclick('<%= i.user_id%>')" type="button">View More</button>
+                <button type="button" onclick="handlejoin('<%= i.user_id%>')">Join</button>
             </div>
         <% }); %>
     </div>
@@ -302,6 +303,16 @@ document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
 
 function handleclick(event){
     window.location.href=`/portfolio?id=${event}`;
+}
+
+  function handlejoin(e){
+    fetch('/sendrequest', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id:e })
+    })
 }
 
 
