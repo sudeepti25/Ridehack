@@ -12,7 +12,7 @@ const organizeHackathonRoutes = require('./ROUTES/organize'); // Import the orga
 const formteamsroutes = require('./ROUTES/Formteam'); // Import the organizehackathon routes
 const findteamsroutes= require('./ROUTES/findhack');
 const sendrequestroutes = require('./ROUTES/Requests');
-
+const teamRoutes = require('./ROUTES/teamroutes');
 
 const app = express();
 const PORT = 5000;
@@ -45,7 +45,7 @@ app.use('/', organizeHackathonRoutes);
 app.use('/', formteamsroutes);
 app.use('/',findteamsroutes); 
 
-
+app.use('/createteam', teamRoutes); // Base route for team-related operations
 
 // LANDING PAGE ROUTE
 
