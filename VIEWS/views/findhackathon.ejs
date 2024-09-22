@@ -38,7 +38,16 @@
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
               </svg>
             </button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" style="background-color: white; color: black; border:none; ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-filter" viewBox="0 0 16 16">
+                    <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+               
+               
+            </button>
         </div>
+        
+    
     </header>
     <br>
     <br>
@@ -59,7 +68,57 @@
 
     <button class="save">Your hackathons</button>
 
+<!-- side bar option -->
 
+
+ 
+  
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width:280px;">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Filters</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        
+      </div>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width:250px;">
+         Event Type
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Remote</a></li>
+          <li><a class="dropdown-item" href="#">Online</a></li>
+        </ul>
+        <br>
+        <br>
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width:250px;">
+            
+           </button>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Global</a></li>
+             <li><a class="dropdown-item" href="#">Within</a></li>
+           
+           </ul>
+
+           <br>
+           <br>
+
+           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width:250px;">
+            Languages
+           </button>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Swift</a></li>
+             <li><a class="dropdown-item" href="#">Kotlin</a></li>
+             <li><a class="dropdown-item" href="#">Javascript</a></li>
+             <li><a class="dropdown-item" href="#">Java</a></li>
+           </ul>
+           <br>
+           <br>
+      </div>
+    </div>
+  </div>
+  <!-- container for showing hackathons -->
     <div class="container">
 
       

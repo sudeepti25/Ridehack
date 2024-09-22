@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="logo">
             <img src="logo.jpg.jpeg" alt="no logo">
             <h3>BrainBridges</h3>
@@ -26,12 +26,12 @@
             <a href="partnership.html">Settings</a>
         </nav>
         <div class="login-signup-button">
-            <% if (!user) { %> <!-- If no user is logged in -->
-                <a href="/login"><button class="login-button">Login</button></a>
+            <% if (!user) { %> If no user is logged in -->
+                <!-- <a href="/login"><button class="login-button">Login</button></a>
                 <a href="/signup"><button class="signup-button">Signup</button></a>
-            <% } else { %> <!-- If user is logged in -->
+            <% } else { %> If user is logged in -->
                 
-                <a href="/logout"><button class="logout-button">Logout</button></a>
+                <!-- <a href="/logout"><button class="logout-button">Logout</button></a>
             <% } %>
         </div>
     </header>
@@ -56,8 +56,85 @@
             <h1>Introducing BrainBridges!</h1>
             <p><span id="typed"></span></p>
             <h1>Start Exploring!</h1>
+        </div> -->
+        <div id="intro-page" class="full-page">
+            <div class="center-content">
+                <h1 id="introducing-text"></h1>
+            </div>
         </div>
-
+    
+        <!-- Second Page: BrainBridges 🚀 -->
+        <div id="brainbridges-page" class="full-page">
+            <div class="center-content">
+                <h1 id="brainbridges-text">BrainBridges 🚀</h1>
+            </div>
+        </div>
+    
+        <!-- Main Landing Page -->
+        <div id="main-page" style="display:none;">
+            <header>
+                <div class="logo">
+                    <img src="logo.jpg.jpeg" alt="no logo">
+                    <h3>BrainBridges</h3>
+                </div>
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="profile.html">My Profile</a>
+                    <a href="messages.html">Messages</a>
+                    <a href="#">Requests</a>
+                    <a href="about.html">About Us</a>
+                    <a href="partnership.html">Settings</a>
+                </nav>
+                <div class="login-signup-button">
+                    <a href="\login"><button class="login-button">Login</button></a>
+                    <a href="\signup"><button class="signup-button">Signup</button></a>
+                </div>
+            </header>
+    
+            <main>
+                <div class="content">
+                    <div class="intro">
+                        <h1 class="welcome">WELCOME TO</h1>
+                        <h1 class="brainbridges">BRAINBRIDGES</h1>
+                        <p><span id="typed"></span></p>
+                        <h2 class="start-exploring">Start Exploring!</h2>
+                    </div>
+                    <div class="trusted-by">
+                        <p>Trusted by teams at</p>
+                        <div class="company-logos-container">
+                            <div class="company-logos">
+                                <div class="company-logo">
+                                    <i class="fab fa-nvidia"></i>
+                                    <span>NVIDIA</span>
+                                </div>
+                                <div class="company-logo">
+                                    <i class="fab fa-microsoft"></i>
+                                    <span>Microsoft</span>
+                                </div>
+                                <div class="company-logo">
+                                    <i class="fab fa-google"></i>
+                                    <span>Google</span>
+                                </div>
+                                <div class="company-logo">
+                                    <i class="fab fa-aws"></i>
+                                    <span>AWS</span>
+                                </div>
+                                <div class="company-logo">
+                                    <i class="fab fa-ibm"></i>
+                                    <span>IBM</span>
+                                </div>
+                                <div class="company-logo">
+                                    <i class="fab fa-oracle"></i>
+                                    <span>Oracle</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image"></div>
+            </main>
+        </div>
+    
         <div class="aboutus">
             <h4>Why BrainBridges ?</h4>
             <br>
@@ -171,7 +248,35 @@
     <!-- Include Typed.js library -->
     
     <!-- Initialize Typed.js -->
-    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        // Typed animation for "Introducing" text
+        var typed = new Typed('#introducing-text', {
+            strings: ['Introducing'],
+            typeSpeed: 100,
+            showCursor: false,
+            onComplete: function () {
+                // After "Introducing" animation, show "BrainBridges 🚀" and slide it up
+                setTimeout(function () {
+                    document.getElementById('intro-page').style.display = 'none';
+                    document.getElementById('brainbridges-page').style.display = 'flex';
+
+                    setTimeout(function () {
+                        document.getElementById('brainbridges-page').classList.add('slide-up');
+                    }, 1000);
+                }, 1500);
+            }
+        });
+
+        // Once the slide-up animation is done, show the main page
+        setTimeout(function () {
+            document.getElementById('brainbridges-page').style.display = 'none';
+            document.getElementById('main-page').style.display = 'block';
+        }, 5000); // Adjust this timeout to match the duration of the animations
+    </script>
+</body>
+</html>
+
     
     
 </body>
