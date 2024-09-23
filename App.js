@@ -45,7 +45,7 @@ app.use('/', organizeHackathonRoutes);
 app.use('/', formteamsroutes);
 app.use('/',findteamsroutes); 
 
-app.use('/createteam', teamRoutes); // Base route for team-related operations
+app.use('/', teamRoutes); // Base route for team-related operations
 
 // LANDING PAGE ROUTE
 

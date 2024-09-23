@@ -130,19 +130,17 @@
         <div class="profile-header">
           <img src="woman.png" alt=" " />
           <div class="profile-details" >
-            <h1>ABC DEFG</h1>
-            <p class="email">Email: abcde@gmail.com</p>
-            <p class="domain">Domain: Web Development</p>
-            <p class="College">College: JUET Guna</p>
+            <h1><%=user.name %> </h1>
+            <p class="email">Email: <%=user.email %></p>
+            <p class="domain">Domain:<%=user.domain%> </p>
+            <p class="College">College: <%= user.college %></p>
           </div>
         </div>
         <div class="bio">
           <h2>Bio</h2>
           <div class="skills-item">
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            tenetur aperiam veritatis nostrum vitae numquam odit a, ad sapiente
-            iusto enim earum. Eum, optio! Numquam facere deleniti fuga quaerat!
+            <%=user.bio %>
           </p>
         </div>
         </div>
@@ -152,10 +150,7 @@
         <h2>Skills</h2>
         <div id="repos-list">
           <div class="skills-item">
-              Empower your time management with our Clock App. Seamlessly track
-              time, set alarms, and customize your schedule with precision. Stay
-              organized, efficient, and on top of your day with this intuitive
-              application.
+            <%=user.skills %>
             </p>
           </div>
         </div>
@@ -165,10 +160,7 @@
         <h2>Experience</h2>
         <div class="skills-item">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-          dolorum odit quod, nihil consectetur, doloremque, modi alias pariatur
-          veritatis facilis iure fuga quis iusto ullam impedit accusamus commodi
-          dolorem amet!
+          <%=user.experience%> 
         </p>
        </div>
       </section>
@@ -177,10 +169,7 @@
         <h2>Project</h2>
         <div class="skills-item">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-          dolorum odit quod, nihil consectetur, doloremque, modi alias pariatur
-          veritatis facilis iure fuga quis iusto ullam impedit accusamus commodi
-          dolorem amet!
+          <%=user.project %>
         </p>
        </div>
       </section>
