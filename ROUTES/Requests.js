@@ -33,17 +33,50 @@ router.post('/sendrequest',(req, res)=>{
 router.get('/showrequest',(req, res)=>{
 
     const id= req.session.user.user_id;
+    console.log(id);
 
-    sql=`SELECT *FROM Requests WHERE sender_id = ?`;
-    db.query(sql,[id], function(err,result){
+    sql=`SELECT *FROM Requests WHERE receiver_id = ? AND status="pending"`;
+    db.query(sql,[id], async function(err,result){
 
         if(err)
         {
             return res.status(err).send("ERROR FETCHING REQUESTS");
         }
-        console.log(result);
-        console.log("YOU HAVE RECIEVED A REQUEST FROM",result.sender_id);
-        return res.send(result.sender_id);
+        
+
+
+        
+
+
+        for (let request of result) {
+            const nameSql = 'SELECT name FROM Users WHERE user_id = ?';
+            await new Promise((resolve, reject) => {
+                db.query(nameSql, [request.sender_id], (err, rows) => {
+                    if (err) {
+                        reject(err);
+                    }
+                    if (rows.length > 0) {
+                        request.sender_name = rows[0].name; // Add name to the request object
+                    } else {
+                        request.sender_name = 'Unknown'; // In case no user is found
+                    }
+                    resolve();
+                });
+            });
+        }
+
+
+          console.log(result);
+        
+
+        return res.render('requespage',{sender:result});
+
+
+
+
+
+
+
 
 
 
