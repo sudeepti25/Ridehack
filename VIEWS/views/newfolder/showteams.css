@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom right, #8bb0d7, #9bb8d7); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative; /* Required for the pseudo-element */
+}
+
+.container {
+    text-align: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-bottom: 20px;
+    opacity: 0; /* Start invisible */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), /* Shadow */
+                 -1px -1px 2px rgba(0, 0, 0, 0.3), /* Shadow */
+                 1px -1px 2px rgb(255, 255, 255), /* Shadow */
+                 -1px 1px 2px rgba(255, 255, 255, 0.3); /* Shadow */
+}
+
+/* On page load, make the heading visible and move it into view */
+body.loaded h1 {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Move to original position */
+}
+
+.team-card {
+    background-color: #c7d7f6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    flex: 1 1 20%; /* Grow and shrink, base width of 20% */
+    margin: 10px; /* Add margin for spacing */
+    transition: transform 0.3s;
+    border:1px solid rgb(10, 10, 10);
+}
+.team-grid {
+    display: flex;
+    gap: 60px;
+    grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    justify-content: space-between; /* Distribute space evenly */
+}
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 20px rgba(76, 87, 175, 0.7); /* Stronger shadow and glow */
+    border: 1px solid rgba(2, 16, 54, 0.81); /* Optional: border to enhance glow effect */
+
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.select-btn {
+    background-color: #4c81af;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.select-btn:hover {
+    background-color: #01455a;
+}
+
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+.team-grid::-webkit-scrollbar {
+    height: 10px; /* Height of horizontal scrollbar */
+}
+
+.team-grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2); /* Background of the scrollbar track */
+    border-radius: 10px; /* Round corners */
+}
+
+.team-grid::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.7); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Round corners */
+}
+
+/* Change color on hover */
+.team-grid::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 0, 0); /* Darker color on hover */
+}
+
+/* Custom scrollbar for Firefox */
+.team-grid {
+    scrollbar-width: thin; /* Make scrollbar thin */
+    scrollbar-color: rgba(0, 0, 0, 0.7) rgba(255, 255, 255, 0.2); /* Thumb color and track color */
+}
+/* Optional: For responsiveness */
+@media (max-width: 800px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
