@@ -28,7 +28,7 @@ router.post('/create', (req, res) => {
 
         const teamId = results.insertId; // Get the newly created team_id
         console.log('Team created successfully with ID:', results.insertId);
-        res.redirect(`/teampage?teamId=${teamId}`); // Redirect to the list of teams after successful creation
+        res.redirect('/showteams'); // Redirect to the list of teams after successful creation
     });
 });
 
