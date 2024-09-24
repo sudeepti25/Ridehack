@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Team Join Requests</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f6;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        /* Container for main content */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 1rem;
+        }
+
+        /* Notification List Styling */
+        .notification-list {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-list h3 {
+            font-size: 1.8rem;
+            color: #0077b6;
+            margin-bottom: 2rem;
+        }
+
+        /* Notification Item Styling */
+        .notification-item {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .notification-item:hover {
+            background-color: #eef6ff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .notification-item p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        /* Button Styling */
+        .notification-buttons {
+            margin-top: 1rem;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .accept-button {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .accept-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .decline-button {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .decline-button:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        /* Different colors for accepted/declined */
+        .accepted {
+            background-color: #d4edda !important;
+            border: 1px solid #c3e6cb;
+        }
+
+        .declined {
+            background-color: #f8d7da !important;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Responsive Design */
+        @media only screen and (max-width: 600px) {
+            header {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .notification-list {
+                padding: 1.5rem;
+            }
+            button {
+                padding: 0.6rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hackathon Team Join Requests</h1>
+    </header>
+
+    <div class="container">
+        <!-- Notifications List -->
+        <div class="notification-list" id="notificationList">
+            <h3>Pending Join Requests</h3>
+
+
+            <% sender.forEach(function(i){ %>
+                <div class="notification-item">
+                    <p><strong><%= i.sender_name %></strong> sended you a join request</p>
+                    <div class="notification-buttons">
+                        <button class="accept-button">Accept</button>
+                        <button class="decline-button">Decline</button>
+                    </div>
+                </div>
+            <% }); %>
+
+                
+           
+
+            <!-- Example Requests -->
+           
+
+           
+
+            <!-- More requests can be added dynamically -->
+        </div>
+    </div>
+
+    <script>
+        // Handle Accept/Decline functionality
+        document.querySelectorAll('.notification-item').forEach(item => {
+            const acceptButton = item.querySelector('.accept-button');
+            const declineButton = item.querySelector('.decline-button');
+
+            // Accept button action
+            acceptButton.addEventListener('click', () => {
+                item.classList.add('accepted');
+                acceptButton.disabled = true;
+                declineButton.disabled = true;
+            });
+
+            // Decline button action
+            declineButton.addEventListener('click', () => {
+                item.classList.add('declined');
+                acceptButton.disabled = true;
+                declineButton.disabled = true;
+            });
+        });
+    </script>
+</body>
+</html>
