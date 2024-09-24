@@ -91,4 +91,34 @@ router.get('/portfolio', (req, res) => {
     });
 });
 
+router.get('/myprofile', (req, res) => {
+    const id = req.session.user.user_id; // Get the user ID from query parameters
+
+    if (!id) {
+        return res.status(400).send('User ID is required');
+    }
+
+    // Fetch the user details from the database
+    const sql = `
+        SELECT u.name,u.email, p.domain, p.college, p.projects, p.bio, p.skills, p.experience
+        FROM users u
+        JOIN portfolio p ON u.user_id = p.user_id
+        WHERE u.user_id = ?`;
+    
+    db.query(sql, [id], (err, result) => {
+        if (err) {
+            console.error("Error fetching user details: ", err);
+            return res.status(500).send('Server error');
+        }
+
+        if (!result || result.length === 0) {
+            console.error("No user found with that ID");
+            return res.status(404).send('User not found');
+        }
+
+        console.log(result);
+        return res.render('myprofile', { user: result[0] });
+    });
+});
+
 module.exports = router;

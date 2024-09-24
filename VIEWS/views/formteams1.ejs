@@ -18,7 +18,7 @@
     </div>
     <nav>
         <a href="#">Home</a>
-        <a href="profile.html">My Profile</a>
+        <a href="/myprofile">My Profile</a>
         <a href="messages.html">Messages</a>
         <a href="#">Requests</a>
         <a href="#">Info</a>
@@ -57,32 +57,40 @@
         
       </div>
       <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width:250px;">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width:250px; background-color:#d5e6ff;color: rgb(57, 57, 57);">
          Years
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">1st</a></li>
+          <li><a class="dropdown-item" href="#">2nd</a></li>
+          <li><a class="dropdown-item" href="#">3rd</a></li>
+          <li><a class="dropdown-item" href="#">4th</a></li>
         </ul>
-
+        <br>
+        <br>
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width:250px;">
             College
            </button>
            <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="#">Action</a></li>
-             <li><a class="dropdown-item" href="#">Another action</a></li>
-             <li><a class="dropdown-item" href="#">Something else here</a></li>
+             <li><a class="dropdown-item" href="#">Global</a></li>
+             <li><a class="dropdown-item" href="#">Within</a></li>
+           
            </ul>
 
+           <br>
+           <br>
+
            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" style="width:250px;">
-            College
+            Languages
            </button>
            <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="#">Action</a></li>
-             <li><a class="dropdown-item" href="#">Another action</a></li>
-             <li><a class="dropdown-item" href="#">Something else here</a></li>
+             <li><a class="dropdown-item" href="#">Swift</a></li>
+             <li><a class="dropdown-item" href="#">Kotlin</a></li>
+             <li><a class="dropdown-item" href="#">Javascript</a></li>
+             <li><a class="dropdown-item" href="#">Java</a></li>
            </ul>
+           <br>
+           <br>
       </div>
     </div>
   </div>
@@ -102,6 +110,7 @@
                 <h2><%= i.name %></h2>
                 <p><%= i.skills %></p>
                 <button onclick="handleclick('<%= i.user_id%>')" type="button">View More</button>
+                <button type="button" onclick="handlejoin('<%= i.user_id%>')">Join</button>
             </div>
         <% }); %>
     </div>
@@ -302,6 +311,16 @@ document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
 
 function handleclick(event){
     window.location.href=`/portfolio?id=${event}`;
+}
+
+  function handlejoin(e){
+    fetch('/sendrequest', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id:e })
+    })
 }
 
 

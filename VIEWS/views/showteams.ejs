@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select a Team</title>
+</head>
+<body>
+    <h1>Select a Team</h1>
+    <ul>
+        <% teams.forEach(team => { %>
+            <li>
+                <strong>Team Name:</strong> <%= team.team_name %> <br>
+                <strong>Leader:</strong> <%= team.leader_name %> <br>
+                <!-- Button to select this team -->
+                <form action="/selectteam" method="POST">
+                    <input type="hidden" name="teamId" value="<%= team.team_id %>">
+                    <button type="submit">Select this Team</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

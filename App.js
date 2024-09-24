@@ -11,7 +11,8 @@ const signnextRoutes = require('./ROUTES/signnext'); // Updated route import
 const organizeHackathonRoutes = require('./ROUTES/organize'); // Import the organizehackathon routes
 const formteamsroutes = require('./ROUTES/Formteam'); // Import the organizehackathon routes
 const findteamsroutes= require('./ROUTES/findhack');
-
+const sendrequestroutes = require('./ROUTES/Requests');
+const teamRoutes = require('./ROUTES/teamroutes');
 
 const app = express();
 const PORT = 5000;
@@ -34,6 +35,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 // Use the login/signup routes
  app.use('/', loginSignupRoutes);
+ app.use('/',sendrequestroutes);
 
 // Use the signnext routes
 app.use('/', signnextRoutes);
@@ -43,7 +45,7 @@ app.use('/', organizeHackathonRoutes);
 app.use('/', formteamsroutes);
 app.use('/',findteamsroutes); 
 
-
+app.use('/', teamRoutes); // Base route for team-related operations
 
 // LANDING PAGE ROUTE
 
