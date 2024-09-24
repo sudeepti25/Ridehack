@@ -1,10 +1,252 @@
-* {
+/* * {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.full-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.center-content {
+  text-align: left; /* Align the entire content to the left */
+}
+
+.center-content h1 {
+  font-size: 4rem;
+  color: #0c0c0c;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 20px; /* Add some margin to push it to the left */
+}
+
+#brainbridges-text {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #0c0c0c;
+  margin-left: 20px; /* Add margin to move it left as well */
+  
+  animation: fadeIn 2s ease-in-out forwards;
+  display: inline-block;
+  position: relative;
+}
+
+#brainbridges-text::after {
+  content: "🚀"; /* Rocket emoji */
+  font-size: 1.5rem; /* Adjust the size of the emoji */
+  position: absolute;
+  right: -30px; /* Position the emoji slightly to the right of the text */
+  top: 10px; /* Adjust vertical position */
+}
+
+
+/* Slide-up animation */
+.slide-up {
+  animation: slideUp 2s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  to {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+}
+
+/* Main landing page styles */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+/* Add your existing landing page styles below */
+.logo {
+  display: flex;
+  align-items: center;
+  column-gap: 0.3rem;
+  font-size: 1.7rem;
+}
+
+.logo img {
+  width: 4rem;
+}
+
+nav {
+  display: flex;
+  column-gap: 2rem;
+}
+
+nav a {
+  color: black;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #007BFF;
+}
+
+.login-signup-button button {
+  background-color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid #007BFF;
+  margin-left: 1rem;
+}
+
+.login-signup-button button:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+main {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5rem;
+}
+
+.intro {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.intro h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 0rem;
+  line-height: 1.2;
+  color: #0c0c0c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.intro .welcome {
+  animation: slideIn 1s ease-out;
+}
+
+.intro .brainbridges {
+  color: #007BFF;
+  animation: slideIn 2s ease-out;
+}
+
+.start-exploring {
+  font-size: 2rem;
+  color: black;
+}
+
+@keyframes slideIn {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+
+
+.intro p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #0a0a0a;
+}
+
+.trusted-by {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+      
+  }
+}
+
+.company-logos-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.company-logos {
+  display: flex;
+  gap: 2rem;
+  animation: slide 10s linear infinite;
+}
+
+.company-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #080808;
+  flex-shrink: 0;
+}
+
+.company-logo i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes slide {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+.image {
+  flex: 1;
+  background-image: url('bg1.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* 
 header {
   width: 100%;
   margin: auto;
@@ -68,19 +310,19 @@ nav a:hover {
 
 .login-signup-button button:hover {
   background-color: #b7b5b527;
-}
+} */
 
 /* .hero img {
   height: 300px;
   width: 100%;
 } */
-.sliderframe {
+/* .sliderframe {
   overflow: hidden;
   height: 400px;
   width: 100%;
   margin-left: 240px;
   /* margin-right: 120px; */
-  margin-top: 20px;
+  /* margin-top: 20px;
 
 }
 
@@ -142,7 +384,7 @@ nav a:hover {
   -webkit-animation-play-state: running;
 
 
-}
+} */ 
 
 .imgcontainer {
   height: 800px;
@@ -153,21 +395,21 @@ nav a:hover {
 }
 
 .intro {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
   text-align: center;
   font-size: larger;
 }
 
 .intro p {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
   margin-bottom: 20px;
   font-size: larger;
 }
 
 .aboutus{
-  
+  font-family: 'Montserrat', sans-serif;
   width: 80%;
   /* height:300px; */
   font-size: 22px;;
@@ -181,12 +423,12 @@ nav a:hover {
   background-color:#f8f8f8;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   h4{
-    font-family: "Quicksand", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 40px;
   }
 }
  .img{
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 font-size: larger;
   float: right;
   justify-self: center;
@@ -215,7 +457,8 @@ font-size: larger;
 
 .feature-box {
   padding: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border: #252E5D;
   outline-color: #252E5D;
   border-radius: 2rem;
@@ -252,8 +495,8 @@ font-size: larger;
 
 
 .feature-box button {
-  
-  background-color: #00bcd4;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #007BFF;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -267,7 +510,7 @@ font-size: larger;
 }
 
 .feature-box:hover {
-  color: #fff;
+  color: black;
 }
 
 .feature-box p:hover {
@@ -323,6 +566,7 @@ font-size: larger;
 }
 
 footer {
+  font-family: 'Montserrat', sans-serif;
   background-color:white;
   height: 300px;
   border-top-left-radius: 30px;
