@@ -27,7 +27,7 @@ router.post('/create', (req, res) => {
         }
 
         const teamId = results.insertId; // Get the newly created team_id
-        console.log('Team created successfully with ID:', results.insertId);
+       
         res.redirect('/showteams'); // Redirect to the list of teams after successful creation
     });
 });
@@ -55,7 +55,7 @@ router.post('/selectteam', (req, res) => {
     // Store the selected team ID in session for later use
     req.session.selectedTeamId = teamId;
 const Id=req.session.selectedTeamId 
-console.log(Id);
+
     // Redirect to the next page where the request will be sent
     res.redirect(`/teampage?teamId=${Id}`);  // This will be the page where users will send the join request
 });
