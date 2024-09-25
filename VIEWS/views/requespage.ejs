@@ -155,9 +155,11 @@
             <% sender.forEach(function(i){ %>
                 <div class="notification-item">
                     <p><strong><%= i.sender_name %></strong> sended you a join request</p>
+                    <p><strong><%= i.team_name%></strong>
+
                     <div class="notification-buttons">
-                        <button class="accept-button">Accept</button>
-                        <button class="decline-button">Decline</button>
+                        <button class="accept-button" onclick="handleclick('<%= i.sender_id %>','<%= i.receiver_id %>','accepted')">Accept</button>
+                        <button class="decline-button " onclick="handleclick('<%= i.sender_id %>','<%= i.receiver_id %>','rejected')">Decline</button>
                     </div>
                 </div>
             <% }); %>
@@ -175,25 +177,34 @@
     </div>
 
     <script>
-        // Handle Accept/Decline functionality
-        document.querySelectorAll('.notification-item').forEach(item => {
-            const acceptButton = item.querySelector('.accept-button');
-            const declineButton = item.querySelector('.decline-button');
 
-            // Accept button action
-            acceptButton.addEventListener('click', () => {
-                item.classList.add('accepted');
-                acceptButton.disabled = true;
-                declineButton.disabled = true;
-            });
 
-            // Decline button action
-            declineButton.addEventListener('click', () => {
-                item.classList.add('declined');
-                acceptButton.disabled = true;
-                declineButton.disabled = true;
+function handleclick(senderid,receiverid,action) {
+            fetch('/response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    sender_id: senderid,
+                    receiver_id: receiverid,
+                    action: action
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(`Request has been ${action}ed.`);
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
-        });
+        }
+       
+       
     </script>
 </body>
 </html>

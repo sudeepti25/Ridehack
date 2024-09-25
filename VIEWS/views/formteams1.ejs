@@ -314,6 +314,8 @@ function handleclick(event){
 }
 
   function handlejoin(e){
+    
+  
     fetch('/sendrequest', {
         method: 'POST',
         headers: {
@@ -321,7 +323,11 @@ function handleclick(event){
         },
         body: JSON.stringify({ id:e })
     })
-}
+
+  }
+
+  
+
 
 
     </script>  
