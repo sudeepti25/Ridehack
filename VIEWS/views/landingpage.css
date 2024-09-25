@@ -9,7 +9,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -25,21 +25,37 @@ body {
   background-color: white;
 }
 
+.center-content {
+  text-align: left; /* Align the entire content to the left */
+}
+
 .center-content h1 {
   font-size: 4rem;
   color: #0c0c0c;
-  text-align: center;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
+  margin-left: 20px; /* Add some margin to push it to the left */
 }
 
 #brainbridges-text {
   font-size: 5rem;
   font-weight: bold;
   color: #0c0c0c;
+  margin-left: 20px; /* Add margin to move it left as well */
   
   animation: fadeIn 2s ease-in-out forwards;
+  display: inline-block;
+  position: relative;
 }
+
+#brainbridges-text::after {
+  content: "🚀"; /* Rocket emoji */
+  font-size: 1.5rem; /* Adjust the size of the emoji */
+  position: absolute;
+  right: -30px; /* Position the emoji slightly to the right of the text */
+  top: 10px; /* Adjust vertical position */
+}
+
 
 /* Slide-up animation */
 .slide-up {
@@ -92,7 +108,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #00bcd4;
+  color: #007BFF;
 }
 
 .login-signup-button button {
@@ -103,12 +119,12 @@ nav a:hover {
   font-weight: 600;
   border-radius: 0.4rem;
   cursor: pointer;
-  border: 1px solid #00bcd4;
+  border: 1px solid #007BFF;
   margin-left: 1rem;
 }
 
 .login-signup-button button:hover {
-  background-color: #00bcd4;
+  background-color: #007BFF;
   color: white;
 }
 
@@ -147,7 +163,7 @@ main {
 }
 
 .intro .brainbridges {
-  color: #169cae;
+  color: #007BFF;
   animation: slideIn 2s ease-out;
 }
 
@@ -379,21 +395,21 @@ nav a:hover {
 }
 
 .intro {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
   text-align: center;
   font-size: larger;
 }
 
 .intro p {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
   margin-bottom: 20px;
   font-size: larger;
 }
 
 .aboutus{
-  
+  font-family: 'Montserrat', sans-serif;
   width: 80%;
   /* height:300px; */
   font-size: 22px;;
@@ -407,12 +423,12 @@ nav a:hover {
   background-color:#f8f8f8;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   h4{
-    font-family: "Quicksand", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 40px;
   }
 }
  .img{
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 font-size: larger;
   float: right;
   justify-self: center;
@@ -441,7 +457,8 @@ font-size: larger;
 
 .feature-box {
   padding: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border: #252E5D;
   outline-color: #252E5D;
   border-radius: 2rem;
@@ -478,8 +495,8 @@ font-size: larger;
 
 
 .feature-box button {
-  
-  background-color: #00bcd4;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #007BFF;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -493,7 +510,7 @@ font-size: larger;
 }
 
 .feature-box:hover {
-  color: #fff;
+  color: black;
 }
 
 .feature-box p:hover {
@@ -549,6 +566,7 @@ font-size: larger;
 }
 
 footer {
+  font-family: 'Montserrat', sans-serif;
   background-color:white;
   height: 300px;
   border-top-left-radius: 30px;
@@ -590,4 +608,6 @@ footer {
   width: 2rem;
 }
 /* Adjusted styles for your requirements */
+
+
 

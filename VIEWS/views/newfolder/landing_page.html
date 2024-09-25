@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="logo">
             <img src="logo.jpg.jpeg" alt="no logo">
             <h3>BrainBridges</h3>
@@ -26,8 +26,13 @@
             <a href="partnership.html">Settings</a>
         </nav>
         <div class="login-signup-button">
-            <a href="\login"><button class="login-button" >Login</button></a>
-            <a href="\signup"><button class="signup-button">Signup</button></a>
+            <% if (!user) { %> If no user is logged in -->
+                <!-- <a href="/login"><button class="login-button">Login</button></a>
+                <a href="/signup"><button class="signup-button">Signup</button></a>
+            <% } else { %> If user is logged in -->
+                
+                <!-- <a href="/logout"><button class="logout-button">Logout</button></a>
+            <% } %>
         </div>
     </header>
 
@@ -51,20 +56,64 @@
             <h1>Introducing BrainBridges!</h1>
             <p><span id="typed"></span></p>
             <h1>Start Exploring!</h1>
+        </div> -->
+        <!-- <div id="intro-page" class="full-page">
+            <div class="center-content">
+                <h1 id="introducing-text"></h1>
+            </div>
+        </div> -->
+    
+        <!-- Second Page: BrainBridges 🚀 -->
+        <!-- <div id="brainbridges-page" class="full-page">
+            <div class="center-content">
+                <h1 id="brainbridges-text">BrainBridges 🚀</h1>
+            </div>
+        </div> -->
+    
+        <!-- Main Landing Page -->
+        <div id="main-page">
+            <header>
+                <div class="logo">
+                    <img src="logo.jpg.jpeg" alt="no logo">
+                    <h3>BrainBridges</h3>
+                </div>
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="/myprofile">My Profile</a>
+                    <a href="messages.html">Messages</a>
+                    <a href="#">Requests</a>
+                    <a href="about.html">About Us</a>
+                    <a href="partnership.html">Settings</a>
+                </nav>
+                <div class="login-signup-button">
+                    <a href="\login"><button class="login-button">Login</button></a>
+                    <a href="\signup"><button class="signup-button">Signup</button></a>
+                </div>
+            </header>
+    
+            <main>
+                <div class="content">
+                    <div class="intro">
+                        <h1 class="welcome">WELCOME TO</h1>
+                        <h1 class="brainbridges">BRAINBRIDGES</h1>
+                        <p><span id="typed"></span></p>
+                        <h2 class="start-exploring">Start Exploring!</h2>
+                    </div>
+                    
+                </div>
+                <div class="image"></div>
+            </main>
         </div>
-
+    
         <div class="aboutus">
             <h4>Why BrainBridges ?</h4>
             <br>
             <div class="img">
-                <img src="logo.jpg.jpeg" alt="" height="300px">
+                <img src="logo.jpg.jpeg" alt="" height="200px">
                 <br>
                 "Unleash Innovation, Code the Future"
             </div>
-            <p>At BrainBridges, we ignite innovation by turning your ideas into reality through our dynamic hackathons.
-                Collaborate with like-minded individuals and industry experts, pushing your boundaries with real-world challenges that test your skills and inspire creativity.
-                Our events cater to both beginners and seasoned coders, offering mentorship, workshops, and hands-on experience to enhance your skillset.
-                 Stand out by showcasing your talent to potential employers and investors, while enjoying fun activities, social events, and the chance to win amazing prizes that celebrate your hard work and innovation.
+            <p>At BrainBridges, we ignite innovation by turning your ideas into reality through our dynamic hackathons. Collaborate with like-minded individuals and industry experts, pushing your boundaries with real-world challenges that test your skills and inspire creativity. Our events cater to both beginners and seasoned coders, offering mentorship, workshops, and hands-on experience to enhance your skillset. Stand out by showcasing your talent to potential employers and investors, while enjoying fun activities, social events, and the chance to win amazing prizes that celebrate your hard work and innovation.
             </p>
         </div>
 
@@ -73,7 +122,7 @@
                 <div class="feature-box">
                     <h3>Form Professional Teams</h3>
                     <p>Form professional teams with experts in various fields for your projects or business ventures.</p>
-                    <a href="formteam.html"><button>Form Now</button></a>
+                    <a href="/teampage"><button>Form Now</button></a>
                 </div>
                 <div class="feature-description">
                     <h3 class="heading">Form Professional Teams</h3>
@@ -84,14 +133,15 @@
             <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
                 <div class="feature-description">
                     <h3 class="heading">Explore Hackathons</h3>
-                    <p style="font-size: 1.2em;"><span class="sub-heading">1. Upcoming Events:</span> Discover a comprehensive calendar of upcoming hackathons worldwide, categorized by date and location. Stay updated on registration deadlines and event details to plan your participation effectively.</p>
-                    <p style="font-size: 1.2em;"><span class="sub-heading">2. Skill Showcase:</span> Explore diverse hackathon themes ranging from AI and cybersecurity to sustainability and fintech. Each event offers a unique opportunity to showcase your skills, network with industry leaders, and gain hands-on experience in cutting-edge technologies.</p>
-                    <p style="font-size: 1.2em;"><span class="sub-heading">3. Participant Resources:</span> Access resources such as past hackathon projects, mentorship opportunities, and participant testimonials to prepare effectively and maximize your hackathon experience.</p>
+                    <p style="font-size: 1.2em;"><span class="sub-heading">1. Upcoming Events:</span> Discover a comprehensive calendar of upcoming hackathons categorized by date and location. Stay updated on registration deadlines and event details to plan your participation effectively.</p>
+                    <p style="font-size: 1.2em;"><span class="sub-heading">2. Skill Showcase:</span> Explore diverse hackathon themes ranging from different domains. Each event offers a unique opportunity to showcase your skills, network with industry leaders.</p>
+                    
                 </div>
                 <div class="feature-box">
                     <h3>Find Hackathons</h3>
+                    
                     <p>Explore and participate in upcoming hackathons to showcase your skills and innovate.</p>
-                    <a href="findhackathon.html"><button>Find Now</button></a>
+                    <a href="/findhack"><button>Find Now</button></a>
                 </div>
             </div>
 
@@ -99,7 +149,7 @@
                 <div class="feature-box">
                     <h3>Organize a Hackathon</h3>
                     <p>Organize a hackathon event through Brain Bridges and bring together creative minds.</p>
-                   <a href="organizehackathon.html"> <button>Organize Now</button></a>
+                   <a href="/organize"> <button>Organize Now</button></a>
                 </div>
                 <div class="feature-description">
                     <h3 class="heading">Organize a Hackathon</h3>
@@ -116,7 +166,7 @@
                 <div class="feature-box">
                     <h3>Saved Hackathons Options</h3>
                     <p>View and manage your saved hackathons options.</p>
-                    <button>Manage Now</button>
+                    <a href="/saved"><button>Manage Now</button></a>
                 </div>
             </div>
         </div>
@@ -159,15 +209,41 @@
             </div>
         </footer>
     </main>
-      <script src="index.js"></script>
+      <script src="index.js">
+       
+      </script>
       <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <!-- Include Typed.js library -->
     
     <!-- Initialize Typed.js -->
-    <script>
-       
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- <script> -->
+        <!-- // Typed animation for "Introducing" text
+
+        // var typed = new Typed('#introducing-text', {
+        //     strings: ['Introducing'],
+        //     typeSpeed: 100,
+        //     showCursor: false,
+        //     onComplete: function () {
+                
+        // After "Introducing" animation, show "BrainBridges 🚀" and slide it up
+
+        //         setTimeout(function () {
+        //             document.getElementById('intro-page').style.display = 'none';
+        //             document.getElementById('brainbridges-page').style.display = 'flex';
+
+        //             setTimeout(function () {
+        //                 document.getElementById('brainbridges-page').classList.add('slide-up');
+        //             }, 1000);
+        //         }, 1500);
+        //     }
+        // });
+
+        // Once the slide-up animation is done, show the main page
+        // setTimeout(function () {
+        //     document.getElementById('brainbridges-page').style.display = 'none';
+        //     document.getElementById('main-page').style.display = 'block';
+        // }, 5000); // Adjust this timeout to match the duration of the animations -->
+    <!-- // </script> -->
 </body>
 </html>
-
-
