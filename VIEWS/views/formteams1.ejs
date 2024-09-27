@@ -109,8 +109,12 @@
             <div class="box">
                 <h2><%= i.name %></h2>
                 <p><%= i.skills %></p>
-                <button onclick="handleclick('<%= i.user_id%>')" type="button">View More</button>
-                <button type="button" onclick="handlejoin('<%= i.user_id%>')">Join</button>
+                <div class="button">
+                    <button onclick="handleclick('<%= i.user_id%>')" type="button">View More</button>
+                    <div class="join">
+                        <button type="button" onclick="handlejoin('<%= i.user_id%>')">Join</button>
+                    </div>
+                </div>
             </div>
         <% }); %>
     </div>

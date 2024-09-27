@@ -9,7 +9,280 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Link to External CSS -->
-    <link rel="stylesheet" href="formteams1.css">
+    <!--<link rel="stylesheet" href="styles1.css">-->
+    <style>
+          /* Import Montserrat Font */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+    
+    /* Reset and Base Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f5f7fa;
+        color: #333;
+    }
+     header {
+       width: 100%;
+       margin: auto;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+       font-family: "Quicksand", sans-serif;
+     
+     }
+    
+     .btn
+     {
+       background-color:none;
+     }
+    
+    
+    
+    
+    
+     #offcanvasExample
+     {
+       width: 300px;
+     }
+    
+    
+     
+     nav {
+       display: flex;
+       column-gap: 2rem;
+       font-family: "Quicksand", sans-serif;
+     
+     }
+     
+     nav a {
+       color: black;
+       font-size: 1.3rem;
+       font-weight: bolder;
+       text-decoration: none;
+     }
+     
+     nav a:hover {
+       color: #007BFF;
+     }
+     
+     
+     
+     .logo {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       column-gap: 0.3rem;
+       text-align: center;
+       font-size: 1.7rem;
+     }
+     
+     .logo img {
+       width: 4rem;
+     }
+     
+     .login-signup-button button {
+       /* position: absolute;
+       right:100px; */
+       margin-right:-150px;
+       background-color: white;
+       text-decoration: none;
+       padding: 0.5rem;
+       font-size: 1rem;
+       font-weight: 600;
+       border-radius: 0.4rem;
+     }
+     
+     .login-signup-button {
+       padding: 2rem;
+     }
+     
+     .login-button {
+       padding-right: 3rem;
+     }
+     
+     .login-signup-button button:hover {
+       background-color: #b7b5b527;
+     }
+    
+    
+    /* Heading Styles */
+    .heading {
+        margin: 2rem auto;
+        text-align: center;
+    }
+    
+    .heading h1 {
+        font-size: 2.5rem;
+        color: #007BFF;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s ease;
+    }
+    
+    .heading h3 {
+        font-size: 1.5rem;
+        color: #555;
+        transition: color 0.3s ease;
+    }
+    
+    /* Change heading color on box hover */
+    .box:hover h2 {
+        color: #007BFF;
+    }
+    
+    .box:hover .heading h1 {
+        /* If you want to change the main heading color when any box is hovered */
+        /* Uncomment the below line */
+        /* color: #00a0ff; */
+    }
+    
+    /* Search Bar Styles */
+    .search-container {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0 2rem 0;
+    }
+    
+    .search-container input {
+        padding: 0.7rem;
+        font-size: 1rem;
+        width: 30%;
+        border-radius: 0.5rem 0 0 0.5rem;
+        border: 2px solid #00a0ff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        background-color: #ffffff;
+    }
+    
+    .search-container input:hover {
+        background-color: #e1cfcf;
+        color: #007BFF;
+        border: 2px solid #00a0ff;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .search-container input:focus {
+        outline: none;
+        border: 2px solid #007BFF;
+    }
+    
+    #search-button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 0 0.5rem 0.5rem 0;
+        padding: 0.7rem 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    #search-button:hover {
+        background-color: #00a0ff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Team Members Container */
+    .container {
+        display: grid;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 1200px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .box {
+        background-color: #ffffff; /* Changed to white */
+        border: 1px solid #ddd;
+        height: 200px;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .box:hover {
+        transform: scale(1.04);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        border:2px solid #007BFF;
+    }
+    
+    .box img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+    }
+    
+    .box h2 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s ease;
+    }
+    
+    .box p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 1rem;
+    }
+    
+    button {
+        background-color: #007BFF ;
+        color: #fff;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        font-size: 16px;
+        font-weight: 500;
+        width: 108px;
+    }
+    
+    .box button:hover {
+        background-color: #00a0ff;
+        transform: scale(1.05);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .search-container input {
+            width: 60%;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .search-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .search-container input {
+            width: 80%;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    
+        #search-button {
+            width: 80%;
+            border-radius:0.5rem;
+        }
+    }
+
+    </style>
 </head>
 <body>
     <header>
@@ -63,59 +336,16 @@
 
     <!-- Team Members Container -->
     <div class="container" id="teamContainer">
-        <div class="box">
-            <img src="man.png" alt="Rakshit Awasthi">
-            <h2>Rakshit Awasthi</h2>
-            <p>Backend Developer</p>
-            <div class="button">
-              <button type="button">View More</button>
-              <button type="button">join</button>
+        <% people.forEach(function(i){ %>
+            <div class="box">
+                <h2><%= i.name %></h2>
+                <p><%= i.skills %></p>
+                <button onclick="handleclick('<%= i.user_id%>')" type="button">View More</button>
+                <button type="button" onclick="handlejoin('<%= i.user_id%>')">Join</button>
             </div>
-            
-        </div>
-        <div class="box">
-            <img src="woman.png" alt="Shubhi Rusiya">
-            <h2>Shubhi Rusiya</h2>
-            <p>Backend Developer</p>
-            <button type="button">View More</button>
-        </div>
-        <div class="box">
-            <img src="man.png" alt="Yash Singh">
-            <h2>Yash Singh</h2>
-            <p>Backend Developer</p>
-            <button type="button">View More</button>
-        </div>
-        <div class="box">
-            <img src="woman.png" alt="Sudeepti Singh">
-            <h2>Sudeepti Singh</h2>
-            <p>Backend Developer</p>
-            <button type="button">View More</button>
-        </div>
-        <div class="box">
-            <img src="woman.png" alt="Tanishka Garg">
-            <h2>Tanishka Garg</h2>
-            <p>Backend Developer</p>
-            <button type="button">View More</button>
-        </div>
-        <div class="box">
-            <img src="man.png" alt="Rakshit Awasthi">
-            <h2>Rakshit Awasthi</h2>
-            <p>Backend Developer</p>
-            <button type="button">View More</button>
-        </div>
-        <div class="box">
-            <img src="man.png" alt="Yash Singh">
-            <h2>Yash Singh</h2>
-            <p>Backend Developer</p>
-            <button type="button">View More</button>
-        </div>
-        <div class="box">
-            <img src="woman.png" alt="Sudeepti Singh">
-            <h2>Sudeepti Singh</h2>
-            <p>Backend Developer</p>
-            <button type="button">View More</button>
-        </div>
+        <% }); %>
     </div>
+   
 
     <!-- JavaScript -->
     <script>
