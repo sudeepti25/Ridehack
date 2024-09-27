@@ -199,6 +199,10 @@ nav a:hover {
     padding-left: 15px;
     /* padding:10px 7px 7px 0px; */
 }
+.heading{
+  padding-top:10vh;
+  margin-bottom: -13vh;
+}
 
 .search-input:focus
 {

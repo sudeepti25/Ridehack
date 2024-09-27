@@ -23,13 +23,13 @@
             <h3>BrainBridges</h3>
         </div>
         <nav>
-            <a href="#">Home</a>
-            <a href="profile.html">My Profile</a>
-            <a href="messages.html">Messages</a>
-            <a href="#">Requests</a>
+            <a href="/landin_page">Home</a>
+            <a href="/App.js">My Profile</a>
+            <a href="#">Messages</a>
+            <a href="/showrequest">Requests</a>
             <a href="#">Info</a>
-            <a href="about.html">About Us</a>
-            <a href="partnership.html">Settings</a>
+            <a href="#">About Us</a>
+            <a href="#">Settings</a>
         </nav>
         <div class="login-signup-button">
             <button>
@@ -41,19 +41,13 @@
         </div>
     </header>
     
-    <div class="heading">Hackathons <span style="color:rgb(76, 76, 247)">awaits</span>
+    <div class="heading">
+        Saved <span style="color:rgb(76, 76, 247)">Hackathons</span>
     </div>
 
-    <div class="nav-search">
-        <input type="text" placeholder=" Search Hackathons..." class="search-input">
-        <div class="search-icon">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>      
-        </div>
+    
 
-      
-    </div>
-
-    <button class="save">Your hackathons</button>
+    
 
 
     <div class="container">
@@ -77,21 +71,14 @@
                   <div class="detail-box"><%=i.eventTheme %></div>
                 </div>
         
-                <div class="buttons-container">
-                    <button class="apply-btn" onclick="handleclick('<%= i.eventName %>')" type="button">View More</button>
-
-                    <button class="save-btn">Save</button>
-                </div>
+               
               </div>
             </div>
           <% }); %>
         </div>
           
 
-            
-            
-           
-    </div>
+</div>
         
     
 </body>
