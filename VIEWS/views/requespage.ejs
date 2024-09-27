@@ -194,7 +194,7 @@ function handleclick(senderid,receiverid,action) {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert(`Request has been ${action}ed.`);
+                    document.getElementById(`notificationList`).remove();
                 } else {
                     alert('Error: ' + data.message);
                 }
