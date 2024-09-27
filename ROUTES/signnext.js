@@ -92,11 +92,14 @@ router.get('/portfolio', (req, res) => {
 });
 
 router.get('/myprofile', (req, res) => {
+
+    if (!req.session || !req.session.user || !req.session.user.user_id) {
+        return res.redirect('/login');
+    }
+
     const id = req.session.user.user_id; // Get the user ID from query parameters
 
-    if (!id) {
-        return res.status(400).send('User ID is required');
-    }
+    
 
     // Fetch the user details from the database
     const sql = `

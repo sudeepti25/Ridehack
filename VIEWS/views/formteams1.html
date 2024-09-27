@@ -3,171 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Your Own Team</title>
+    
+    <!-- Link to Google Fonts for Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to External CSS -->
     <link rel="stylesheet" href="formteams1.css">
-    <style>
-                   
-    </style>
 </head>
 <body>
+    <header>
+        <div class="logo">
+          <img src="logo.jpg.jpeg" alt="no logo">
+          <h3>BrainBridges</h3>
+        </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="profile.html">My Profile</a>
+        <a href="messages.html">Messages</a>
+        <a href="#">Requests</a>
+        <a href="#">Info</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <div class="login-signup-button">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" style="background-color: white; color: black; border:none; ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-filter" viewBox="0 0 16 16">
+                <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+              </svg>
+        </button>
+      </div>
+      <!-- Hamburger Menu for Mobile View -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Navigation -->
+    <!--<nav id="navbar">-->
+    <!--  <a href="#">Home</a>-->
+    <!--  <a href="profile.html">My Profile</a>-->
+    <!--  <a href="messages.html">Messages</a>-->
+    <!--  <a href="#">Requests</a>-->
+    <!--  <a href="#">Info</a>-->
+    <!--  <a href="about.html">About Us</a>-->
+    <!--</nav>-->
+
+  </header>
     <div class="heading">
-    <h1>Form Your Own Team</h1>
-           <h3>Powered By BrainBridges</h3>
-</div>
-<!-- side bar option -->
-<div class="hamburger-menu">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-</div>
-
-
-<nav id="sidebar">
-    <!-- Close button -->
-    <div class="close-btn">&times;</div>
-    <div class="dropdown">
-    <ul>
-        <!-- Year Dropdown -->
-        <li>
-            <a href="#" class="dropdown-toggle">Year</a>
-            <ul class="dropdown-menu year-filters show">
-                <li>
-                    <label><input type="checkbox" name="year" value="1st" data-filter="1st"> 1st Year</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="year" value="2nd" data-filter="2nd"> 2nd Year</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="year" value="3rd" data-filter="3rd"> 3rd Year</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="year" value="4th" data-filter="4th"> 4th Year</label>
-                </li>
-            </ul>
-        </li>
-
-        <!-- Skills Dropdown -->
-        <li>
-            <a href="#" class="dropdown-toggle">Skills</a>
-            <ul class="dropdown-menu skills-filters show">
-                <li>
-                    <label><input type="checkbox" name="skills" value="AI" data-filter="AI"> AI</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="skills" value="ML" data-filter="ML"> ML</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="skills" value="Web Development" data-filter="Web Development"> Web Development</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="skills" value="App Development" data-filter="App Development"> App Development</label>
-                </li>
-            </ul>
-        </li>
-
-        <!-- Languages Dropdown -->
-        <li>
-            <a href="#" class="dropdown-toggle">Languages</a>
-            <ul class="dropdown-menu language-filters show">
-                <li>
-                    <label><input type="checkbox" name="language" value="C/C++" data-filter="C/C++"> C/C++</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="Java" data-filter="Java"> Java</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="Python" data-filter="Python"> Python</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="JavaScript" data-filter="JavaScript"> JavaScript</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="Ruby" data-filter="Ruby"> Ruby</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="PHP" data-filter="PHP"> PHP</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="language" value="Go" data-filter="Go"> Go</label>
-                </li>
-            </ul>
-        </li>
-
-        <!-- College Dropdown -->
-        <li>
-            <a href="#" class="dropdown-toggle">College</a>
-            <ul class="dropdown-menu college-filters show">
-                <li>
-                    <label><input type="checkbox" name="college" value="Global" data-filter="Global"> Global Universities</label>
-                </li>
-                <li>
-                    <label><input type="checkbox" name="college" value="Own University" data-filter="Own University"> Within University</label>
-                </li>
-            </ul>
-      
-        </li>
-    </ul>
+        <h1>Form Your Own Team</h1>
+        <h3>Powered By BrainBridges</h3>
     </div>
-</nav>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search for names..">
+        <button id="search-button">Search</button>
+    </div>
 
-
-
-<!-- Search Bar -->
-<div class="search-container">
-    <input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search for names..">
-    <button id="search-button">Search</button>
-</div>
-    <div class="container">
+    <!-- Team Members Container -->
+    <div class="container" id="teamContainer">
         <div class="box">
-            <img src="man.png" alt="" srcset="">
+            <img src="man.png" alt="Rakshit Awasthi">
             <h2>Rakshit Awasthi</h2>
-            <p>Backend Devloper</p>
-            <button type="button">View More</button>
+            <p>Backend Developer</p>
+            <div class="button">
+              <button type="button">View More</button>
+              <button type="button">join</button>
+            </div>
+            
         </div>
         <div class="box">
-            <img src="woman.png" alt="" srcset="">
+            <img src="woman.png" alt="Shubhi Rusiya">
             <h2>Shubhi Rusiya</h2>
-            <p>Backend Devloper</p>
+            <p>Backend Developer</p>
             <button type="button">View More</button>
         </div>
         <div class="box">
-            <img src="man.png" alt="" srcset="">
+            <img src="man.png" alt="Yash Singh">
             <h2>Yash Singh</h2>
-            <p>Backend Devloper</p>
+            <p>Backend Developer</p>
             <button type="button">View More</button>
         </div>
         <div class="box">
-            <img src="woman.png" alt="" srcset="">
+            <img src="woman.png" alt="Sudeepti Singh">
             <h2>Sudeepti Singh</h2>
-            <p>Backend Devloper</p>
+            <p>Backend Developer</p>
             <button type="button">View More</button>
         </div>
         <div class="box">
-            <img src="woman.png" alt="" srcset="">
+            <img src="woman.png" alt="Tanishka Garg">
             <h2>Tanishka Garg</h2>
-            <p>Backend Devloper</p>
+            <p>Backend Developer</p>
             <button type="button">View More</button>
         </div>
         <div class="box">
-            <img src="man.png" alt="" srcset="">
+            <img src="man.png" alt="Rakshit Awasthi">
             <h2>Rakshit Awasthi</h2>
-            <p>Backend Devloper</p>
+            <p>Backend Developer</p>
             <button type="button">View More</button>
         </div>
         <div class="box">
-            <img src="man.png" alt="" srcset="">
+            <img src="man.png" alt="Yash Singh">
             <h2>Yash Singh</h2>
-            <p>Backend Devloper</p>
+            <p>Backend Developer</p>
             <button type="button">View More</button>
         </div>
         <div class="box">
-            <img src="woman.png" alt="" srcset="">
+            <img src="woman.png" alt="Sudeepti Singh">
             <h2>Sudeepti Singh</h2>
-            <p>Backend Devloper</p>
+            <p>Backend Developer</p>
             <button type="button">View More</button>
         </div>
     </div>
+
+    <!-- JavaScript -->
     <script>
+        // Search Functionality
         function searchFunction() {
             var input, filter, container, boxes, h2, i, txtValue;
             input = document.getElementById('searchBar');
@@ -185,96 +137,19 @@
                 }
             }
         }
-// side bar
-const hamburger = document.querySelector('.hamburger-menu');
-const sidebar = document.getElementById('sidebar');
-const closeBtn = document.querySelector('.close-btn');
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.getElementById('navbar');
 
-// Toggle sidebar when hamburger is clicked
-hamburger.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-});
-
-// Close sidebar when close button is clicked
-closeBtn.addEventListener('click', () => {
-    sidebar.classList.remove('active');
-});
-
-//side bar options
-// Object to store selected filters
-const filters = {
-    year: [],
-    skills: [],
-    language: [],
-    college: []
-};
-
-// Handle click event for dropdown toggle
-document.querySelector('.dropdown-toggle').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default link behavior
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    
-    // Toggle the 'show' class to display/hide the dropdown menu
-    dropdownMenu.classList.toggle('show');
-});
+        hamburger.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        });
 
 
-// Handle click event for dropdown toggle
-document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        const parent = this.parentElement;
-        const dropdownMenu = parent.querySelector('.dropdown-menu');
-        
-        // Toggle the 'show' class to display/hide the dropdown menu
-        dropdownMenu.classList.toggle('show');
-    });
-});
-
-// Close dropdown menu if clicked outside
-document.addEventListener('click', function(event) {
-    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-        
-        if (!dropdown.contains(event.target)) {
-            dropdownMenu.classList.remove('show');
-        }
-    });
-});
-
-
-// Handle click event for dropdown toggle
-document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-    toggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        const parent = this.parentElement;
-        const dropdownMenu = parent.querySelector('.dropdown-menu');
-        
-        // Toggle the 'show' class to display/hide the dropdown menu
-        dropdownMenu.classList.toggle('show');
-    });
-});
-
-// Close dropdown menu if clicked outside
-document.addEventListener('click', function(event) {
-    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-        
-        if (!dropdown.contains(event.target)) {
-            dropdownMenu.classList.remove('show');
-        }
-    });
-});
-
-// Toggle dropdown menu visibility
-document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+        // Dropdown Functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
             toggle.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent default link behavior
-
-                // Get the dropdown menu
+                event.preventDefault();
                 const dropdownMenu = this.nextElementSibling;
-
-                // Toggle the 'show' class to display/hide the dropdown menu
                 dropdownMenu.classList.toggle('show');
 
                 // Close other dropdowns
@@ -285,6 +160,28 @@ document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
                 });
             });
         });
-    </script>  
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                if (!dropdown.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        });
+
+        // Heading Color Change on Box Hover
+        const headingContainer = document.querySelector('.heading');
+
+        document.querySelectorAll('.box').forEach(function(box) {
+            box.addEventListener('mouseenter', () => {
+                headingContainer.classList.add('active');
+            });
+            box.addEventListener('mouseleave', () => {
+                headingContainer.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

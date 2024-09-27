@@ -32,8 +32,15 @@ router.post('/sendrequest',(req, res)=>{
 
 router.get('/showrequest',(req, res)=>{
 
+   
+    
+    if (!req.session || !req.session.user || !req.session.user.user_id) {
+        return res.redirect('/login');
+    }
+
     const id= req.session.user.user_id;
-    console.log(id);
+
+
 
     sql=`SELECT *FROM Requests WHERE receiver_id = ? AND status="pending"`;
     db.query(sql,[id], async function(err,result){
@@ -45,10 +52,7 @@ router.get('/showrequest',(req, res)=>{
         
 
 
-        
-
-
-        for (let request of result) {
+    for (let request of result) {
             const nameSql = 'SELECT u.name, t.team_name from Users u JOIN Teams t ON u.user_id=t.leader_id WHERE u.user_id=?';
             await new Promise((resolve, reject) => {
                 db.query(nameSql, [request.sender_id], (err, rows) => {

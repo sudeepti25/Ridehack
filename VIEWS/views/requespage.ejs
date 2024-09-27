@@ -3,183 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon Team Join Requests</title>
+    <title>Form Your Own Team</title>
+    
+    <!-- Link to Google Fonts for Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to External CSS -->
+    <!--<link rel="stylesheet" href="styles1.css">-->
     <style>
-        /* General Body Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #eef2f6;
-        }
+      /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Header Styling */
-        header {
-            background-color: #0077b6;
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
 
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
+header {
+   width: 100%;
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 
-        /* Container for main content */
-        .container {
-            width: 100%;
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 1rem;
-        }
+.logo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   column-gap: 0.3rem;
+   text-align: center;
+   font-size: 1.7rem;
+}
 
-        /* Notification List Styling */
-        .notification-list {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
+.logo img {
+   width: 4rem;
+}
 
-        .notification-list h3 {
-            font-size: 1.8rem;
-            color: #0077b6;
-            margin-bottom: 2rem;
-        }
+nav {
+   display: flex;
+   column-gap: 2rem;
+   font-family: "Quicksand", sans-serif;
+}
 
-        /* Notification Item Styling */
-        .notification-item {
-            background-color: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            margin-bottom: 1.5rem;
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
+nav a {
+   color: black;
+   font-size: 1.3rem;
+   font-weight: bolder;
+   text-decoration: none;
+}
 
-        .notification-item:hover {
-            background-color: #eef6ff;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-        }
+nav a:hover {
+   color: #007BFF;
+}
 
-        .notification-item p {
-            margin: 0;
-            font-size: 1.1rem;
-            color: #333;
-        }
+.login-signup-button button {
+   background-color: white;
+   padding: 0.5rem;
+   font-size: 1rem;
+   font-weight: 600;
+   border-radius: 0.4rem;
+}
 
-        /* Button Styling */
-        .notification-buttons {
-            margin-top: 1rem;
-            display: flex;
-            gap: 10px;
-        }
+.login-signup-button {
+   padding: 2rem;
+}
 
-        button {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
+/* Heading Styles */
+.heading {
+    margin: 2rem auto;
+    text-align: center;
+}
 
-        .accept-button {
-            background-color: #28a745;
-            color: white;
-        }
+.heading h1 {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
 
-        .accept-button:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
-        }
+.heading h3 {
+    font-size: 1.5rem;
+    color: #555;
+    transition: color 0.3s ease;
+}
 
-        .decline-button {
-            background-color: #e74c3c;
-            color: white;
-        }
+.box:hover h2 {
+    color: #007BFF;
+}
+.box:hover{
+  border:1.5px solid #007BFF;
+}
 
-        .decline-button:hover {
-            background-color: #c82333;
-            transform: translateY(-2px);
-        }
+/* Box and Button Layout */
+.container{
+  display: flex;
+  justify-content: center;
+}
+.box {
+    position: relative;
+    border: 1.5px solid transparent;
+    width: 90%;
+    height: 150px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        button:disabled {
-            background-color: #ddd;
-            cursor: not-allowed;
-        }
+.name {
+    margin-bottom:40px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
 
-        /* Different colors for accepted/declined */
-        .accepted {
-            background-color: #d4edda !important;
-            border: 1px solid #c3e6cb;
-        }
+.button {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 20px; /* 10px above the bottom */
+    right: 30px;  /* 10px from the right side */
+}
 
-        .declined {
-            background-color: #f8d7da !important;
-            border: 1px solid #f5c6cb;
-        }
 
-        /* Responsive Design */
-        @media only screen and (max-width: 600px) {
-            header {
-                padding: 1.5rem 1rem;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .notification-list {
-                padding: 1.5rem;
-            }
-            button {
-                padding: 0.6rem 1rem;
-            }
-        }
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #00a0ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .name {
+        margin-bottom: -1rem;
+    }
+
+     .button {
+        bottom: 20px; /* Keep the button 10px above the bottom */
+        right: 30px; /* Adjust for smaller screen, keeping it 10px from the right */
+        flex-wrap: wrap;
+        width: auto;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .box {
+        padding: 1rem;
+        width: 100%;
+    }
+
+     .button {
+        flex-wrap: wrap;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    button {
+        width: 30%;
+    }
+
+    .heading h1 {
+        font-size: 2rem;
+    }
+
+    .heading h3 {
+        font-size: 1.2rem;
+    }
+
+
+
+}
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Hackathon Team Join Requests</h1>
-    </header>
-
-    <div class="container">
-        <!-- Notifications List -->
-        <div class="notification-list" id="notificationList">
-            <h3>Pending Join Requests</h3>
-
-
-            <% sender.forEach(function(i){ %>
-                <div class="notification-item">
-                    <p><strong><%= i.sender_name %></strong> sended you a join request</p>
-                    <p><strong><%= i.team_name%></strong>
-
-                    <div class="notification-buttons">
-                        <button class="accept-button" onclick="handleclick('<%= i.sender_id %>','<%= i.receiver_id %>','accepted')">Accept</button>
-                        <button class="decline-button " onclick="handleclick('<%= i.sender_id %>','<%= i.receiver_id %>','rejected')">Decline</button>
-                    </div>
-                </div>
-            <% }); %>
-
-                
-           
-
-            <!-- Example Requests -->
-           
-
-           
-
-            <!-- More requests can be added dynamically -->
+        <div class="logo">
+          <img src="logo.jpg.jpeg" alt="no logo">
+          <h3>BrainBridges</h3>
         </div>
+      <nav>
+        <a href="/landing_page">Home</a>
+        <a href="/myprofile">My Profile</a>
+        <a href="#">Messages</a>
+        
+        <a href="#">Info</a>
+        <a href="#">About Us</a>
+      </nav>
+      <div class="login-signup-button">
+        
+      </div>
+      <!-- Hamburger Menu for Mobile View -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+
+    <!-- Navigation -->
+    <!--<nav id="navbar">-->
+    <!--  <a href="#">Home</a>-->
+    <!--  <a href="profile.html">My Profile</a>-->
+    <!--  <a href="messages.html">Messages</a>-->
+    <!--  <a href="#">Requests</a>-->
+    <!--  <a href="#">Info</a>-->
+    <!--  <a href="about.html">About Us</a>-->
+    <!--</nav>-->
+
+  </header>
+    <div class="heading">
+        <h1>Join Requests</h1>
+        <h2>Powered By BrainBridges</h2>
+    </div>
+    
+    <!-- Search Bar -->
+    <!--<div class="search-container">-->
+    <!--    <input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search for names..">-->
+    <!--    <button id="search-button">Search</button>-->
+    <!--</div>-->
+
+    <!-- Team Members Container -->
+
+    <% if(!sender || sender.length===0){ %>
+        <div class="noreq" style="font-family: Quicksand, sans-serif; font-size: 30px; margin-top: 200px; margin-left: 600px;"><p>No pending join requests</p></div>
+    <% } %>
+    <div class="container" id="teamContainer">
+
+        
+      
+
+
+
+        <% sender.forEach(function(i){ %>
+        <div class="box">
+          <div class="name">
+            <p><strong><%= i.sender_name %></strong> sended you a join request</p>
+            <p><strong><%= i.team_name%></strong>
+          </div>
+            
+          <!--<p>Backend Developer</p>-->
+          <div class="button">
+            <button class="accept-button" onclick="handleclick('<%= i.sender_id %>','<%= i.receiver_id %>','accepted')">Accept</button>
+            <button class="decline-button " onclick="handleclick('<%= i.sender_id %>','<%= i.receiver_id %>','rejected')">Decline</button>
+          </div>
+            
+        </div>
+
+        <% }); %>
+        
 
     <script>
 
 
 function handleclick(senderid,receiverid,action) {
+
+    
+    
             fetch('/response', {
                 method: 'POST',
                 headers: {
@@ -190,11 +312,21 @@ function handleclick(senderid,receiverid,action) {
                     receiver_id: receiverid,
                     action: action
                 })
+        
+                
             })
+
+            
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    document.getElementById(`notificationList`).remove();
+                    const notificationItem = document.getElementById(`notification-${senderId}`);
+                    if (notificationItem) {
+                        notificationItem.remove();
+                    } else {
+                        console.error('Notification item not found');
+                    }
+                   
                 } else {
                     alert('Error: ' + data.message);
                 }
@@ -202,6 +334,8 @@ function handleclick(senderid,receiverid,action) {
             .catch(error => {
                 console.error('Error:', error);
             });
+
+            
         }
        
        

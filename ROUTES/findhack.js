@@ -31,6 +31,19 @@ router.get('/findhack',(req,res) => {
 })
 
 
+router.post('/savehacks', (req, res) => {
+
+const sql =`INSERT INTO savehacks VALUES()`
+
+
+
+
+
+
+
+})
+
+
 
 
 module.exports=router;
