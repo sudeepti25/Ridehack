@@ -11,7 +11,7 @@ router.get("/teampage", (req, res) => {
 router.get('/teams', (req, res) => {
 
     if (!req.session || !req.session.user || !req.session.user.user_id) {
-        return res.status(404).send("USER NOT LOGGED IN");
+        return res.redirect('/login');
     }
 
     const value = req.query.value;

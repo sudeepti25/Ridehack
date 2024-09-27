@@ -23,13 +23,13 @@
             <h3>BrainBridges</h3>
         </div>
         <nav>
-            <a href="#">Home</a>
-            <a href="profile.html">My Profile</a>
-            <a href="messages.html">Messages</a>
-            <a href="#">Requests</a>
+            <a href="/landing_page  ">Home</a>
+            <a href="/myprofile">My Profile</a>
+            <a href="#">Messages</a>
+            <a href="/showrequest">Requests</a>
             <a href="#">Info</a>
-            <a href="about.html">About Us</a>
-            <a href="partnership.html">Settings</a>
+            <a href="#">About Us</a>
+            <a href="#">Settings</a>
         </nav>
         <div class="login-signup-button">
             <button>
@@ -143,7 +143,7 @@
                 <div class="buttons-container">
                     <button class="apply-btn" onclick="handleclick('<%= i.eventName %>')" type="button">View More</button>
 
-                    <a href="/saved"><button class="save-btn">Save</button></a>
+                    <button class="save-btn" onclick="handlesave(i)">Save</button>
                 </div>
               </div>
             </div>
@@ -162,6 +162,17 @@
 <script>
     function handleclick(eventId) {
         window.location.href = `/hackathon/${eventId}`;
+    }
+
+    function handlesave(i)
+    {
+      fetch('/savehacks', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ hack:i })
+    })
     }
     function adjustFontSize() {
         const detailBoxes = document.querySelectorAll('.detail-box');
