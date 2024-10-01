@@ -50,6 +50,7 @@ body{
 }
 .container {
   /* position: relative; */
+  
   margin-top: 6.2%;
   margin-left:3%;
   width: 40%;
@@ -87,6 +88,7 @@ body{
   .login-box {
     /* position: absolute; */
     /* height:10%; */
+    margin-top: 20%;
     display: flex;
     flex-direction: column;
     align-content: center;

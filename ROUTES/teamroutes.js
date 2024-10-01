@@ -1,4 +1,3 @@
-// teamroutes.js
 const express = require('express');
 const router = express.Router();
 const db = require('../CONNECTIONS/Connect');
@@ -32,32 +31,70 @@ router.post('/create', (req, res) => {
     });
 });
 
-// Render the list of existing teams with leader information
-router.get('/showteams', (req, res) => { // Corrected the route name
+// Render the list of existing teams with leader and member information
+// Render the list of existing teams with leader and team members information
+router.get('/showteams', (req, res) => {
     const sql = `
-        SELECT teams.team_id, teams.team_name, users.name AS leader_name
-        FROM teams
-        JOIN users ON teams.leader_id = users.user_id
+        SELECT 
+            t.team_id, 
+            t.team_name, 
+            u.name AS leader_name,
+            um.user_id AS member_id,
+            um.name AS member_name
+        FROM teams t
+        JOIN users u ON t.leader_id = u.user_id
+        LEFT JOIN team_members tm ON t.team_id = tm.team_id
+        LEFT JOIN users um ON tm.user_id = um.user_id
     `;
+
     db.query(sql, (error, results) => {
         if (error) {
             console.error('Database error:', error);
             return res.status(500).json({ error: 'Database error' });
         }
 
-        res.render('showteams', { teams: results }); // Pass the teams to the EJS view
+        // Process the results to group team members by team
+        const teams = results.reduce((acc, row) => {
+            // Find the team in the accumulator
+            let team = acc.find(t => t.team_id === row.team_id);
+
+            if (!team) {
+                // If team doesn't exist in the accumulator, create a new entry
+                team = {
+                    team_id: row.team_id,
+                    team_name: row.team_name,
+                    leader_name: row.leader_name,
+                    members: []
+                };
+                acc.push(team);
+            }
+
+            // If there is a member for the team, add the member to the members array
+            if (row.member_id) {
+                team.members.push({
+                    user_id: row.member_id,
+                    name: row.member_name
+                });
+            }
+
+            return acc;
+        }, []);
+
+        // Render the showteams page and pass the teams and their members
+        res.render('showteams', { teams });
     });
 });
+
 // Handle POST request to select a team
 router.post('/selectteam', (req, res) => {
     const { teamId } = req.body;
 
     // Store the selected team ID in session for later use
     req.session.selectedTeamId = teamId;
-const Id=req.session.selectedTeamId 
+    const selectedTeamId = req.session.selectedTeamId;
 
     // Redirect to the next page where the request will be sent
-    res.redirect(`/teampage?teamId=${Id}`);  // This will be the page where users will send the join request
+    res.redirect(`/teampage`);  // Redirect to the team page to send join request
 });
 
 module.exports = router;

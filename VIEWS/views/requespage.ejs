@@ -286,8 +286,8 @@ button:hover {
             
           <!--<p>Backend Developer</p>-->
           <div class="button">
-            <button class="accept-button" onclick="handleclick('<%= i.sender_id %>','<%= i.receiver_id %>','accepted')">Accept</button>
-            <button class="decline-button " onclick="handleclick('<%= i.sender_id %>','<%= i.receiver_id %>','rejected')">Decline</button>
+            <button class="accept-button" onclick="handleclick('<%= i.sender_id %>','<%= i.receiver_id %>','<%= i.team_id %>','accepted')">Accept</button>
+            <button class="decline-button " onclick="handleclick('<%= i.sender_id %>','<%= i.receiver_id %>','<%= i.team_id %>','rejected')">Decline</button>
           </div>
             
         </div>
@@ -298,7 +298,7 @@ button:hover {
     <script>
 
 
-function handleclick(senderid,receiverid,action) {
+function handleclick(senderid,receiverid,team_id,action) {
 
     
     
@@ -310,6 +310,7 @@ function handleclick(senderid,receiverid,action) {
                 body: JSON.stringify({
                     sender_id: senderid,
                     receiver_id: receiverid,
+                    team_id:team_id,
                     action: action
                 })
         

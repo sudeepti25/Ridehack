@@ -1,7 +1,7 @@
-
-@import url('https:fonts.googleapis.comcss2?family=Montserrat:wght@400;600;700&display=swap');
-
-
+/* Import Montserrat Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+    
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -74,8 +74,8 @@ body {
  }
  
  .login-signup-button button {
-   position: absolute;
-   right:100px;
+   /* position: absolute;
+   right:100px; */
    margin-right:-150px;
    background-color: white;
    text-decoration: none;
@@ -98,7 +98,7 @@ body {
  }
 
 
-
+/* Heading Styles */
 .heading {
     margin: 2rem auto;
     text-align: center;
@@ -117,18 +117,13 @@ body {
     transition: color 0.3s ease;
 }
 
-
+/* Change heading color on box hover */
 .box:hover h2 {
     color: #007BFF;
 }
 
-.box:hover .heading h1 {
-    /* * If you want to change the main heading color when any box is hovered *
-    * Uncomment the below line *
-    * color: #00a0ff; * */
-}
 
-
+/* Search Bar Styles */
 .search-container {
     display: flex;
     justify-content: center;
@@ -147,7 +142,7 @@ body {
 }
 
 .search-container input:hover {
-    background-color: #e1cfcf;
+    background-color: #ffffff;
     color: #007BFF;
     border: 2px solid #00a0ff;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
@@ -174,7 +169,7 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-* Team Members Container *
+/* Team Members Container */
 .container {
     display: grid;
     margin: 0 auto;
@@ -186,8 +181,9 @@ body {
 }
 
 .box {
-    background-color: #ffffff; 
+    background-color: #ffffff; /* Changed to white */
     border: 1px solid #ddd;
+    height: 200px;
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
@@ -199,8 +195,9 @@ body {
 }
 
 .box:hover {
-    transform: translateY(-10px);
+    transform: scale(1.04);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    border:2px solid #007BFF;
 }
 
 .box img {
@@ -223,18 +220,29 @@ body {
     color: #666;
     margin-bottom: 1rem;
 }
-
+.button{
+    margin-top: 10px;
+    padding: 0px 10px;
+    display: flex;
+    
+}
+.join{
+   margin-left: 10px;
+   /* border-radius: 10px; */
+}
 button {
     background-color: #007BFF ;
     color: #fff;
-    border: none;
-    border-radius: 0.5rem;
+    border: transparent !important;
+    /* border: 2px solid #007BFF; */
+    border-radius: 100px;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* transition: background-color 0.3s ease, transform 0.3s ease; */
     font-size: 16px;
     font-weight: 600;
-    width: 108px;
+    /* margin-left: 5px; */
+    /* width: 108px; */
 }
 
 .box button:hover {
@@ -242,7 +250,7 @@ button {
     transform: scale(1.05);
 }
 
-
+/* Responsive Design */
 @media (max-width: 768px) {
     .search-container input {
         width: 60%;
@@ -263,6 +271,6 @@ button {
 
     #search-button {
         width: 80%;
-        border-radius: 0.5rem;
+        border-radius:0.5rem;
     }
 }
